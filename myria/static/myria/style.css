@@ -1,0 +1,956 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.header-container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header-top {
+    background-color: #ffffff;
+    padding: 2px 0;
+    border-bottom: 1px solid #e0e6ed;
+    justify-content: space-between;
+}
+
+/* Левая группа элементов */
+.header-left-group {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Логотип */
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px; 
+    width: auto;
+    margin-left: -25px;
+}
+
+/* Навигация */
+.header-nav {
+    display: flex;
+    align-items: center; 
+    gap: 27px;
+    margin-left: 25px; 
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #000000;    
+    font-size: 16px;    
+    font-weight: 500;   
+    white-space: nowrap; 
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+/* Выпадающее меню  */
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500; 
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0; 
+}
+
+.dropdown-button:hover {
+    text-decoration: underline;
+}
+
+.chevron-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5px;
+    transition: transform 0.2s ease;
+}
+
+/* Выпадающее окно */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    z-index: 100;    
+    display: none;   
+    min-width: 280px; 
+    background-color: #ffffff;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12); 
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #252a34;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f7fa; 
+    color: #000000;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; 
+}
+
+/* Правая часть с иконками */
+.header-right {
+    display: flex;
+    align-items: center;
+    
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #252a34;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease; 
+}
+
+.icon-btn:hover {
+    background-color: #e2e2e2;
+}
+
+/* Червоний овальний бейдж "NEW" */
+.badge-new {
+    position: absolute;
+    top: 2px;
+    left: 20px;
+    background-color: #d72626;
+    color: white;
+    font-size: 9px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    padding: 3px 4px;
+    border-radius: 20px;
+}
+
+/* Червона крапка сповіщення */
+.badge-dot {
+    position: absolute;
+    top: 5px;
+    right:5px;
+    width: 6px;
+    height: 6px;
+    background-color: #e13636;
+    border-radius: 50%;
+}
+
+/* Кнопка "Продати авто" */
+.btn-sell-car {
+    display: inline-flex;     
+    align-items: center;      
+    justify-content: center;   
+    gap: 6px;                  
+    border: 1.5px solid #000000;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 26px;        
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;           
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.btn-sell-car:hover {
+    background-color: #e2e2e2;
+    
+}
+
+
+.donation-bar {
+    padding: 10px 90px;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+
+.donation-link {
+    color: #252a34;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.flag-ua-svg {
+    margin-right: 8px; 
+    border-radius: 2px; 
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+/* 
+   СЕКЦІЯ ПОШУКУ 
+ */
+.search-section {
+    background-color: #e3f1fd; 
+    padding: 18px 0;
+}
+
+.search-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Заголовок "Знаємо, бо перевірили" */
+.search-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #252a34;
+    margin-bottom: 10px;
+}
+
+/* Таби (Всі, Вживані, Нові...) */
+.car-types-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    background-color: #ffffff;
+    border: 2px solid #e0e6ed;
+    padding: 15px 15px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #252a34;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    border: 2px solid #bdbdbd;
+}
+
+.tab-btn.active {
+    background-color: #252a34;
+    color: #ffffff;
+    border-color: #252a34;
+}
+
+/* Сітка фільтрів */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+/* Контейнер для окремого поля  */
+.form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-label {
+    font-size: 11px;
+    color: #7a828e;
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    pointer-events: none;
+}
+
+/* Стилі для селектів та інпутів */
+.form-select, .form-input {
+    width: 100%;
+    height: 48px;
+    padding: 12px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #252a34;
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Спеціальний відступ зверху для поля, де є малий підпис */
+.form-group .floating-label + .form-select {
+    padding-top: 20px;
+}
+
+.form-input::placeholder {
+    color: #7a828e;
+}
+
+.form-select:focus, .form-input:focus {
+    border-color: #90b4ce;
+}
+
+/* Нижня панель з кнопками пошуку */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+}
+
+/* Червона кнопка "Шукати" */
+.btn-submit {
+    background-color: #ce3b28;
+    color: #ffffff;
+    border: none;
+    padding: 14px 115px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #df3d27;
+}
+
+/* Біла кнопка "Розширений пошук" */
+.btn-advanced {
+    background-color: #ffffff;
+    color: #252a34;
+    border: 2px solid #252a34;
+    padding: 14px 67px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-advanced:hover {
+    background-color: #e0dfdf;
+
+}
+
+
+/* 
+ОСНОВНИЙ КОНТЕНТ 
+ */
+.main-content {
+    background-color: #ffffff;
+    padding: 30px 0;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Спільні стилі для заголовків секцій з нагадуванням стрілочок */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #252a34;
+}
+
+.slider-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e0e6ed;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #252a34;
+    transition: all 0.2s ease;
+}
+
+.arrow-btn:hover {
+    background-color: #f6f8fa;
+    border-color: #252a34;
+}
+
+
+.search-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.search-card {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid #e6ebf0;
+    border-radius: 12px;
+    background-color: #fcfdfe;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-logo {
+    font-size: 24px;
+    margin-right: 15px;
+    background-color: #f0f3f6;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.card-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #252a34;
+    margin-bottom: 4px;
+}
+
+.card-info p {
+    font-size: 12px;
+    color: #7a828e;
+}
+
+.badge-count {
+    position: absolute;
+    right: 15px;
+    background-color: #e54b3c;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+
+.stories-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; 
+    padding-bottom: 10px;
+}
+
+.stories-list::-webkit-scrollbar {
+    display: none;
+}
+
+.story-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.story-circle {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #b55fe6, #e65fa3); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+
+.story-circle.viewed {
+    background: #d0d7de; 
+}
+
+.story-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+.story-item span {
+    font-size: 11px;
+    font-weight: 600;
+    color: #252a34;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    width: 100%;
+}
+
+
+
+
+/* 
+БЛОК "AUTO.RIA РЕКОМЕНДУЄ"
+ */
+.recommendations-section {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* Маленька сіра плашка "На основі AI" */
+.badge-ai {
+    font-size: 13px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 4px 7px;
+    border-radius: 50px;
+    border: 2px solid #cacaca;
+    font-weight: 600;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+
+.car-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Стиль картки автомобіля */
+.car-card {
+    background-color: #ffffff;
+    border: 1px solid #e6ebf0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Ефект підняття картки при наведенні мишкою */
+.car-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.car-image-box {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #f0f2f5;
+}
+
+.car-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.heart-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.1s ease;
+}
+
+.heart-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Текстовий вміст картки (назва, ціна, характеристики) */
+.car-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Заголовок: Марка + Модель + Рік */
+.car-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #252a34;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+
+.car-card-price {
+    margin-bottom: 15px;
+}
+
+.price-usd {
+    font-size: 19px;
+    font-weight: 800;
+    color: #24ae60; 
+}
+
+
+.car-card-tech {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    color: #494b55;
+    border-top: 1px dashed #e6ebf0;
+    padding-top: 12px;
+    margin-top: auto; 
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Нижня кнопка "Показати всі авто" */
+.show-more-box {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.btn-show-more {
+    display: inline-block;
+    padding: 12px 45px;
+    border: 1px solid #252a34;
+    color: #252a34;
+    text-decoration: none;
+    border-radius: 24px;
+    font-weight: 700;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.btn-show-more:hover {
+    background-color: #252a34;
+    color: #ffffff;
+}
+
+
+/* 
+   ФУТЕР
+*/
+
+.main-footer {
+    background-color: #1e2229; 
+    color: #ffffff;
+    padding: 30px 0 30px 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.support-block {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Накладання круглик аватарів */
+.support-avatars {
+    display: flex;
+    align-items: center;
+
+}
+
+.support-avatars .avatar {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    border: 4px solid #f3f3f3;
+    object-fit: cover;
+    
+}
+
+.support-avatars .avatar:not(:first-child) {
+    margin-left: -25px; 
+}
+
+.support-info:hover{
+    text-decoration: underline;
+}
+
+.support-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0 0 14px 0;
+}
+
+.support-link {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-item {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.social-item:hover {
+    transform: scale(1.05);
+}
+
+.footer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.tag-btn {
+    background-color: #ffffff;
+    color: #1e2229;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.tag-btn:hover {
+    background-color: #dadada;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.links-group {
+    margin-bottom: 25px;
+}
+
+.links-group h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+}
+
+/* Посилання в рядок через крапку */
+.links-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 8px;
+}
+
+.links-inline a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.links-inline a:hover {
+    text-decoration: underline;
+}
+
+/* Створення крапки-розділювача між посиланнями */
+.links-inline a:not(:last-child)::after {
+    content: "•";
+    color: #a6b1c2;
+    margin: 0 8px;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #2d3440;
+    margin-bottom: 25px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.legal-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.legal-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    color: #a6b1c2;
+    font-size: 13px;
+    margin: 0;
+}
+
+.bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.version-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.version-link:hover {
+    text-decoration: underline;
+}
+
+.lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.lang-arrow {
+    border: solid #ffffff;
+    border-width: 0 1.5px 1.5px 0;
+    display: inline-block;
+    padding: 2.5px;
+    transform: rotate(45deg);
+    margin-bottom: 3px;
+}
+

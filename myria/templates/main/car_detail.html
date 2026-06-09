@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ car.brand }} {{ car.model }} {{ car.year }} року</title>
+    <link rel="stylesheet" href="{% static 'myria/style.css' %}">
+    <style>
+        /* Базові стилі для макету а-ля AutoRia */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .car-header {
+            margin-bottom: 15px;
+        }
+        .car-header h1 {
+            margin: 0 0 5px 0;
+            font-size: 28px;
+        }
+        .main-layout {
+            display: flex;
+            gap: 30px;
+        }
+        /* Ліва колонка (65%) */
+        .left-column {
+            flex: 65;
+        }
+        /* Права колонка (35%) */
+        .right-column {
+            flex: 35;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            align-self: flex-start;
+        }
+        /* Галерея */
+        .main-image img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .thumbs-gallery {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .thumbs-gallery img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .thumbs-gallery img:hover {
+            border-color: #db5c00;
+        }
+        /* Блок характеристик коротких */
+        .quick-specs {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+            font-size: 15px;
+            color: #555;
+            background: #f1f5f9;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        /* Блок держномеру та VIN */
+        .car-codes {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .badge-number {
+            background: #3b82f6;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .badge-vin {
+            background: #34d399;
+            color: #064e3b;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        /* Блок Перевірено державою */
+        .verified-block {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+            background-color: #fafafa;
+        }
+        .verified-title {
+            color: #1e3a8a;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .verified-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .verified-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .verified-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: green;
+            font-weight: bold;
+        }
+        /* Права панель ціни та зв'язку */
+        .price-box {
+            font-size: 32px;
+            color: #22c55e;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .seller-info {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .btn-phone {
+            display: block;
+            background: #22c55e;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .btn-phone:hover {
+            background: #16a34a;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #db5c00;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="car-header">
+        <h1>{{ car.brand }} {{ car.model }} {{ car.year }}</h1>
+        <span style="color: #777;">ID автомобіля: {{ car.id }}</span>
+    </div>
+
+    <div class="main-layout">
+        
+        <div class="left-column">
+            
+            <div class="main-image">
+                {% if car.image %}
+                    <img id="current-main-img" src="{{ car.image }}" alt="Головне фото {{ car.brand }}">
+                {% else %}
+                    <div style="background: #e2e8f0; height: 300px; display:flex; align-items:center; justify-content:center;">Немає фото</div>
+                {% endif %}
+            </div>
+
+            <div class="thumbs-gallery">
+                {% if car.image_url %}
+                    <img src="{{ car.image }}" onclick="changeImage('{{ car.image }}')" alt="Мініатюра 1">
+                {% endif %}
+                
+                {% for img in car.images.all %}
+                    <img src="{{ img.image }}" onclick="changeImage('{{ img.image }}')" alt="Додаткове фото">
+                {% endfor %}
+            </div>
+
+            <div class="quick-specs">
+                <span>🚗 <b>Пробіг:</b> {{ car.mileage }} тис. км</span>
+                <span>⚙️ <b>Коробка:</b> {{ car.transmission }}</span>
+                <span>⛽ <b>Паливо:</b> {{ car.fuel }}</span>
+                <span>📍 <b>Місто:</b> {{ car.city }}</span>
+            </div>
+
+            <div class="car-codes">
+                {% if car.car_number %}
+                    <div class="badge-number">{{ car.car_number }}</div>
+                {% endif %}
+                {% if car.vin_code %}
+                    <div class="badge-vin">VIN: {{ car.vin_code }}</div>
+                {% endif %}
+            </div>
+
+            <div class="description-section">
+                <h2>Опис від власника</h2>
+                <p style="line-height: 1.6; color: #4a5568;">
+                    {% if car.description %}
+                        {{ car.description }}
+                    {% else %}
+                        Власник не надав додаткового опису для цього транспортного засобу.
+                    {% endif %}
+                </p>
+            </div>
+
+            <div class="verified-block">
+                <div class="verified-title">🛡️ Перевірено AUTO.RIA за офіційними відкритими державними даними</div>
+                <ul class="verified-list">
+                    <li>{{ car.brand }} {{ car.model }} {{ car.year }}</li>
+                    <li>Колір за техпаспортом: {{ car.color }}</li>
+                    <li>Тип двигуна: {{ car.fuel }}</li>
+                    <li>Відсутній у розшуку</li>
+                    <li>Успішно пройдено повну юридичну перевірку</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+            <div class="price-box">${{ car.price }}</div>
+            <div style="color: #718096; font-size: 14px;">• Стан хороший, можливий торг</div>
+
+            <div class="seller-info">
+                <h3 style="margin: 0 0 5px 0;">Продавець Приватна Особа</h3>
+                <p style="color: #4a5568; font-size: 14px; margin: 0;">📍 На AUTO.RIA з нами більше року</p>
+                
+                <a href="tel:#" class="btn-phone" onclick="alert('Телефон продавця: (095) XXX-XX-XX')">📞 Показати телефон</a>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="{% url 'car_list' %}" class="back-link">← Назад до списку автомобілів</a>
+</div>
+
+<script>
+    function changeImage(imageUrl) {
+        document.getElementById('current-main-img').src = imageUrl;
+    }
+</script>
+
+</body>
+</html>

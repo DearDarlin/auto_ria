@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список автомобілів</title>
+</head>
+<body>
+    <h1>Список автомобілів</h1>
+
+    {% for car in cars %}
+        <div style="margin-bottom: 20px; padding: 10px; border: 1px solid gray; display: flex; gap: 20px; align-items: center;">
+            
+            {% if car.image %}
+                <img src="{{ car.image }}" alt="{{ car.brand }}" style="width: 150px; height: 100px; object-fit: cover; border-radius: 4px;">
+            {% else %}
+                <div style="width: 150px; height: 100px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #777;">
+                    Немає фото
+                </div>
+            {% endif %}
+
+            <div>
+                <h2>{{ car.brand }} {{ car.model }}</h2>
+                <p><b>Рік:</b> {{ car.year }} | <b>Місто:</b> {{ car.city }}</p>
+                <p><b>Пробіг:</b> {{ car.mileage }} | <b>Пальне:</b> {{ car.fuel }}</p>
+                <p style="font-size: 18px; color: green; font-weight: bold;">Ціна: ${{ car.price }}</p>
+                
+                <a href="{% url 'car_detail' car.id %}">Детальніше</a>
+            </div>
+
+        </div>
+    {% empty %}
+        <p>Машин у базі даних поки немає.</p>
+    {% endfor %}
+
+    <br>
+    <a href="{% url 'home' %}">На головну</a>
+</body>
+</html>

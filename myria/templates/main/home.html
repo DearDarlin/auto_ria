@@ -1,0 +1,467 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTO.RIA</title>
+    <link rel="stylesheet" href="{% static 'myria/style.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="header-container">
+        
+                <div class="header-left-group">
+                    <div class="header-logo">
+                        <img src="{% static 'myria/image/logo.png' %}" alt="AUTO.RIA Logo" class="logo-image">
+                    </div>
+
+                    <nav class="header-nav">
+                        <a href="#" class="nav-item">Вживані авто</a>
+                        <a href="#" class="nav-item">Нові авто</a>
+                
+                        <div class="dropdown">
+                            <button class="dropdown-button">
+                                <span>Все для авто</span>
+                                <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Каталог СТО</a></li>
+                                <li><a href="#">Автозапчастини на RIA.com</a></li>
+                                <li><a href="#">16 видів перевірок на AUTO.RIA</a></li>
+                                <li><a href="#">Перевірка по номеру авто та VIN-коду</a></li>
+                                <li><a href="#">Підрахунок середньої ціни авто</a></li>
+                                <li><a href="#">Митний калькулятор</a></li>
+                                <li><a href="#">Авто з пробігом від Автодилерів</a></li>
+                                <li><a href="#">Авто з-за кордону</a></li>
+                                <li><a href="#">Відгуки про авто</a></li>
+                                <li><a href="#">Фінансування авто на AUTO.RIA</a></li>
+                                <li><a href="#">Новини про авто</a></li>
+                                <li><a href="#">Перереєструвати ТЗ через Дію</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="nav-item">GARAGE AUTO.RIA</a>
+                        <a href="#" class="nav-item">Підтримка 24/7</a>
+                    </nav>
+                </div>
+
+        <div class="header-right">
+            <div class="header-icons">
+                
+                <div class="icon-wrapper">
+                    <button class="icon-btn search-icon" title="Пошук">
+                        <i data-lucide="search"></i>
+                    </button>
+                    <span class="badge-new">NEW</span>
+                </div>
+
+                <div class="icon-wrapper">
+                    <button class="icon-btn" title="Обране">
+                        <i data-lucide="heart"></i>
+                    </button>
+                </div>
+
+                <div class="icon-wrapper">
+                    <button class="icon-btn" title="Кабінет">
+                        <i data-lucide="user"></i>
+                    </button>
+                    <span class="badge-dot"></span>
+                </div>
+                
+            </div>
+        </div>
+
+                <a href="{% url 'car_list' %}" class="btn-sell-car"><i data-lucide="plus"></i> Продати авто</a>
+            
+            
+        </div>
+        <div class="donation-bar">
+            <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+                <rect width="1200" height="800" fill="#0057B7"/>
+                <rect width="1200" height="400" y="400" fill="#FFD700"/>
+            </svg>
+            <a href="#" class="donation-link">Донат до донату – автівка на фронт! Подвоїмо кожну гривню!</a>
+        </div>
+    </div>
+</div>
+</header>
+
+<section class="search-section">
+    <div class="search-container">
+        
+        <h1 class="search-title">Знаємо, бо перевірили</h1>
+        
+        <div class="car-types-tabs">
+            <button class="tab-btn active">Всі</button>
+            <button class="tab-btn">Вживані</button>
+            <button class="tab-btn">Нові</button>
+            <button class="tab-btn">Під пригон</button>
+        </div>
+
+        <form class="search-form">
+            <div class="form-grid">
+                
+                <div class="form-group">
+                    <label class="floating-label">Тип транспорту</label>
+                    <select class="form-select">
+                        <option>Легкові</option>
+                        <option>Мото</option>
+                        <option>Вантажівки</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="Марка, Модель">
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select">
+                        <option disabled selected>Рік випуску</option>
+                        <option>2026</option>
+                        <option>2025</option>
+                        <option>2024</option>
+                        <option>2023</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select">
+                        <option disabled selected>Вартість</option>
+                        <option>до 5 000 $</option>
+                        <option>до 10 000 $</option>
+                        <option>до 20 000 $</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select">
+                        <option disabled selected>Регіон</option>
+                        <option>Київська обл.</option>
+                        <option>Вінницька обл.</option>
+                        <option>Львівська обл.</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select">
+                        <option disabled selected>Пальне</option>
+                        <option>Бензин</option>
+                        <option>Дизель</option>
+                        <option>Електро</option>
+                        <option>Гібрид</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select">
+                        <option disabled selected>Коробка передач</option>
+                        <option>Автомат</option>
+                        <option>Ручна / Механіка</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Шукати</button>
+                <button type="button" class="btn-advanced">Розширений пошук</button>
+            </div>
+
+        </form>
+
+    </div>
+</section>
+
+<main class="main-content">
+    <div class="content-container">
+
+        <section class="recent-searches">
+            <div class="section-header">
+                <h2>Продовжити пошук</h2>
+                <div class="slider-arrows">
+                    <button class="arrow-btn">‹</button>
+                    <button class="arrow-btn">›</button>
+                </div>
+            </div>
+            
+            <div class="search-cards-grid">
+                <div class="search-card">
+                    <div class="card-logo">🚗</div>
+                    <div class="card-info">
+                        <h3>Honda Insight 2018 - 2019 рр.</h3>
+                        <p>Вся Україна, Авто в Україні</p>
+                    </div>
+                </div>
+                <div class="search-card">
+                    <div class="card-logo">🚗</div>
+                    <div class="card-info">
+                        <h3>Toyota Prius 2018 - 2019 рр.</h3>
+                        <p>Вся Україна, Авто в Україні</p>
+                    </div>
+                </div>
+                <div class="search-card">
+                    <div class="card-logo">🚗</div>
+                    <div class="card-info">
+                        <h3>Hyundai Kona Electric 2019 - 2020 ...</h3>
+                        <p>Вся Україна, Електро, Авто в Україні</p>
+                        <span class="badge-count">+11</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stories-section">
+            <div class="section-header">
+                <h2>Відеоповідомлення</h2>
+                <div class="slider-arrows">
+                    <button class="arrow-btn">‹</button>
+                    <button class="arrow-btn">›</button>
+                </div>
+            </div>
+
+            <div class="stories-list">
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/10664_large.jpg' %}" alt="Car">
+                    </div>
+                    <span>MG ZS EV 2020</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/images.jpg' %}" alt="Car">
+                    </div>
+                    <span>Audi A4 Allroa...</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/image.jpg' %}" alt="Car">
+                    </div>
+                    <span>Renault Grand...</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/images.jpg' %}" alt="Car">
+                    </div>
+                    <span>Renault Kardia...</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/images.jpg' %}" alt="Car">
+                    </div>
+                    <span>BMW X5 2015</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/images.jpg' %}" alt="Car">
+                    </div>
+                    <span>Volkswagen...</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/images.jpg' %}" alt="Car">
+                    </div>
+                    <span>Suzuki...</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/images.jpg' %}" alt="Car">
+                    </div>
+                    <span>Hyundai Ioniq ...</span>
+                </div>
+                <div class="story-item">
+                    <div class="story-circle viewed">
+                        <img src="{% static 'myria/image/images.jpg' %}" alt="Car">
+                    </div>
+                    <span>Ford Mustang...</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+<section class="recommendations-section">
+    <div class="section-header">
+        <h2>AUTO.RIA рекомендує <span class="badge-ai">На основі AI</span></h2>
+    </div>
+
+    <div class="cars-grid">
+        {% for car in cars %}
+        <a href="{% url 'car_detail' car.id %}" class="car-card-link">
+            <div class="car-card">
+                
+                <div class="car-image-box">
+                    {% if car.image %}
+                        <img src="{{ car.image }}" alt="{{ car.brand }} {{ car.model }}" class="car-img">
+                    {% else %}
+                        <div style="background: #e2e8f0; height: 180px; display:flex; align-items:center; justify-content:center; color: #777;">Немає фото</div>
+                    {% endif %}
+                    <button class="heart-btn">💙</button>
+                </div>
+
+                <div class="car-card-content">
+                    <h3 class="car-card-title">{{ car.brand }} {{ car.model }} {{ car.year }}</h3>
+                    
+                    <div class="car-card-price">
+                        <span class="price-usd">{{ car.price }} $</span>
+                    </div>
+
+                    <div class="car-card-tech">
+                        <span class="tech-item">⏱ {{ car.mileage }} тис. км</span>
+                        <span class="tech-item">⛽ {{ car.fuel }}</span>
+                        <span class="tech-item">📍 {{ car.city }}</span>
+                    </div>
+                </div>
+
+            </div>
+        </a>
+        {% empty %}
+        <p>Наразі немає доступних автомобілів на головній сторінці.</p>
+        {% endfor %}
+    </div>
+
+    <div class="show-more-box">
+        <a href="{% url 'car_list' %}" class="btn-show-more">Показати всі авто</a>
+    </div>
+</section>
+</main>
+<footer class="main-footer">
+    <div class="footer-container">
+        
+        <div class="footer-top">
+            <div class="support-block">
+                <div class="support-avatars">
+                    <img src="{% static 'myria/image/women1.jpg' %}" alt="Support 1" class="avatar">
+                    <img src="{% static 'myria/image/women2.jpg' %}" alt="Support 2" class="avatar">
+                    <img src="{% static 'myria/image/women3.jpg' %}" alt="Support 3" class="avatar">
+                </div>
+                <div class="support-info">
+                    <h3>Служба турботи про користувачів 24/7</h3>
+                    <a href="#" class="support-link">Допомога по сайту</a>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-item telegram" title="Telegram"></a>
+                <a href="#" class="social-item messenger" title="Messenger"></a>
+                <a href="#" class="social-item viber" title="Viber"></a>
+                <a href="#" class="social-item email" title="Email"></a>
+                <a href="#" class="social-item call" title="Call"></a>
+            </div>
+        </div>
+
+        <!-- Блок з овальними білими тегами/кнопками -->
+        <div class="footer-tags">
+            <a href="#" class="tag-btn">Відгуки про авто</a>
+            <a href="#" class="tag-btn">Авто Лідер</a>
+            <a href="#" class="tag-btn">RIA.com для бізнесу</a>
+            <a href="#" class="tag-btn">RIA.com Marketplace</a>
+            <a href="#" class="tag-btn">API для розробників</a>
+            <a href="#" class="tag-btn">Вікіпедія про AUTO.RIA</a>
+            <a href="#" class="tag-btn">Безпечні угоди</a>
+            <a href="#" class="tag-btn">Вакансії AUTO.RIA</a>
+            <a href="#" class="tag-btn">Партнерська ініціатива - Біле світло</a>
+        </div>
+
+        <!-- Головна сітка з категоріями посилань -->
+        <div class="footer-links-grid">
+            
+            <!-- Ліва колонка -->
+            <div class="links-column">
+                <div class="links-group">
+                    <h4>Вживані авто</h4>
+                    <div class="links-inline">
+                        <a href="#">Автодилери</a>
+                        <a href="#">Авто з Європи</a>
+                        <a href="#">Пригнані авто</a>
+                        <a href="#">Нерозмитнені авто</a>
+                    </div>
+                </div>
+                
+                <div class="links-group">
+                    <h4>Нові авто</h4>
+                    <div class="links-inline">
+                        <a href="#">Автосалони</a>
+                        <a href="#">Мотосалони</a>
+                        <a href="#">Спецтехніка</a>
+                        <a href="#">Електромобілі</a>
+                        <a href="#">Автоцентр AUTO.RIA</a>
+                    </div>
+                </div>
+
+                <div class="links-group">
+                    <h4>Сільгосптехніка</h4>
+                    <div class="links-inline">
+                        <a href="#">Оренда</a>
+                        <a href="#">Послуги</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Права колонка -->
+            <div class="links-column">
+                <div class="links-group">
+                    <h4>Послуги для авто</h4>
+                    <div class="links-inline">
+                        <a href="#">СТО</a>
+                    </div>
+                </div>
+
+                <div class="links-group">
+                    <h4>Новини</h4>
+                    <div class="links-inline">
+                        <a href="#">Тест-драйви</a>
+                        <a href="#">Електромобілі</a>
+                        <a href="#">Розмитнення</a>
+                        <a href="#">Онлайн-журнал</a>
+                    </div>
+                </div>
+
+                <div class="links-group">
+                    <h4>Сервіси</h4>
+                    <div class="links-inline">
+                        <a href="#">Калькулятор розмитнення</a>
+                        <a href="#">Порівняння авто</a>
+                        <a href="#">Ціни на пальне</a>
+                        <a href="#">Автотерміни</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <!-- Нижня панель: Юридичні тексти та копірайт -->
+        <div class="footer-bottom">
+            <div class="bottom-left">
+                <div class="legal-links">
+                    <a href="#">Угода про надання послуг</a>
+                    <a href="#">Політика Приватності</a>
+                    <a href="#">Мапа сайту</a>
+                </div>
+                <p class="copyright">© 2014-2026 RIA.com</p>
+            </div>
+            
+            <div class="bottom-right">
+                <a href="#" class="version-link">Повернутися до попередньої версії</a>
+                <div class="lang-selector">
+                    <span>Українська</span>
+                    <span class="lang-arrow"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="{% static 'myria/main.js' %}"></script>
+    
+</body>
+</html>

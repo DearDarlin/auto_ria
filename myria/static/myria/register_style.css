@@ -272,7 +272,6 @@ a {
     min-height: calc(100vh - 97px);
     align-items: center;        /* Центрируем левую и правую часть по вертикали */
     
-    /* ИСПРАВЛЕНИЕ ТУТ: */
     justify-content: center;    /* Стягиваем элементы ближе друг к другу по центру */
     gap: 80px;                  /* Задаем фиксированное, аккуратное расстояние между ними */
     
@@ -330,7 +329,7 @@ a {
 
 .bubble-mid-left {
     top: 120px;
-    left: 0;
+    left: -80px;
 }
 
 .bubble-bottom-left {
@@ -631,26 +630,32 @@ a {
 /* ===== FOOTER ===== */
 footer {
     background: #fff;
-    border-top: 1px solid #e5e8ed;
-    padding: 40px 24px 24px;
 }
 
-.footer-top {
+.footer-banner {
+    background: #ebf4f9;
+    padding: 2px 24px;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.footer-banner-inner {
+    max-width: 950px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 32px;
-    margin-bottom: 40px;
-    align-items: start;
+    grid-template-columns: auto 1fr auto;
+    gap: 40px;
+    align-items: center;
 }
 
-.footer-app {
+.footer-banner-text {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    min-width: 220px;
 }
 
 .footer-app-title {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 900;
     color: #1a1a1a;
     line-height: 1.2;
@@ -659,6 +664,7 @@ footer {
 .footer-app-desc {
     font-size: 13px;
     color: #6b7280;
+    line-height: 1.5;
 }
 
 .app-buttons {
@@ -681,49 +687,65 @@ footer {
     white-space: nowrap;
 }
 
-.app-btn:hover { background: #333; }
+.app-btn:hover { 
+    background: #333; 
+}
 
-.app-btn-label { font-size: 10px; opacity: 0.7; display: block; line-height: 1; }
-.app-btn-store { font-size: 12px; font-weight: 700; display: block; line-height: 1.2; }
+.app-btn-label { 
+    font-size: 10px; 
+    opacity: 0.7; 
+    display: block; 
+    line-height: 1; 
+}
 
-.footer-phones {
+.app-btn-store { 
+    font-size: 12px; 
+    font-weight: 700; 
+    display: block; 
+    line-height: 1.2; 
+}
+
+.footer-phones-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+}
+
+.footer-phones-img img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    
+}
+
+.footer-phones-placeholder {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 260px;
+    height: 160px;
+    border: 2px dashed #c3d5e0;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+    color: #9ca3af;
+    font-size: 12px;
 }
 
-.footer-phones p {
-    font-size: 12.5px;
-    color: #4b5563;
-    line-height: 1.5;
-}
-
-.footer-section h4 {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-}
-
-.footer-section ul {
-    list-style: none;
+.footer-banner-social {
+    min-width: 220px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 14px;
 }
-
-.footer-section ul li a {
-    font-size: 12.5px;
-    color: #2563eb;
-}
-
-.footer-section ul li a:hover { text-decoration: underline; }
 
 .footer-social-title {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: #1a1a1a;
-    margin-bottom: 12px;
+    line-height: 1.4;
 }
 
 .social-icons {
@@ -733,8 +755,8 @@ footer {
 }
 
 .social-icon {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -744,19 +766,229 @@ footer {
     transition: opacity 0.15s;
 }
 
-.social-icon:hover { opacity: 0.8; }
-.social-icon.fb   { background: #1877f2; color: #fff; }
-.social-icon.ig   { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
-.social-icon.yt   { background: #ff0000; color: #fff; }
-.social-icon.tw   { background: #1da1f2; color: #fff; }
-.social-icon.tg   { background: #0088cc; color: #fff; }
+.social-icon:hover{ 
+    opacity: 0.8; 
+}
+
+.social-icon.fb{ 
+    background: #1877f2; 
+    color: #fff; 
+}
+
+.social-icon.ig{ 
+    background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); 
+    color: #fff; 
+}
+.social-icon.yt{ 
+    background: #ff0000; 
+    color: #fff; 
+}
+
+.social-icon.tw{ 
+    background: #000; 
+    color: #fff; 
+}
+
+.social-icon.tg{ 
+    background: #0088cc; 
+    color: #fff; 
+}
+
+.footer-main {
+    padding: 32px 24px 24px;
+}
+
+.footer-main-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+    margin-top: 14px;
+}
+
+.footer-col h4:first-child { 
+    margin-top: 0; 
+}
+
+.footer-col ul {
+    list-style: none;
+    margin-bottom: 2px;
+}
+
+.footer-col ul li {
+    font-size: 12.5px;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.footer-col ul li a {
+    color: #2563eb;
+    font-size: 12.5px;
+}
+
+.footer-col ul li a:hover { 
+    text-decoration: underline; 
+}
+
+.footer-standalone-links {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.footer-standalone-links li a {
+    font-size: 13px !important;
+    font-weight: 600;
+    color: #1a1a1a !important;
+}
+
+.footer-standalone-links li a:hover { 
+    text-decoration: underline; 
+}
+
+/* Help column */
+.footer-col-help {
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-help-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border: 1px solid #e0e3e8;
+    border-radius: 10px;
+    background: #fff;
+    width: fit-content;
+}
+
+.footer-avatars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4px;
+    width: 86px;
+    height: 86px;
+    flex-shrink: 0;
+}
+
+.footer-avatar {
+    border-radius: 50%;
+    background: #d1d5db;
+    border: 2px solid #fff;
+    overflow: hidden;
+}
+
+.footer-avatar-tl {
+    grid-column: 1;
+    grid-row: 1;
+    background: #c9d4e0;
+}
+
+.footer-avatar-tr {
+    grid-column: 2;
+    grid-row: 1;
+    background: #b0bec8;
+}
+
+.footer-avatar-bl {
+    grid-column: 1;
+    grid-row: 2;
+    background: #d8e2ea;
+}
+
+.footer-help-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.footer-help-link:hover { 
+    text-decoration: underline; 
+}
+
+.footer-contact-icons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.footer-contact-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e0e3e8;
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.footer-contact-icon:hover {
+    background: #f5f7fa;
+    border-color: #aaa;
+}
+
+.footer-write-btn {
+    display: block;
+    text-align: center;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 11px;
+    font-size: 14px;
+    color: #1a1a1a;
+    text-decoration: none;
+    background: #fff;
+    transition: background 0.15s;
+    margin-top: 4px;
+}
+
+.footer-write-btn:hover { 
+    background: #f9fafb; 
+}
+
+.footer-legal-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 4px;
+}
+
+.footer-legal-links li a {
+    font-size: 12.5px;
+    color: #2563eb;
+}
+
+.footer-legal-links li a:hover {
+    text-decoration: underline; 
+}
 
 .footer-bottom {
     border-top: 1px solid #e5e8ed;
-    padding-top: 20px;
+    padding: 16px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .footer-bottom-copy {
@@ -790,4 +1022,8 @@ footer {
     text-decoration: underline;
 }
 
-.lang-switch a.active { color: #1a1a1a; font-weight: 600; text-decoration: none; }
+.lang-switch a.active { 
+    color: #1a1a1a; 
+    font-weight: 600; 
+    text-decoration: none; 
+}

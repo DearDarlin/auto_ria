@@ -63,9 +63,15 @@
                 </div>
 
                 <div class="icon-wrapper">
-                    <button class="icon-btn" title="Кабінет">
-                        <i data-lucide="user"></i>
-                    </button>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'profile_view' %}" style="text-decoration: none; color: inherit;">
+                    {% else %}
+                        <a href="{% url 'login_view' %}" style="text-decoration: none; color: inherit;">
+                    {% endif %}
+                        <button class="icon-btn" title="Кабінет">
+                            <i data-lucide="user"></i>
+                        </button>
+                        </a>
                     <span class="badge-dot"></span>
                 </div>
                 

@@ -1,0 +1,793 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ebf4f9;
+    color: #1a1a1a;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+    background: #f0f1fb;
+    border-bottom: 1px solid #e5e8ed;
+    padding: 0 20px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.topbar-left a {
+    font-size: 15px;
+    color: #4a5568;
+    font-weight: 500;    
+}
+
+.topbar-left a:hover { 
+    text-decoration: underline; 
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 105px;
+}
+
+.topbar-right a {
+    font-size: 12px;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.topbar-right a:hover { 
+   text-decoration: underline;
+}
+
+.topbar-icon {
+    width: 22px;       
+    height: 22px;
+    stroke: #4a5568;  
+    stroke-width: 1px; 
+    fill: none;        
+    transition: stroke 0.2s ease;
+}
+
+.user-avatar {
+    stroke-width: 1px; 
+    width: 32px;
+    height: 32px;
+}
+
+.ukraine-flag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    color: #4a5568;
+    font-weight: 500;
+}
+.header-top {
+    background-color: #ffffff;
+    padding: 2px 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.header-left-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Логотип */
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 60px; 
+    width: auto;
+    margin-left: -10px;
+}
+
+/* Навигация */
+.header-nav {
+    display: flex;
+    align-items: center; 
+    gap: 27px;
+    margin-left: 25px; 
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #000000;    
+    font-size: 18px;    
+    white-space: nowrap; 
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: underline;
+}
+
+.nav-item:hover {
+    color: red;
+}
+
+/* Выпадающее меню  */
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0; 
+    text-decoration: underline;
+}
+
+.dropdown-button:hover {
+    color: red;
+}
+
+.chevron-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5px;
+    transition: transform 0.2s ease;
+}
+
+/* Выпадающее окно */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    z-index: 100;    
+    display: none;   
+    min-width: 280px; 
+    background-color: #ffffff;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12); 
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #252a34;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f7fa; 
+    color: #000000;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; 
+}
+
+/* Правая часть с иконками */
+.header-right {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Кнопка "Продати авто" */
+.btn-sell-car {
+    display: inline-flex;     
+    align-items: center;      
+    justify-content: center;   
+    gap: 6px;                  
+    background-color: rgb(96, 212, 50);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 40px;        
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 1;           
+    white-space: nowrap;
+    margin-left: 50px;
+
+}
+
+.btn-sell-car:hover {
+    background-color: #e2e2e2;
+    
+}
+
+.donation-bar {
+    padding: 15px 250px;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    background-color: white;
+    text-decoration: none;
+    margin-top: -20px;
+}
+
+.donation-link {
+    color: #1148b6;
+    font-weight: 500;
+}
+
+.flag-ua-svg {
+    margin-right: 8px; 
+    border-radius: 2px; 
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+
+/* ===== MAIN LAYOUT ===== */
+.page-wrapper {
+    display: flex;
+    min-height: calc(100vh - 97px);
+    align-items: center;        /* Центрируем левую и правую часть по вертикали */
+    
+    /* ИСПРАВЛЕНИЕ ТУТ: */
+    justify-content: center;    /* Стягиваем элементы ближе друг к другу по центру */
+    gap: 80px;                  /* Задаем фиксированное, аккуратное расстояние между ними */
+    
+    max-width: 1000px;          /* Ограничиваем максимальную ширину контента хедера и контента страницы */
+    margin: 0 auto;             /* Центрируем всю рабочую область по центру экрана */
+    padding: 5px 24px 60px;
+    position: relative;
+}
+
+/* ===== LEFT HERO ===== */
+.hero-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+}
+
+.hero-float-area {
+    position: relative;
+    width: 380px;
+    height: 380px;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: 900;
+    color: #1b2a4a;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.review-bubble {
+    position: absolute;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    font-size: 13px;
+    color: #333;
+    max-width: 200px;
+    z-index: 2;
+}
+
+.bubble-top-right {
+    top: 10px;
+    right: 0;
+}
+
+.bubble-mid-left {
+    top: 120px;
+    left: 0;
+}
+
+.bubble-bottom-left {
+    bottom: 40px;
+    left: 30px;
+}
+
+.bubble-bottom-right {
+    bottom: 20px;
+    right: 10px;
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+/* ===== PARTNER LOGOS BLOCK ===== */
+.partner-logos-block {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.partner-logos-block p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.partner-logos {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.partner-badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.partner-badge.ria-color {
+    background: #1b3c82;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.partner-badge.auto-color {
+    background: #ef6c00;
+    color: #fff;
+    padding: 5px 6px;
+}
+
+.partner-badge.dim-color {
+    background: #e37700;
+    color: #fff;
+    padding: 5px 6px;
+}
+
+.partner-badge.agro-color {
+    background: #3cb54a;
+    color: #fff;
+    padding: 5px 6px;
+}
+
+.partner-badge .ria-sub {
+    background: #1b3c82;
+    color: #fff;
+    padding: 5px 6px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+/* ===== REGISTRATION CARD ===== */
+.register-card {
+    width: 400px;
+    min-width: 380px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e0e3e8;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    padding: 32px 28px 28px;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.card-title span {
+    color: #ef6c00;
+    font-weight: 900;
+}
+
+/* ===== FORM FIELDS ===== */
+.form-field {
+    margin-bottom: 14px;
+    position: relative;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1a1a1a;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-field input::placeholder {
+    color: #9ca3af;
+}
+
+.form-field input:focus {
+    border-color: #ef6c00;
+    box-shadow: 0 0 0 3px rgba(239, 108, 0, 0.08);
+}
+
+.field-hint {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 16px;
+    cursor: help;
+}
+
+/* ===== CHECKBOX ===== */
+.checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 14px 0;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: #ef6c00;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.checkbox-row label {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.checkbox-row label a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.privacy-note {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.privacy-note a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* ===== BUTTONS ===== */
+.btn-continue {
+    width: 100%;
+    background: #d1d5db;
+    color: #9ca3af;
+    border: none;
+    border-radius: 6px;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: not-allowed;
+    margin-bottom: 16px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-continue.active {
+    background: #ef6c00;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-continue.active:hover {
+    background: #d45e00;
+}
+
+.divider-or {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.divider-or::before,
+.divider-or::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e5e8ed;
+}
+
+/* Social login buttons */
+.btn-social {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    color: #1a1a1a;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background 0.15s, border-color 0.15s;
+    text-decoration: none;
+}
+
+.btn-social:hover {
+    background: #f9fafb;
+    border-color: #aaa;
+}
+
+.btn-social .icon-google {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-social .icon-telegram {
+    color: #0088cc;
+    font-size: 18px;
+}
+
+.btn-social .icon-diia {
+    background: #1b3c82;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 5px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+}
+
+/* ===== ALREADY REGISTERED ===== */
+.already-registered {
+    text-align: center;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.already-registered a {
+    font-size: 14px;
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* ===== ERROR BLOCK ===== */
+.error-block {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #fff;
+    border-top: 1px solid #e5e8ed;
+    padding: 40px 24px 24px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 32px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.footer-app {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-app-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1.2;
+}
+
+.footer-app-desc {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.app-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.app-btn {
+    background: #111;
+    color: #fff;
+    border-radius: 7px;
+    padding: 7px 12px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: background 0.15s;
+    white-space: nowrap;
+}
+
+.app-btn:hover { background: #333; }
+
+.app-btn-label { font-size: 10px; opacity: 0.7; display: block; line-height: 1; }
+.app-btn-store { font-size: 12px; font-weight: 700; display: block; line-height: 1.2; }
+
+.footer-phones {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-phones p {
+    font-size: 12.5px;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.footer-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-section ul li a {
+    font-size: 12.5px;
+    color: #2563eb;
+}
+
+.footer-section ul li a:hover { text-decoration: underline; }
+
+.footer-social-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+
+.social-icon:hover { opacity: 0.8; }
+.social-icon.fb   { background: #1877f2; color: #fff; }
+.social-icon.ig   { background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
+.social-icon.yt   { background: #ff0000; color: #fff; }
+.social-icon.tw   { background: #1da1f2; color: #fff; }
+.social-icon.tg   { background: #0088cc; color: #fff; }
+
+.footer-bottom {
+    border-top: 1px solid #e5e8ed;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-bottom-copy {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ria-badge {
+    background: #1b3c82;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 7px;
+    border-radius: 4px;
+}
+
+.footer-bottom-copy p {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-switch a {
+    font-size: 13px;
+    color: #6b7280;
+    text-decoration: underline;
+}
+
+.lang-switch a.active { color: #1a1a1a; font-weight: 600; text-decoration: none; }

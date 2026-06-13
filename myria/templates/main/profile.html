@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Кабінет користувача | AUTO.RIA</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f4f7; margin: 0; padding: 0; }
+        .navbar { background: #fff; border-bottom: 1px solid #e0e3e8; padding: 12px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 22px; font-weight: bold; color: #db5c00; text-decoration: none; }
+        .navbar a.home-link { color: #555; text-decoration: none; font-size: 14px; font-weight: bold; }
+        .cabinet-container { max-width: 900px; margin: 40px auto; background: white; border-radius: 8px; border: 1px solid #e0e3e8; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .profile-card { display: flex; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 25px; margin-bottom: 25px; }
+        .avatar-circle { width: 70px; height: 70px; background: #db5c00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; text-transform: uppercase; margin-right: 20px; }
+        .profile-details h2 { margin: 0 0 5px 0; font-size: 22px; color: #333; }
+        .profile-details p { margin: 0; color: #666; font-size: 14px; }
+        .info-panel { background: #f8fafc; border-left: 4px solid #79a600; padding: 15px; border-radius: 4px; font-size: 14px; color: #444; line-height: 1.5; }
+        .btn-logout { display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; font-size: 14px; margin-top: 25px; transition: background 0.2s; }
+        .btn-logout:hover { background: #c82333; }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="{% url 'home' %}" class="logo">AUTO.RIA</a>
+    <a href="{% url 'home' %}" class="home-link">🏠 На головну</a>
+</div>
+
+<div class="cabinet-container">
+    <div class="profile-card">
+        <div class="avatar-circle">{{ user.username|slice:":1" }}</div>
+        <div class="profile-details">
+            <h2>Вітаємо, {{ user.username }}!</h2>
+            <p>Ваш Email: <b>{{ user.email|default:"через соцмережу" }}</b></p>
+        </div>
+    </div>
+
+    <div class="info-panel">
+        <strong>🔒 Безпечний вхід активовано</strong><br>
+        Ви успішно авторизувалися за допомогою платформи Google Auth Platform. Тепер ви можете додавати оголошення про продаж автомобілів та керувати обраним.
+    </div>
+
+    <a href="{% url 'logout_view' %}" class="btn-logout">🚪 Вийти з кабінету</a>
+</div>
+
+</body>
+</html>

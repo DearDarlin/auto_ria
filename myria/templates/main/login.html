@@ -1,0 +1,78 @@
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід на сайт AUTO.RIA</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f4f7; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .main-wrapper { display: flex; max-width: 1000px; width: 100%; padding: 20px; box-sizing: border-box; justify-content: space-between; align-items: center; }
+        .left-promo { width: 50%; color: #04434f; padding-right: 40px; }
+        .left-promo h1 { font-size: 36px; font-weight: bold; line-height: 1.2; text-align: center; margin-bottom: 30px; }
+        .right-auth-box { background: white; padding: 30px; border-radius: 8px; border: 1px solid #e0e3e8; width: 100%; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .auth-title { font-size: 16px; font-weight: bold; color: #333; margin-top: 0; margin-bottom: 15px; }
+        .auth-title span { color: #db5c00; }
+        .social-btn { display: flex; align-items: center; justify-content: center; width: 100%; background: white; color: #212529; border: 1px solid #999; padding: 10px; border-radius: 4px; text-decoration: none; font-size: 14px; margin-bottom: 10px; box-sizing: border-box; transition: background 0.2s; }
+        .social-btn:hover { background: #f8f9fa; }
+        .social-btn img { width: 16px; height: 16px; margin-right: 12px; }
+        .divider { text-align: center; margin: 15px 0; color: #666; font-size: 13px; position: relative; }
+        .divider::before, .divider::after { content: ""; position: absolute; top: 50%; width: 42%; height: 1px; background: #e0e3e8; }
+        .divider::before { left: 0; } .divider::after { right: 0; }
+        .form-group { margin-bottom: 12px; }
+        .form-group input { width: 100%; padding: 11px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px; background: #fafafa; }
+        .form-group input:focus { border-color: #db5c00; outline: none; background: #fff; }
+        .options-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin-bottom: 15px; }
+        .options-row a { color: #0b5ed7; text-decoration: none; }
+        .btn-green-submit { width: 100%; background: #79a600; color: white; border: none; padding: 12px; border-radius: 4px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+        .btn-green-submit:hover { background: #668c00; }
+        .register-link-box { text-align: center; margin-top: 20px; font-size: 14px; }
+        .register-link-box a { color: #0b5ed7; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="left-promo">
+        <h1>Автівки,<br>перевірені<br>людьми</h1>
+    </div>
+
+    <div class="right-auth-box">
+        <p class="auth-title">Вхід на сайт <span>AUTO.RIA</span></p>
+
+        <a href="{% provider_login_url 'google' %}" class="social-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18">
+                    <path fill="#EA4335" d="M24 9.5c3.1 0 5.8 1.1 8 2.9l6-6C34.3 3.1 29.4 1 24 1 14.9 1 7.2 6.6 3.9 14.5l7 5.4C12.7 13.6 17.9 9.5 24 9.5z"/>
+                    <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.4 5.7c4.3-4 6.8-9.9 7.2-16.9z"/>
+                    <path fill="#FBBC05" d="M10.9 28.4c-.6-1.7-.9-3.5-.9-5.4s.3-3.7.9-5.4l-7-5.4C2.5 15 1 19.3 1 24s1.5 9 3.9 11.8l6-4.6z"/>
+                    <path fill="#34A853" d="M24 47c5.4 0 10-1.8 13.3-4.8l-7.4-5.7c-1.9 1.3-4.3 2-5.9 2-6.1 0-11.3-4.1-13.1-9.9l-6 4.6C7.2 41.4 14.9 47 24 47z"/>
+                </svg>
+            Увійти через Google
+        </a>
+
+        <div class="divider">Або</div>
+
+        <form method="POST" action="{% url 'login_view' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="username" required placeholder="Телефон або e-mail">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" required placeholder="Пароль">
+            </div>
+            
+            <div class="options-row">
+                <label><input type="checkbox" checked> Запам'ятати мене</label>
+                <a href="#">Забули пароль?</a>
+            </div>
+
+            <button type="submit" class="btn-green-submit">Увійти</button>
+        </form>
+
+        <div class="register-link-box">
+            <a href="{% url 'register_view' %}">Зареєструватися на AUTO.RIA</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

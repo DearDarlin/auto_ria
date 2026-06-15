@@ -270,13 +270,11 @@ a {
 .page-wrapper {
     display: flex;
     min-height: calc(100vh - 97px);
-    align-items: center;        /* Центрируем левую и правую часть по вертикали */
-    
-    justify-content: center;    /* Стягиваем элементы ближе друг к другу по центру */
-    gap: 80px;                  /* Задаем фиксированное, аккуратное расстояние между ними */
-    
-    max-width: 1000px;          /* Ограничиваем максимальную ширину контента хедера и контента страницы */
-    margin: 0 auto;             /* Центрируем всю рабочую область по центру экрана */
+    align-items: center;       
+    justify-content: center;    
+    gap: 80px;                  
+    max-width: 1000px;          
+    margin: 0 auto;            
     padding: 5px 24px 60px;
     position: relative;
 }

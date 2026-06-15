@@ -460,7 +460,6 @@ a {
 
 .card-title {
     font-size: 20px;
-    font-weight: 600;
     color: #1a1a1a;
     margin-bottom: 24px;
     text-align: left;
@@ -468,12 +467,12 @@ a {
 
 .card-title span {
     color: #ef6c00;
-    font-weight: 900;
+    font-weight: 600;
 }
 
 /* ===== FORM FIELDS ===== */
 .form-field {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
     position: relative;
 }
 
@@ -482,15 +481,15 @@ a {
     padding: 12px 14px;
     border: 1px solid #d1d5db;
     border-radius: 2px;
-    font-size: 14px;
-    color: #1a1a1a;
+    font-size: 15px;
+    color: #0a0909;
     background: #fff;
     transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
 }
 
 .form-field input::placeholder {
-    color: #9ca3af;
+    color: #8b8b8b;
 }
 
 .form-field input:focus {
@@ -592,52 +591,61 @@ a {
 /* Social login buttons */
 .btn-social {
     width: 100%;
-    display: grid;
-    grid-template-columns: 24px 1fr 24px;
-    height: 46px;
+    height: 45px;               
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
-    padding: 11px;
-    border: 1px solid #286677;
-    border-radius: 6px;
-    background: #fff;
-    font-size: 14px;
-    color: #286677;
+    justify-content: center;   
+    position: relative;         
+    padding: 0 24px;
+    border: 1px solid #1967b2;  
+    border-radius: 8px;         
+    background: #ffffff;
+    font-size: 16px;            
+    color: #1967b2;             
+    font-weight: 400;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     transition: background 0.15s, border-color 0.15s;
     text-decoration: none;
 }
 
 .btn-social:hover {
-    background: #f9fafb;
-    border-color: #aaa;
+    background: #f1f7fc;
+    border-color: #14528f;
 }
 
-.btn-social .icon-google {
-    width: 18px;
-    height: 18px;
+
+.btn-social .icon-google,
+.btn-social .icon-telegram,
+.btn-social .icon-diia {
+    position: absolute;
+    left: 24px;                 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
+.btn-social .icon-google svg {
+    width: 22px;
+    height: 22px;
+}
 
-
-.btn-social .icon-telegram {
-    color: #0088cc;
-    font-size: 18px;
+.btn-social .icon-telegram svg {
+    width: 24px;
+    height: 24px;
 }
 
 .btn-social .icon-diia {
-    background: #1b3c82;
-    color: #fff;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 5px;
-    border-radius: 3px;
-    letter-spacing: 0.3px;
+    background: #000000;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 6px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    min-width: 24px;
+    text-align: center;
 }
 
 /* ===== ALREADY REGISTERED ===== */
@@ -652,6 +660,10 @@ a {
     font-size: 16px;
     color: #286677;
     text-decoration: none;
+}
+
+.already-registered a:hover { 
+    text-decoration: underline; 
 }
 
 /* ===== ERROR BLOCK ===== */

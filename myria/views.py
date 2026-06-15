@@ -28,14 +28,30 @@ def login_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
+        first_name = request.POST.get('username')  
+        last_name = request.POST.get('last_name')
+        phone_or_email = request.POST.get('phone_or_email').strip()  
         password = request.POST.get('password')
-        if not User.objects.filter(username=username).exists():
-            User.objects.create_user(username=username, email=email, password=password)
-            return redirect('login_view')
-        else:
-            return render(request, 'main/register.html', {'error': 'Користувач вже існує'})
+        system_username = phone_or_email 
+        
+        if User.objects.filter(username=system_username).exists():
+            return render(request, 'main/register.html', {
+                'error': 'Користувач з таким телефоном або e-mail вже зареєстрований!'
+            })
+            
+        user_email = ""
+        if "@" in phone_or_email:
+            user_email = phone_or_email  
+
+        user = User.objects.create_user(
+            username=system_username,  
+            email=user_email,
+            password=password,
+            first_name=first_name,   
+            last_name=last_name        
+        )
+        return redirect('login_view')
+            
     return render(request, 'main/register.html')
 
 def profile_view(request):

@@ -285,13 +285,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 420px;
+    min-height: 500px;
 }
 
 .hero-float-area {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 350px; 
+    height: 350px;
 }
 
 .hero-title {
@@ -299,53 +299,116 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 36px;
-    font-weight: 900;
-    color: #1b2a4a;
-    line-height: 1.2;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0c334d; 
+    line-height: 1.15;
     text-align: center;
     white-space: nowrap;
-    z-index: 1;
+    z-index: 10;
+    margin: 0;
 }
 
 .review-bubble {
     position: absolute;
-    background: #fff;
-    border-radius: 12px;
-    padding: 10px 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: #ffffff;
+    padding: 10px 18px;
+    font-size: 14px;
+    color: #1e4258;
+    line-height: 1.3;
+    z-index: 15;
+}
+
+
+.bubble-top-left-stars {
+    padding: 10px 10px;
     font-size: 13px;
-    color: #333;
-    max-width: 200px;
-    z-index: 2;
+    letter-spacing: 2px;
+
+}
+.star-fill { 
+    color: #f59e0b; 
+}
+
+.star-empty { 
+    color: #e5e7eb; 
+}
+
+
+.bubble-top-left-stars {
+    top: 50px;
+    left: 0px;
+    border-radius: 4px 30px 30px 30px;
 }
 
 .bubble-top-right {
-    top: 10px;
-    right: 0;
+    top: 30px;
+    right: -40px;
+    text-align: left;
+    border-radius: 4px 30px 30px 30px;
 }
 
 .bubble-mid-left {
-    top: 120px;
-    left: -80px;
+    top: 185px;
+    left: -70px;
+    border-radius: 30px 4px 30px 30px;
 }
 
-.bubble-bottom-left {
-    bottom: 40px;
-    left: 30px;
+.bubble-bottom-left-stars {
+    bottom: 10px;
+    left: 100px;
+    font-size: 20px;
+    border-radius: 30px 4px 30px 30px;
+    padding: 10px 10px;
+    letter-spacing: 2px;
 }
 
 .bubble-bottom-right {
-    bottom: 20px;
-    right: 10px;
+    bottom: 55px;
+    right: -40px;
+    
+    border-radius: 4px 30px 30px 30px;
 }
 
-.stars {
-    color: #f59e0b;
-    font-size: 14px;
-    margin-bottom: 4px;
+/* СТИЛИ ДЛЯ ПУСТЫХ ДЕКОРАТИВНЫХ КОНТУРОВ */
+.decor-bubble {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.85); 
+    border-radius: 4px 30px 30px 30px;
+    z-index: 5;
 }
 
+.decor-top-center {
+    top: 15px;
+    left: 190px;
+    width: 60px;
+    height: 22px;
+    border-radius: 4px 30px 30px 30px;
+}
+
+.decor-mid-right {
+    top: 170px;
+    right: -60px;
+    width: 75px;
+    height: 30px;
+    border-radius: 4px 30px 30px 30px;
+}
+
+.decor-bottom-left {
+    bottom: 100px;
+    left: 10px;
+    width: 45px;
+    height: 18px;
+    border-radius: 4px 30px 30px 30px;
+}
+
+.decor-bottom-right {
+    bottom: -20px;
+    right: 50px;
+    width: 65px;
+    height: 24px;
+    border-radius: 4px 30px 30px 30px;
+}
 /* ===== PARTNER LOGOS BLOCK ===== */
 .partner-logos-block {
     margin-top: 16px;
@@ -397,7 +460,7 @@ a {
 
 .card-title {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: #1a1a1a;
     margin-bottom: 24px;
     text-align: left;

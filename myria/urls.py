@@ -16,13 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home, cars_list, car_detail, login_view, register_view, profile_view, logout_view
+from .views import home, cars_list, car_detail, login_view, register_view, profile_view, logout_view, admin_panel_view
+from . import views
 urlpatterns = [
     path('', home, name='home'),
     path('cars/', cars_list, name='car_list'),
     path('cars/<int:car_id>/', car_detail, name='car_detail'),
     path('login/', login_view, name='login_view'),            
     path('register/', register_view, name='register_view'),   
-    path('profile/', profile_view, name='profile_view'),       
+    path('profile/', profile_view, name='profile_view'), 
+    path('admin_panel/', admin_panel_view, name='admin_panel_view'),      
     path('logout/', logout_view, name='logout_view'),
+
+    path('api/me/', views.me, name='me'),
+    path('api/admin-data/', views.admin_data, name='admin_data'),
+    path('api/token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]

@@ -153,7 +153,6 @@
             <button type="submit" class="btn-continue" id="continueBtn">Продовжити</button>
         </form>
 
-        <div class="divider-or"><span style="font-size:13px;color:#9ca3af;">або</span></div>
 
         <a href="{% provider_login_url 'google' %}" class="btn-social">
             <span class="icon-google">
@@ -184,11 +183,18 @@
         <div class="partner-logos-block">
             <p>Зареєструвавшись, Ви зможете користуватися послугами сайтів:</p>
             <div class="partner-logos">
-                <span class="partner-badge ria-color">RIA</span>
-                <span class="partner-badge auto-color">auto<span class="ria-sub">RIA</span></span>
-                <span class="partner-badge dim-color">dim<span class="ria-sub">RIA</span></span>
-                <span class="partner-badge agro-color">agro<span class="ria-sub">RIA</span></span>
+                <span class="partner-badge"><img src="{% static 'myria/image/ria.png' %}" alt="AUTO.RIA Logo"> </span>
+                <span class="partner-badge"><img src="{% static 'myria/image/auto.png' %}" alt="AUTO.RIA Logo"></span>
+                <span class="partner-badge"><img src="{% static 'myria/image/dim.png' %}" alt="AUTO.RIA Logo"></span>
+                <span class="partner-badge"><img src="{% static 'myria/image/agro.png' %}" alt="AUTO.RIA Logo"></span>
             </div>
+            <p style="font-size:13px; font-weight:700; color:#1a1a1a; margin-bottom:4px; margin-top: 15px;">Виникли питання?</p>
+            <p style="font-size:13px; color:#2563eb; font-weight:600; margin-bottom:8px;">Служба турботи про користувачів:</p>
+            <p style="font-size:12.5px; color:#4b5563; line-height:2.7;">
+                <i data-lucide="smartphone" style="height: 17px;"></i>(067) 431-82-29, (093) 170-77-40,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(050) 416-86-88, 0-800-21-00-12,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(0432) 503-100
+            </p>
         </div>
 
     </aside>

@@ -363,52 +363,26 @@ a {
 
 .partner-logos {
     display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;            
+    gap: 4px;                       
+    flex-wrap: nowrap;              
 }
 
 .partner-badge {
     display: inline-flex;
     align-items: center;
-    border-radius: 4px;
-    overflow: hidden;
-    font-size: 11px;
-    font-weight: 900;
-    line-height: 1;
+    height: 24px;                   
 }
 
-.partner-badge.ria-color {
-    background: #1b3c82;
-    color: #fff;
-    padding: 5px 8px;
-    border-radius: 4px;
+
+.partner-badge img {
+    height: 100%;                  
+    width: auto;                    
+    object-fit: contain;           
 }
 
-.partner-badge.auto-color {
-    background: #ef6c00;
-    color: #fff;
-    padding: 5px 6px;
-}
 
-.partner-badge.dim-color {
-    background: #e37700;
-    color: #fff;
-    padding: 5px 6px;
-}
-
-.partner-badge.agro-color {
-    background: #3cb54a;
-    color: #fff;
-    padding: 5px 6px;
-}
-
-.partner-badge .ria-sub {
-    background: #1b3c82;
-    color: #fff;
-    padding: 5px 6px;
-    font-size: 11px;
-    font-weight: 900;
-}
 
 /* ===== REGISTRATION CARD ===== */
 .register-card {
@@ -446,7 +420,7 @@ a {
     width: 100%;
     padding: 12px 14px;
     border: 1px solid #d1d5db;
-    border-radius: 6px;
+    border-radius: 2px;
     font-size: 14px;
     color: #1a1a1a;
     background: #fff;
@@ -557,16 +531,18 @@ a {
 /* Social login buttons */
 .btn-social {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 24px 1fr 24px;
+    height: 46px;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
     padding: 11px;
-    border: 1px solid #d1d5db;
+    border: 1px solid #286677;
     border-radius: 6px;
     background: #fff;
     font-size: 14px;
-    color: #1a1a1a;
+    color: #286677;
     cursor: pointer;
     margin-bottom: 10px;
     transition: background 0.15s, border-color 0.15s;
@@ -585,6 +561,8 @@ a {
     align-items: center;
     justify-content: center;
 }
+
+
 
 .btn-social .icon-telegram {
     color: #0088cc;
@@ -606,13 +584,13 @@ a {
     text-align: center;
     margin-top: 14px;
     padding-top: 14px;
-    border-top: 1px solid #f0f0f0;
+    
 }
 
 .already-registered a {
-    font-size: 14px;
-    color: #2563eb;
-    text-decoration: underline;
+    font-size: 16px;
+    color: #286677;
+    text-decoration: none;
 }
 
 /* ===== ERROR BLOCK ===== */

@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from .views import home, cars_list, car_detail, login_view, register_view, profile_view, logout_view, admin_panel_view
 from . import views
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 urlpatterns = [
     path('', home, name='home'),
     path('cars/', cars_list, name='car_list'),
@@ -31,4 +32,6 @@ urlpatterns = [
     path('api/me/', views.me, name='me'),
     path('api/admin-data/', views.admin_data, name='admin_data'),
     path('api/token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
 ]

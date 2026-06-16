@@ -50,14 +50,15 @@
         </a>
 
         <div class="divider">Або</div>
+        <div id="errorMessage" class="error-message"></div>
 
-        <form method="POST" action="{% url 'login_view' %}">
+        <form id="loginForm">
             {% csrf_token %}
             <div class="form-group">
-                <input type="text" name="username" required placeholder="Телефон або e-mail">
+                <input type="text" id="username" name="username" required placeholder="Телефон або e-mail">
             </div>
             <div class="form-group">
-                <input type="password" name="password" required placeholder="Пароль">
+                <input type="password" id="password" name="password" required placeholder="Пароль">
             </div>
             
             <div class="options-row">
@@ -73,6 +74,53 @@
         </div>
     </div>
 </div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); 
+    
+    const usernameField = document.getElementById('username').value;
+    const passwordField = document.getElementById('password').value;
+    const errorBox = document.getElementById('errorMessage');
+    
+    errorBox.style.display = 'none'; 
+
+    try {
+        const response = await fetch("{% url 'token_obtain_pair' %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}" 
+            },
+            body: JSON.stringify({
+                username: usernameField,
+                password: passwordField
+            })
+        });
+
+        console.log("Відповідь сервера:", response);
+
+        const data = await response.json();
+
+        if (response.ok) {
+            localStorage.setItem('access_token', data.access);
+            localStorage.setItem('refresh_token', data.refresh);
+            
+
+            localStorage.setItem('username', data.username);
+            localStorage.setItem('is_staff', data.is_staff);
+
+            window.location.href = "{% url 'profile_view' %}";
+        } else {
+            errorBox.textContent = "Невірний телефон/e-mail або пароль.";
+            errorBox.style.display = 'block';
+        }
+    } catch (error) {
+        console.error("Помилка запиту:", error);
+        errorBox.textContent = "Сталася помилка з'єднання з сервером.";
+        errorBox.style.display = 'block';
+    }
+});
+</script>
 
 </body>
 </html>

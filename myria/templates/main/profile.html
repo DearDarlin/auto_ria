@@ -13,9 +13,12 @@
         .avatar-circle { width: 70px; height: 70px; background: #db5c00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: bold; text-transform: uppercase; margin-right: 20px; }
         .profile-details h2 { margin: 0 0 5px 0; font-size: 22px; color: #333; }
         .profile-details p { margin: 0; color: #666; font-size: 14px; }
-        .info-panel { background: #f8fafc; border-left: 4px solid #79a600; padding: 15px; border-radius: 4px; font-size: 14px; color: #444; line-height: 1.5; }
-        .btn-logout { display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; font-size: 14px; margin-top: 25px; transition: background 0.2s; }
+        .info-panel { background: #f8fafc; border-left: 4px solid #79a600; padding: 15px; border-radius: 4px; font-size: 14px; color: #444; line-height: 1.5; margin-bottom: 20px; }
+        .btn-logout { display: inline-block; background: #dc3545; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; font-size: 14px; margin-top: 25px; border: none; cursor: pointer; transition: background 0.2s; }
         .btn-logout:hover { background: #c82333; }
+        
+        .debug-block { background: #2d3748; color: #a0aec0; padding: 15px; border-radius: 6px; font-family: monospace; font-size: 13px; margin-top: 25px; white-space: pre-wrap; }
+        .debug-title { color: #edf2f7; font-weight: bold; margin-bottom: 8px; font-family: Arial, sans-serif; }
     </style>
 </head>
 <body>
@@ -27,20 +30,81 @@
 
 <div class="cabinet-container">
     <div class="profile-card">
-        <div class="avatar-circle">{{ user.username|slice:":1" }}</div>
+        <div id="userAvatar" class="avatar-circle">?</div>
         <div class="profile-details">
-            <h2>Вітаємо, {{ user.username }}!</h2>
-            <p>Ваш Email: <b>{{ user.email|default:"через соцмережу" }}</b></p>
+            <h2 id="welcomeMessage">Завантаження...</h2>
+            <p>Ваш логін/ID в системі: <b id="userLogin">...</b></p>
         </div>
     </div>
 
     <div class="info-panel">
-        <strong>🔒 Безпечний вхід активовано</strong><br>
-        Ви успішно авторизувалися за допомогою платформи Google Auth Platform. Тепер ви можете додавати оголошення про продаж автомобілів та керувати обраним.
+        <strong>🔒 Безпечний JWT-вхід активовано</strong><br>
+        Ви успішно авторизувалися в системі за допомогою JSON Web Tokens. Токен авторизації успішно передано бекенду через заголовки запиту `Authorization: Bearer`.
     </div>
 
-    <a href="{% url 'logout_view' %}" class="btn-logout">🚪 Вийти з кабінету</a>
+    <button onclick="logout()" class="btn-logout">🚪 Вийти з кабінету</button>
+
+    <div class="debug-title">🛠️ Дані відповіді від /api/me/:</div>
+    <div id="userInfo" class="debug-block">Очікування відповіді від API...</div>
 </div>
+
+<script>
+    async function loadProfile() {
+        const isDjangoAuthenticated = "{{ user.is_authenticated }}" === "True";
+        
+        const token = localStorage.getItem('access_token');
+        if (!isDjangoAuthenticated && !token) {
+            console.log("Користувач не авторизований жодним методом. Редірект на логін.");
+            window.location.href = "{% url 'login_view' %}";
+            return;
+        }
+        if (isDjangoAuthenticated) {
+            document.getElementById('welcomeMessage').innerText = "Вітаємо, {{ user.username }}!";
+            document.getElementById('userLogin').innerText = "{{ user.email|default:user.username }}";
+            document.getElementById('userAvatar').innerText = "{{ user.username }}".slice(0, 1);
+            
+            document.getElementById('userInfo').innerText = JSON.stringify({
+                "auth_method": "Google Social Auth",
+                "username": "{{ user.username }}",
+                "email": "{{ user.email }}",
+                "is_staff": "{{ user.is_staff }}" === "True"
+            }, null, 4);
+            
+            return; 
+        }
+
+        try {
+            const response = await fetch("{% url 'me' %}", {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+
+            if (!response.ok) {
+                localStorage.clear();
+                window.location.href = "{% url 'login_view' %}";
+                return;
+            }
+
+            const user = await response.json();
+            
+            document.getElementById('userInfo').innerText = JSON.stringify(user, null, 4);
+            document.getElementById('welcomeMessage').innerText = `Вітаємо, ${user.username}!`;
+            document.getElementById('userLogin').innerText = user.username;
+            document.getElementById('userAvatar').innerText = user.username.slice(0, 1);
+            
+        } catch (error) {
+            console.error("Помилка зв'язку з API:", error);
+        }
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = "{% url 'logout_view' %}";
+    }
+
+    loadProfile();
+</script>
 
 </body>
 </html>

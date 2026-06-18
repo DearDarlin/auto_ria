@@ -376,7 +376,137 @@
     <div class="show-more-box">
         <a href="{% url 'car_list' %}" class="btn-show-more">Показати всі авто</a>
     </div>
+
+    <section class="transport-types">
+    <h2>Типи транспорту</h2>
+
+    <div class="type-tabs">
+        <button class="type-tab active">Легкові б/у</button>
+        <button class="type-tab">Нові авто</button>
+        <button class="type-tab">Мото</button>
+        <button class="type-tab">Вантажівки</button>
+        <button class="type-tab">Причепи</button>
+        <button class="type-tab">Спецтехніка</button>
+        <button class="type-tab">Сільгосптехніка</button>
+        <button class="type-tab">Автобуси</button>
+        <button class="type-tab">Водний</button>
+    </div>
+
+    <div class="brands-grid">
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/1.png' %}" alt="ВАЗ">
+            </div>
+            <span>ВАЗ</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/2.png' %}" alt="Volkswagen">
+            </div>
+            <span>Volkswagen</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/3.png' %}" alt="Mercedes-Benz">
+            </div>
+            <span>Mercedes-Benz</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/4.png' %}" alt="Opel">
+            </div>
+            <span>Opel</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/5.png' %}" alt="Renault">
+            </div>
+            <span>Renault</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/6.png' %}" alt="BMW">
+            </div>
+            <span>BMW</span>
+        </div>
+
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/7.png' %}" alt="Ford">
+            </div>
+            <span>Ford</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/8.png' %}" alt="Audi">
+            </div>
+            <span>Audi</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/9.png' %}" alt="Toyota">
+            </div>
+            <span>Toyota</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/10.png' %}" alt="Daewoo">
+            </div>
+            <span>Daewoo</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/11.png' %}" alt="Skoda">
+            </div>
+            <span>Skoda</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/12.png' %}" alt="Nissan">
+            </div>
+            <span>Nissan</span>
+        </div>
+
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/13.png' %}" alt="Honda">
+            </div>
+            <span>Honda</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/14.png' %}" alt="Hyundai">
+            </div>
+            <span>Hyundai</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/15.png' %}" alt="Mitsubishi">
+            </div>
+            <span>Mitsubishi</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/16.png' %}" alt="Chevrolet">
+            </div>
+            <span>Chevrolet</span>
+        </div>
+        <div class="brand-card">
+            <div class="brand-logo">
+                <img src="{% static 'myria/image/17.png' %}" alt="Peugeot">
+            </div>
+            <span>Peugeot</span>
+        </div>
+        <div class="brand-card brand-card--more">
+            <div class="brand-logo brand-logo--icon">
+                <span class="arrow-icon">›</span>
+            </div>
+            <span>Дивитись всі</span>
+        </div>
+    </div>
 </section>
+</section>
+
 </main>
 <footer class="main-footer">
     <div class="footer-container">
@@ -403,7 +533,6 @@
             </div>
         </div>
 
-        <!-- Блок з овальними білими тегами/кнопками -->
         <div class="footer-tags">
             <a href="#" class="tag-btn">Відгуки про авто</a>
             <a href="#" class="tag-btn">Авто Лідер</a>

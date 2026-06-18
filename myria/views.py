@@ -9,7 +9,9 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-from .models import Car  
+from .models import Car, CarImage  
+from .forms import CarForm
+import requests
 
 def home(request):
     cars = Car.objects.all()
@@ -60,6 +62,9 @@ def profile_view(request):
 def admin_panel_view(request):
     return render(request, 'main/admin_panel.html')
 
+def add_car(request):
+    return render(request, 'main/add_car.html')
+
 def logout_view(request):
     logout(request)
     return redirect('home')
@@ -99,3 +104,49 @@ def admin_data(request):
         'message': 'Ты админ. Доступ разрешён.',
         'secret': 'Это данные только для администратора.'
     })
+
+def upload_to_imgbb(file_object):
+    API_KEY = 'c1b8fa1435c084c7346d97362362be2d' 
+    url = "https://api.imgbb.com/1/upload"
+    
+    files = {'image': (file_object.name, file_object, file_object.content_type)}
+    payload = {'key': API_KEY}
+    
+    try:
+        response = requests.post(url, data=payload, files=files)
+        if response.status_code == 200:
+            return response.json()['data']['url']
+        else:
+            print(f"Помилка завантаження: {response.status_code} - {response.text}")
+    except Exception as e:
+        print(f"Помилка завантаження: {e}")
+    return None
+
+
+def add_car_view(request):
+    if request.method == 'POST':
+        form = CarForm(request.POST, request.FILES)
+        if form.is_valid():
+            car = form.save(commit=False)
+            
+            if request.user.is_authenticated:
+                car.seller = request.user
+            
+            if 'main_photo' in request.FILES:
+                main_url = upload_to_imgbb(request.FILES['main_photo'])
+                if main_url:
+                    car.main_photo = main_url
+            
+            car.save()
+            
+            gallery_files = request.FILES.getlist('gallery_images')
+            for file in gallery_files:
+                img_url = upload_to_imgbb(file)
+                if img_url:
+                    CarImage.objects.create(car=car, image=img_url)
+                    
+            return redirect('car_list') 
+    else:
+        form = CarForm()
+        
+    return render(request, 'main/add_car.html', {'form': form})

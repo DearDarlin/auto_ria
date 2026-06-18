@@ -8,6 +8,6 @@ class CarImageInline(admin.TabularInline):
 # admin.site.register(Car)
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
-    list_display = ('brand', 'model', 'year', 'price', 'mileage', 'fuel', 'city')
+    list_display = ('brand', 'model_name', 'year', 'price', 'mileage', 'city')
     inlines = [CarImageInline]
 # Register your models here.

@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home, cars_list, car_detail, login_view, register_view, profile_view, logout_view, admin_panel_view
+from .views import home, cars_list, car_detail, login_view, register_view, profile_view, logout_view, admin_panel_view, add_car
 from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 urlpatterns = [
@@ -28,6 +28,7 @@ urlpatterns = [
     path('profile/', profile_view, name='profile_view'), 
     path('admin_panel/', admin_panel_view, name='admin_panel_view'),      
     path('logout/', logout_view, name='logout_view'),
+    path('add_car/', views.add_car_view, name='add_car'),
 
     path('api/me/', views.me, name='me'),
     path('api/admin-data/', views.admin_data, name='admin_data'),

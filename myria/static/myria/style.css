@@ -691,7 +691,7 @@ body {
 /* ===== RECOMMENDATIONS SECTION ===== */
 .recommendations-section {
     margin: 40px auto 50px;
-    max-width: 1250px;
+    max-width: 1300px;
     padding: 0 16px;
 }
 
@@ -1059,7 +1059,7 @@ body {
 
 /* ---------- Секція ---------- */
 .news-section {
-  max-width: 960px;
+
   margin: 0 auto;
   padding: 32px 16px 40px;
   font-family: Arial, Helvetica, sans-serif;
@@ -1116,8 +1116,8 @@ body {
 .news-featured {
   position: relative;
   display: block;
-  flex: 0 0 430px;
-  max-width: 430px;
+  flex: 0 0 400px;
+  max-width: 400px;
   border-radius: 6px;
   overflow: hidden;
   text-decoration: none;
@@ -1125,39 +1125,15 @@ body {
 
 .news-featured__img {
   width: 100%;
-  height: 340px;
+  height: 300px;
   object-fit: cover;
   display: block;
-  background-color: #d0d0d0;
+  background-color: #003DA5;
+
 }
 
-/* Підпис поверх фото (знизу) */
-.news-featured__label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 12px 16px 14px;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
 
-.news-featured__label-sub {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
 
-.news-featured__label-title {
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.2;
-}
 
 /* ---------- Список новин ---------- */
 .news-list {
@@ -1170,9 +1146,7 @@ body {
   gap: 0;
 }
 
-.news-item {
-  border-bottom: 1px solid #e8e8e8;
-}
+
 
 .news-item:last-child {
   border-bottom: none;
@@ -1182,7 +1156,7 @@ body {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  padding: 14px 0;
+  padding-bottom: 15px;
   text-decoration: none;
   color: inherit;
   transition: opacity 0.15s;
@@ -1195,13 +1169,12 @@ body {
 /* Мініатюра новини */
 .news-item__img {
   width: 110px;
-  height: 75px;
+  height: 85px;
   object-fit: cover;
   flex-shrink: 0;
-  border-radius: 4px;
+  border-radius: 6px;
   display: block;
-  /* Поки немає фото — сірий плейсхолдер */
-  background-color: #d0d0d0;
+
 }
 
 .news-item__body {

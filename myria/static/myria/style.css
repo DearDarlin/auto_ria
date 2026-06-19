@@ -64,6 +64,7 @@ body {
     display: inline-flex;
     align-items: center;
     height: 100%;
+    
 }
 
 .nav-item:hover {
@@ -959,27 +960,43 @@ body {
 }
 
 .type-tabs {
-    display: flex;
-    gap: 4px;
+    display: inline-flex;    
+    gap: 0;                   
     flex-wrap: wrap;
     align-items: center;
-    background-color: #f2f2f5; 
+    background-color: #ececec;
     border-radius: 28px;
-    padding: 6px;
+    padding: 2px;
     margin-bottom: 24px;
 }
 
 .type-tab {
+    position: relative;
     border: none;
     background: transparent;
-    padding: 10px 18px;
+    padding: 14px 16px;
     border-radius: 24px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
     color: #252a34;
     cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s, color 0.2s;
+}
+
+.type-tab:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.type-tab.active::before,
+.type-tab.active + .type-tab::before {
+    display: none;
 }
 
 .type-tab:hover {
@@ -1002,7 +1019,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 15px;
+    padding: 17px 13px;
     border: 1px solid #e6ebf0;
     border-radius: 12px;
     background-color: #ffffff;
@@ -1053,62 +1070,53 @@ body {
     line-height: 1;
 }
 
-/* =============================================
-   AUTO NEWS SECTION — auto-news.css
-   ============================================= */
 
-/* ---------- Секція ---------- */
 .news-section {
-
   margin: 0 auto;
-  padding: 32px 16px 40px;
+  padding: 30px 10px 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: #1a1a1a;
 }
 
-/* ---------- Заголовок ---------- */
 .news-title {
   font-size: 24px;
   font-weight: 700;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   color: #111;
+  letter-spacing: -0.5px;
 }
 
-/* ---------- Теги ---------- */
 .news-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 
 .tag {
   display: inline-block;
-  padding: 7px 16px;
-  border: 1.5px solid #c0c0c0;
+  padding: 15px 16px;
+  border: 1.5px solid #111;
   border-radius: 50px;
   background: #fff;
-  font-size: 14px;
+  font-size: 15px;
   color: #222;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
   white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
 }
 
 .tag:hover {
   border-color: #555;
 }
 
-.tag.active {
-  border-color: #111;
-  background: #fff;
-  font-weight: 600;
-}
 
 /* ---------- Контент: featured + список ---------- */
 .news-content {
   display: flex;
-  gap: 24px;
+  gap: 18px;
   align-items: flex-start;
 }
 
@@ -1133,9 +1141,6 @@ body {
 }
 
 
-
-
-/* ---------- Список новин ---------- */
 .news-list {
   list-style: none;
   margin: 0;
@@ -1152,10 +1157,14 @@ body {
   border-bottom: none;
 }
 
+.news-item:hover p{
+    text-decoration: underline;
+}
+
 .news-item__link {
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  gap: 30px;
+  align-items: center;
   padding-bottom: 15px;
   text-decoration: none;
   color: inherit;
@@ -1166,13 +1175,12 @@ body {
   opacity: 0.78;
 }
 
-/* Мініатюра новини */
 .news-item__img {
-  width: 110px;
-  height: 85px;
+  width: 120px;
+  height: 90px;
   object-fit: cover;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: 10px;
   display: block;
 
 }
@@ -1192,23 +1200,21 @@ body {
 }
 
 .news-item__date {
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
 }
 
-/* ---------- Кнопка "Читати все" ---------- */
 .news-footer {
-  margin-top: 24px;
   text-align: center;
 }
 
 .btn-read-all {
   display: inline-block;
-  padding: 13px 60px;
+  padding: 15px 160px;
   border: 1.5px solid #222;
   border-radius: 50px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   color: #111;
   background: #fff;
   text-decoration: none;
@@ -1217,11 +1223,149 @@ body {
 }
 
 .btn-read-all:hover {
-  background: #111;
+  background: #e3e3e3;
   color: #fff;
 }
 
+.recommend-block {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 4px;
+}
 
+.recommend-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #14151a;
+    margin: 0 0 16px;
+}
+
+.recommend-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 14px;
+    row-gap: 25px;
+    max-width: 800px;
+}
+
+.recommend-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #14151a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    width: fit-content;
+}
+
+
+.recommend-link:hover {
+    text-decoration: none;
+}
+
+.catalog-block {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 4px;
+    padding-top: 40px;
+}
+
+.catalog-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #14151a;
+    margin: 0 0 16px;
+}
+
+.catalog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* --- сортировка --- */
+.sort-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #14151a;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+}
+
+.sort-link i {
+    font-size: 15px;
+}
+
+.catalog-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+
+.catalog-column {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 4px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  
+  /* Убираем старый border и border-radius на всю группу */
+    border: none;
+}
+
+.catalog-column:last-child {
+    border-right: none;
+}
+
+.catalog-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    font-size: 14px;
+    color: #14151a;
+    text-decoration: none;
+}
+
+.catalog-column .catalog-link:last-child {
+    border-bottom: none;
+}
+
+.catalog-link:hover {
+    background: #f8f8fa;
+}
+
+.catalog-link .count {
+    flex-shrink: 0;
+    background: #f2f2f5;
+    color: #5c5e68;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 12px;
+    line-height: 1.4;
+}
+
+.catalog-footer-text {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #5c5e68;
+}
 
 /* 
    ФУТЕР

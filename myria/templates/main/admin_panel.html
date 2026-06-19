@@ -4,47 +4,203 @@
     <meta charset="UTF-8">
     <title>Панель адміністратора Myria</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .admin-box { border: 2px solid red; padding: 20px; border-radius: 8px; }
-        .error { color: red; }
+        body { font-family: 'Roboto', Arial, sans-serif; background-color: #f2f4f7; padding: 30px; margin: 0; color: #333; }
+        .container { max-width: 1100px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { color: #04434f; margin-top: 0; border-bottom: 2px solid #e0e3e8; padding-bottom: 15px; }
+        .error { color: #EA4335; font-weight: bold; }
+        .nav-tabs { margin: 20px 0; }
+        .tab-btn { background: #e0e3e8; border: none; padding: 10px 20px; font-size: 15px; font-weight: bold; cursor: pointer; border-radius: 4px; margin-right: 10px; transition: 0.2s; }
+        .tab-btn.active { background: #db5c00; color: white; }
+        .tab-content { display: none; margin-top: 20px; }
+        .tab-content.active { display: block; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: #fff; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e3e8; }
+        th { background-color: #04434f; color: white; }
+        tr:hover { background-color: #f8f9fa; }
+        .btn-delete { background-color: #EA4335; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-delete:hover { background-color: #c53026; }
+        .back-link { display: inline-block; margin-top: 20px; color: #0b5ed7; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h1>Секретна Адмін-панель</h1>
-    
-    <div class="admin-box">
-        <p id="result">Перевірка прав доступу...</p>
+
+<div class="container">
+    <h1>⚙️ Панель адміністратора Myria</h1>
+    <p id="statusMessage">Перевірка прав доступу...</p>
+
+    <div id="adminSections" style="display: none;">
+        <div class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('usersTab')">👤 Користувачі</button>
+            <button class="tab-btn" onclick="switchTab('carsTab')">🚗 Оголошення (Авто)</button>
+        </div>
+
+        <div id="usersTab" class="tab-content active">
+            <h2>Керування користувачами</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Логін (Username)</th>
+                        <th>Email</th>
+                        <th>Статус</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody"></tbody>
+            </table>
+        </div>
+
+        <div id="carsTab" class="tab-content">
+            <h2>Керування оголошеннями</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Тип</th>
+                        <th>Марка</th>
+                        <th>Модель</th>
+                        <th>Рік</th>
+                        <th>Автор</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody id="carsTableBody"></tbody>
+            </table>
+        </div>
     </div>
 
-    <br>
-    <a href="{% url 'home' %}">Повернутися на головну</a>
+    <a href="{% url 'home' %}" class="back-link">← Повернутися на головну</a>
+</div>
 
-    <script>
-        async function checkAdminAccess() {
-            const token = localStorage.getItem('access_token');
+<script>
+    const token = localStorage.getItem('access_token'); // Твой ключ из login.html
 
-            if (!token) {
-                document.getElementById('result').innerHTML = '<span class="error">Ви не авторизовані! Перенаправлення...</span>';
-                setTimeout(() => { window.location.href = '/login/'; }, 2000);
-                return;
-            }
-
-            const response = await fetch('/api/admin-data/', {
-                headers: {
-                    'Authorization': 'Bearer ' + token
-                }
-            });
-
-            if (!response.ok) {
-                document.getElementById('result').innerHTML = '<span class="error">Доступ заборонено. Ви звичайний користувач.</span>';
-                return;
-            }
-
-            const data = await response.json();
-            document.getElementById('result').innerText = data.message + '\n\n' + data.secret;
+    // Проверка доступа при входе на страницу
+    async function checkAdminAccess() {
+        if (!token) {
+            document.getElementById('statusMessage').innerHTML = '<span class="error">Ви не авторизовані! Перенаправлення на сторінку входу...</span>';
+            setTimeout(() => { window.location.href = '/login/'; }, 2000);
+            return;
         }
 
-        checkAdminAccess();
-    </script>
+        const response = await fetch('/api/admin-data/', {
+            headers: { 'Authorization': 'Bearer ' + token }
+        });
+
+        if (!response.ok) {
+            document.getElementById('statusMessage').innerHTML = '<span class="error">Доступ заборонено! Ви не є адміністратором.</span>';
+            return;
+        }
+
+        // Если проверка пройдена успешно:
+        document.getElementById('statusMessage').style.display = 'none';
+        document.getElementById('adminSections').style.display = 'block';
+        
+        // Загружаем данные в таблицы
+        loadUsers();
+        loadCars();
+    }
+
+    // Переключение вкладок
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        
+        document.getElementById(tabId).classList.add('active');
+        event.target.classList.add('active');
+    }
+
+    // Загрузка списка пользователей
+    async function loadUsers() {
+        const response = await fetch('/api/admin/users/', {
+            headers: { 'Authorization': 'Bearer ' + token }
+        });
+        if (response.ok) {
+            const users = await response.json();
+            const tbody = document.getElementById('usersTableBody');
+            tbody.innerHTML = '';
+            
+            users.forEach(user => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${user.id}</td>
+                        <td><strong>${user.username}</strong></td>
+                        <td>${user.email || '—'}</td>
+                        <td>${user.is_staff ? '🔴 Адмін' : '👤 Користувач'}</td>
+                        <td>
+                            <button class="btn-delete" onclick="deleteUser(${user.id}, '${user.username}')">Видалити</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+    }
+
+    // Удаление пользователя
+    async function deleteUser(id, username) {
+        if (confirm(`Ви впевнені, що хочете видалити користувача ${username}?`)) {
+            const response = await fetch(`/api/admin/users/${id}/delete/`, {
+                method: 'DELETE',
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            const data = await response.json();
+            if (response.ok) {
+                alert(data.message);
+                loadUsers(); // Перезагружаем список
+                loadCars();  // Объявления удаленного юзера тоже могли удалиться каскадно
+            } else {
+                alert(data.error);
+            }
+        }
+    }
+
+    // Загрузка списка объявлений (машин)
+    async function loadCars() {
+        const response = await fetch('/api/admin/cars/', {
+            headers: { 'Authorization': 'Bearer ' + token }
+        });
+        if (response.ok) {
+            const cars = await response.json();
+            const tbody = document.getElementById('carsTableBody');
+            tbody.innerHTML = '';
+            
+            cars.forEach(car => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${car.id}</td>
+                        <td>${car.transport_type}</td>
+                        <td><strong>${car.brand}</strong></td>
+                        <td>${car.model_name}</td>
+                        <td>${car.year}</td>
+                        <td>@${car.user}</td>
+                        <td>
+                            <button class="btn-delete" onclick="deleteCar(${car.id})">Видалити</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+    }
+
+    // Удаление объявления
+    async function deleteCar(id) {
+        if (confirm(`Ви впевнені, що хочете видалити оголошення ID ${id}?`)) {
+            const response = await fetch(`/api/admin/cars/${id}/delete/`, {
+                method: 'DELETE',
+                headers: { 'Authorization': 'Bearer ' + token }
+            });
+            const data = await response.json();
+            if (response.ok) {
+                alert(data.message);
+                loadCars(); // Перезагружаем список
+            } else {
+                alert(data.error);
+            }
+        }
+    }
+
+    // Запуск проверки при загрузке страницы
+    checkAdminAccess();
+</script>
 </body>
 </html>

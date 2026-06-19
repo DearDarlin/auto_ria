@@ -9,6 +9,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework import status
 from .models import Car, CarImage  
 from .forms import CarForm
 import requests
@@ -150,3 +151,72 @@ def add_car_view(request):
         form = CarForm()
         
     return render(request, 'main/add_car.html', {'form': form})
+
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def get_all_users(request):
+    """Получение списка всех пользователей"""
+    users = User.objects.all().order_by('id')
+    users_data = [
+        {
+            "id": u.id,
+            "username": u.username,
+            "email": u.email,
+            "is_staff": u.is_staff
+        } for u in users
+    ]
+    return Response(users_data)
+
+@api_view(['DELETE'])
+@permission_classes([IsAdminUser])
+def delete_user(request, user_id):
+    """Удаление пользователя"""
+    try:
+        user = User.objects.get(id=user_id)
+        if user.is_superuser:
+            return Response({"error": "Не можна видалити головного суперюзера!"}, status=status.HTTP_400_BAD_REQUEST)
+        user.delete()
+        return Response({"message": "Користувача успішно видалено"})
+    except User.DoesNotExist:
+        return Response({"error": "Користувача не знайдено"}, status=status.HTTP_404_NOT_FOUND)
+    
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def get_all_cars(request):
+    """Отримання списку всіх оголошень (зв'язок через seller)"""
+    try:
+        cars = Car.objects.all().order_by('-id')
+        cars_data = []
+        
+        for c in cars:
+            # Проверяем, привязана ли машина к продавцу (seller)
+            if c.seller:
+                author = c.seller.username
+            else:
+                author = "Не вказано"
+
+            cars_data.append({
+                "id": c.id,
+                "brand": getattr(c, 'brand', '—'),
+                # Проверяем, как названо поле в БД: model_name или model
+                "model_name": getattr(c, 'model_name', None) or getattr(c, 'model', '—'),
+                "year": getattr(c, 'year', '—'),
+                "transport_type": getattr(c, 'transport_type', '—'),
+                "user": author  # Передаем имя продавца на фронтенд
+            })
+            
+        return Response(cars_data)
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(['DELETE'])
+@permission_classes([IsAdminUser])
+def delete_car(request, car_id):
+    """Удаление объявления администратором"""
+    try:
+        car = Car.objects.get(id=car_id)
+        car.delete()
+        return Response({"message": "Оголошення успішно видалено"})
+    except Car.DoesNotExist:
+        return Response({"error": "Оголошення не знайдено"}, status=status.HTTP_404_NOT_FOUND)

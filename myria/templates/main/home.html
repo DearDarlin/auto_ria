@@ -43,8 +43,8 @@
                         </div>
                         <a href="#" class="nav-item">GARAGE AUTO.RIA</a>
                         <a href="#" class="nav-item">Підтримка 24/7</a>
-                        <a href="{% url 'admin_panel_view' %}" id="adminPanelLink" class="nav-item" style="display: none; color: red; font-weight: bold; padding: 10px;">
-                            ⚙️ Адмін-панель
+                        <a href="{% url 'admin_panel_view' %}" id="adminPanelLink" class="nav-item" style="display: none; color: red;">
+                            Адмін-панель
                         </a>
                     </nav>
                 </div>
@@ -554,8 +554,7 @@
   <h2 class="news-title">Новини про авто</h2>
  
   <div class="news-tags">
-    <button class="tag active">Автомобільні новини</button>
-    <button class="tag">Будівництво</button>
+    <button class="tag">Автомобільні новини</button>
     <button class="tag">Тест-драйви</button>
     <button class="tag">Журнал</button>
     <button class="tag">Як підготувати авто до зими</button>
@@ -611,6 +610,108 @@
   </div>
  
 </section>
+<div class="recommend-block">
+    <h2 class="recommend-title">AUTO.RIA рекомендує</h2>
+
+    <div class="type-tabs">
+        <button class="type-tab active">Можливості розміщення</button>
+        <button class="type-tab">Пошук автомобілів</button>
+        <button class="type-tab">Автомобільні компанії</button>
+        <button class="type-tab">Товари для авто</button>
+        <button class="type-tab">Перед купівлею авто</button>
+        <button class="type-tab">Автомобільні послуги</button>
+    </div>
+
+    <div class="recommend-links">
+        <a href="#" class="recommend-link">Просування авто в пошуку <span class="arrow">›</span></a>
+        <a href="#" class="recommend-link">Вигоди на публікації до -45% <span class="arrow">›</span></a>
+        <a href="#" class="recommend-link">Вигоди на ТОП до -45% <span class="arrow">›</span></a>
+        <a href="#" class="recommend-link">Просування нового авто в пошуку <span class="arrow">›</span></a>
+    </div>
+</div>
+
+<div class="catalog-block">
+    <h2 class="catalog-title">Каталог автомобілів</h2>
+
+    <div class="catalog-header">
+        <div class="type-tabs">
+            <button class="type-tab active">Вживані авто</button>
+            <button class="type-tab">Нові авто</button>
+            <button class="type-tab">Все для автомобіліста</button>
+            <button class="type-tab">Новини</button>
+            <button class="type-tab">Теми</button>
+            <button class="type-tab">Відгуки</button>
+        </div>
+
+        <a href="#" class="sort-link">по марці <i class="ti ti-arrows-sort"></i></a>
+    </div>
+
+    <div class="catalog-columns">
+        <div class="catalog-column">
+            <a href="#" class="catalog-link"><span>Дивитись всі марки</span><span class="count">359 326</span></a>
+            <a href="#" class="catalog-link"><span>Дивитись всі роки</span><span class="count">359 326</span></a>
+            <a href="#" class="catalog-link"><span>Каталог легковиків</span><span class="count">311 135</span></a>
+            <a href="#" class="catalog-link"><span>Каталог мото</span><span class="count">18 380</span></a>
+            <a href="#" class="catalog-link"><span>Каталог водного</span><span class="count">1 241</span></a>
+            <a href="#" class="catalog-link"><span>Каталог сільгосптехніки</span><span class="count">35 559</span></a>
+            <a href="#" class="catalog-link"><span>Каталог спецтехніки</span><span class="count">3 043</span></a>
+            <a href="#" class="catalog-link"><span>Каталог автобусів</span><span class="count">4 112</span></a>
+            <a href="#" class="catalog-link"><span>Каталог вантажівок</span><span class="count">11 653</span></a>
+            <a href="#" class="catalog-link"><span>Каталог причепів</span><span class="count">9 552</span></a>
+            <a href="#" class="catalog-link"><span>Каталог автобудинків</span><span class="count">195</span></a>
+            <a href="#" class="catalog-link"><span>Каталог повітряного транспорта</span><span class="count">13</span></a>
+        </div>
+
+        <div class="catalog-column">
+            <a href="#" class="catalog-link"><span>Volkswagen</span><span class="count">36 015</span></a>
+            <a href="#" class="catalog-link"><span>Audi</span><span class="count">21 211</span></a>
+            <a href="#" class="catalog-link"><span>BMW</span><span class="count">20 805</span></a>
+            <a href="#" class="catalog-link"><span>Mercedes-Benz</span><span class="count">18 952</span></a>
+            <a href="#" class="catalog-link"><span>Ford</span><span class="count">17 931</span></a>
+            <a href="#" class="catalog-link"><span>Renault</span><span class="count">16 860</span></a>
+            <a href="#" class="catalog-link"><span>ВАЗ / Lada</span><span class="count">15 617</span></a>
+            <a href="#" class="catalog-link"><span>Nissan</span><span class="count">13 385</span></a>
+            <a href="#" class="catalog-link"><span>Opel</span><span class="count">13 296</span></a>
+            <a href="#" class="catalog-link"><span>Skoda</span><span class="count">13 171</span></a>
+            <a href="#" class="catalog-link"><span>Toyota</span><span class="count">11 249</span></a>
+            <a href="#" class="catalog-link"><span>Hyundai</span><span class="count">10 900</span></a>
+        </div>
+
+        <div class="catalog-column">
+            <a href="#" class="catalog-link"><span>Mazda</span><span class="count">8 378</span></a>
+            <a href="#" class="catalog-link"><span>Kia</span><span class="count">8 305</span></a>
+            <a href="#" class="catalog-link"><span>Peugeot</span><span class="count">7 403</span></a>
+            <a href="#" class="catalog-link"><span>Chevrolet</span><span class="count">6 991</span></a>
+            <a href="#" class="catalog-link"><span>Honda</span><span class="count">6 475</span></a>
+            <a href="#" class="catalog-link"><span>Mitsubishi</span><span class="count">6 292</span></a>
+            <a href="#" class="catalog-link"><span>Daewoo</span><span class="count">5 920</span></a>
+            <a href="#" class="catalog-link"><span>Tesla</span><span class="count">5 703</span></a>
+            <a href="#" class="catalog-link"><span>Volvo</span><span class="count">4 327</span></a>
+            <a href="#" class="catalog-link"><span>Jeep</span><span class="count">4 193</span></a>
+            <a href="#" class="catalog-link"><span>Citroen</span><span class="count">4 187</span></a>
+            <a href="#" class="catalog-link"><span>ЗАЗ</span><span class="count">3 970</span></a>
+        </div>
+
+        <div class="catalog-column">
+            <a href="#" class="catalog-link"><span>Land Rover</span><span class="count">3 251</span></a>
+            <a href="#" class="catalog-link"><span>Lexus</span><span class="count">3 216</span></a>
+            <a href="#" class="catalog-link"><span>Fiat</span><span class="count">2 839</span></a>
+            <a href="#" class="catalog-link"><span>Subaru</span><span class="count">2 705</span></a>
+            <a href="#" class="catalog-link"><span>Suzuki</span><span class="count">2 343</span></a>
+            <a href="#" class="catalog-link"><span>Chery</span><span class="count">2 204</span></a>
+            <a href="#" class="catalog-link"><span>ГАЗ</span><span class="count">1 999</span></a>
+            <a href="#" class="catalog-link"><span>Infiniti</span><span class="count">1 833</span></a>
+            <a href="#" class="catalog-link"><span>Yamaha</span><span class="count">1 819</span></a>
+            <a href="#" class="catalog-link"><span>Porsche</span><span class="count">1 785</span></a>
+            <a href="#" class="catalog-link"><span>Dodge</span><span class="count">1 725</span></a>
+            <a href="#" class="catalog-link"><span>MAN</span><span class="count">1 555</span></a>
+        </div>
+    </div>
+
+    <p class="catalog-footer-text">
+        AUTO.RIA - найбільш великий авто базар України серед всіх вітчизняних сайтів подібного роду. У намірі допомогти як покупцям транспортних засобів, так і бажаючим їх продати, ми розробили зручний і масштабний ресурс, представлений у вигляді дошки онлайн-оголошень.
+    </p>
+</div>
 </section>
 
 </main>

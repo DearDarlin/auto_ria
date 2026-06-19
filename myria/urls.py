@@ -35,4 +35,9 @@ urlpatterns = [
     path('api/token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
+    path('api/admin/users/', views.get_all_users, name='admin_users_list'),
+    path('api/admin/users/<int:user_id>/delete/', views.delete_user, name='admin_delete_user'),
+    path('api/admin/cars/', views.get_all_cars, name='admin_cars_list'),
+    path('api/admin/cars/<int:car_id>/delete/', views.delete_car, name='admin_delete_car'),
+
 ]

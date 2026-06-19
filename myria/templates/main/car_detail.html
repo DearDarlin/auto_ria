@@ -4,266 +4,595 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ car.brand }} {{ car.model }} {{ car.year }} року</title>
-    <link rel="stylesheet" href="{% static 'myria/style.css' %}">
-    <style>
-        /* Базові стилі для макету а-ля AutoRia */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f4f7;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .car-header {
-            margin-bottom: 15px;
-        }
-        .car-header h1 {
-            margin: 0 0 5px 0;
-            font-size: 28px;
-        }
-        .main-layout {
-            display: flex;
-            gap: 30px;
-        }
-        /* Ліва колонка (65%) */
-        .left-column {
-            flex: 65;
-        }
-        /* Права колонка (35%) */
-        .right-column {
-            flex: 35;
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            align-self: flex-start;
-        }
-        /* Галерея */
-        .main-image img {
-            width: 100%;
-            height: auto;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .thumbs-gallery {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-        .thumbs-gallery img {
-            width: 100px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 4px;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: 0.2s;
-        }
-        .thumbs-gallery img:hover {
-            border-color: #db5c00;
-        }
-        /* Блок характеристик коротких */
-        .quick-specs {
-            display: flex;
-            gap: 20px;
-            margin: 15px 0;
-            font-size: 15px;
-            color: #555;
-            background: #f1f5f9;
-            padding: 10px;
-            border-radius: 6px;
-        }
-        /* Блок держномеру та VIN */
-        .car-codes {
-            display: flex;
-            gap: 15px;
-            margin: 15px 0;
-        }
-        .badge-number {
-            background: #3b82f6;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .badge-vin {
-            background: #34d399;
-            color: #064e3b;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        /* Блок Перевірено державою */
-        .verified-block {
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 25px;
-            background-color: #fafafa;
-        }
-        .verified-title {
-            color: #1e3a8a;
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .verified-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .verified-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .verified-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: green;
-            font-weight: bold;
-        }
-        /* Права панель ціни та зв'язку */
-        .price-box {
-            font-size: 32px;
-            color: #22c55e;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .seller-info {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #e2e8f0;
-        }
-        .btn-phone {
-            display: block;
-            background: #22c55e;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: bold;
-            text-decoration: none;
-            margin-top: 15px;
-            font-size: 16px;
-        }
-        .btn-phone:hover {
-            background: #16a34a;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #db5c00;
-            text-decoration: none;
-        }
-    </style>
+    <title>{{ car.brand }} {{ car.model_name }} {{ car.year }} року | Myria</title>
+    <link rel="stylesheet" href="{% static 'myria/car_detail_style.css' %}">
 </head>
 <body>
 
-<div class="container">
-    <div class="car-header">
-        <h1>{{ car.brand }} {{ car.model }} {{ car.year }}</h1>
-        <span style="color: #777;">ID автомобіля: {{ car.id }}</span>
+<div class="page-wrap">
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <a href="/">Головна</a>
+        <span>›</span>
+        <a href="{% url 'car_list' %}">Оголошення</a>
+        <span>›</span>
+        <a href="#">{{ car.transport_type }}</a>
+        <span>›</span>
+        <a href="#">{{ car.brand }}</a>
+        <span>›</span>
+        {{ car.brand }} {{ car.model_name }} {{ car.year }}
     </div>
 
     <div class="main-layout">
-        
-        <div class="left-column">
-            
-            <div class="main-image">
-                {% if car.image %}
-                    <img id="current-main-img" src="{{ car.image }}" alt="Головне фото {{ car.brand }}">
+
+        <!-- ===================== LEFT COLUMN ===================== -->
+        <div class="left-col">
+
+            <!-- GALLERY -->
+            <div class="gallery">
+                {% if car.main_photo %}
+                    <img id="mainPhoto" class="gallery__main" src="{{ car.main_photo.url }}" alt="{{ car.brand }} {{ car.model_name }}">
                 {% else %}
-                    <div style="background: #e2e8f0; height: 300px; display:flex; align-items:center; justify-content:center;">Немає фото</div>
+                    <div class="gallery__no-photo">Немає фото</div>
                 {% endif %}
+                <div class="gallery__counter">
+                    1 з {% if car.images.all %}{{ car.images.count|add:1 }}{% else %}1{% endif %}
+                </div>
+                <button class="gallery__expand" onclick="openFullscreen()" title="На весь екран">⛶</button>
+                <button class="gallery__prev" onclick="prevPhoto()">‹</button>
+                <button class="gallery__next" onclick="nextPhoto()">›</button>
+            </div>
+            <div id="photoData"
+                data-main="{% if car.main_photo %}{{ car.main_photo.url }}{% endif %}"
+                data-extra="{% for img in car.images.all %}{{ img.image }}{% if not forloop.last %},{% endif %}{% endfor %}"
+                style="display:none;">
             </div>
 
-            <div class="thumbs-gallery">
-                {% if car.image_url %}
-                    <img src="{{ car.image }}" onclick="changeImage('{{ car.image }}')" alt="Мініатюра 1">
+            <!-- THUMBNAILS -->
+            <div class="thumbs" id="thumbsRow">
+                {% if car.main_photo %}
+                    <img src="{{ car.main_photo.url }}"
+                         alt="Фото 1"
+                         class="active"
+                         onclick="setPhoto(this, '{{ car.main_photo.url }}')">
                 {% endif %}
-                
                 {% for img in car.images.all %}
-                    <img src="{{ img.image }}" onclick="changeImage('{{ img.image }}')" alt="Додаткове фото">
+                    <img src="{{ img.image }}"
+                         alt="Фото {{ forloop.counter|add:1 }}"
+                         onclick="setPhoto(this, '{{ img.image }}')">
                 {% endfor %}
             </div>
 
-            <div class="quick-specs">
-                <span>🚗 <b>Пробіг:</b> {{ car.mileage }} тис. км</span>
-                <span>⚙️ <b>Коробка:</b> {{ car.transmission }}</span>
-                <span>⛽ <b>Паливо:</b> {{ car.fuel }}</span>
-                <span>📍 <b>Місто:</b> {{ car.city }}</span>
-            </div>
+            <!-- CAR TITLE + PRICE -->
+            <div class="car-info-top">
+                <div class="car-title-block">
+                    <h1>{{ car.brand }} {{ car.model_name }} {{ car.year }}</h1>
+                    <div class="car-subtitle">
+                        {% if car.modification %}{{ car.modification }} · {% endif %}
+                        {{ car.body_type }}
+                    </div>
+                </div>
 
-            <div class="car-codes">
-                {% if car.car_number %}
-                    <div class="badge-number">{{ car.car_number }}</div>
-                {% endif %}
-                {% if car.vin_code %}
-                    <div class="badge-vin">VIN: {{ car.vin_code }}</div>
-                {% endif %}
-            </div>
-
-            <div class="description-section">
-                <h2>Опис від власника</h2>
-                <p style="line-height: 1.6; color: #4a5568;">
-                    {% if car.description %}
-                        {{ car.description }}
-                    {% else %}
-                        Власник не надав додаткового опису для цього транспортного засобу.
+                <div class="price-line">
+                    <span class="price-main">{{ car.price }} {{ car.currency }}</span>
+                    {% if car.currency != 'грн.' %}
+                        <span class="price-secondary"><!-- UAH equivalent via template tag if available --></span>
                     {% endif %}
-                </p>
+                    {% if car.bargain_possible %}
+                        <span class="tag" style="font-size:12px; padding:2px 10px;">Торг</span>
+                    {% endif %}
+                    {% if car.exchange_possible %}
+                        <span class="tag" style="font-size:12px; padding:2px 10px;">Обмін</span>
+                    {% endif %}
+                </div>
+                <div class="price-avg"><a href="#">Середня ціна ⎯</a></div>
             </div>
 
+            <!-- QUICK SPECS -->
+            <div class="quick-specs">
+                <div class="quick-specs__item">
+                    <span class="qs-icon">⏱</span>
+                    {{ car.mileage }} тис. км
+                </div>
+                <div class="quick-specs__item">
+                    <span class="qs-icon">📍</span>
+                    {{ car.city }}{% if car.region %}, {{ car.region }}{% endif %}
+                </div>
+                {% if car.color %}
+                <div class="quick-specs__item">
+                    <span class="qs-icon">🎨</span>
+                    {{ car.color }}
+                </div>
+                {% endif %}
+                {% if car.imported_from %}
+                <div class="quick-specs__item">
+                    <span class="qs-icon">🚢</span>
+                    Пригнано з {{ car.imported_from }}
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="location-line">
+                UA, {{ car.region }}{% if car.city %}, {{ car.city }}{% endif %}
+            </div>
+
+            <!-- TAGS -->
+            <div class="tags">
+                {% if car.vin_code %}
+                    <div class="tag tag--vin" onclick="copyVin('{{ car.vin_code }}')" title="Скопіювати VIN">
+                        🚗 {{ car.vin_code }}
+                        <span class="copy-icon">⎘</span>
+                    </div>
+                {% endif %}
+                {% if car.imported_from %}
+                    <div class="tag">Пригнано з {{ car.imported_from }}</div>
+                {% endif %}
+                {% if car.is_owner %}
+                    <div class="tag">Від власника</div>
+                {% endif %}
+                {% if car.accident == 'Ні, не був у ДТП' %}
+                    <div class="tag">Не битий</div>
+                {% endif %}
+            </div>
+
+            <!-- VERIFIED BLOCK -->
             <div class="verified-block">
-                <div class="verified-title">🛡️ Перевірено AUTO.RIA за офіційними відкритими державними даними</div>
-                <ul class="verified-list">
-                    <li>{{ car.brand }} {{ car.model }} {{ car.year }}</li>
-                    <li>Колір за техпаспортом: {{ car.color }}</li>
-                    <li>Тип двигуна: {{ car.fuel }}</li>
-                    <li>Відсутній у розшуку</li>
-                    <li>Успішно пройдено повну юридичну перевірку</li>
-                </ul>
+                <div class="verified-block__title">Перевірено Myria за офіційними відкритими державними даними</div>
+
+                <div class="verified-item">
+                    <span class="verified-item__icon verified-item__icon--ok">✓</span>
+                    <span>{{ car.brand }} {{ car.model_name }} {{ car.year }}</span>
+                </div>
+
+                {% if car.color %}
+                <div class="verified-item">
+                    <span class="verified-item__icon verified-item__icon--dot">●</span>
+                    <span>Колір за техпаспортом: {{ car.color }}</span>
+                </div>
+                {% endif %}
+
+                <div class="verified-item">
+                    <span class="verified-item__icon verified-item__icon--ok">✓</span>
+                    <span>Відсутній у розшуку</span>
+                </div>
+
+                {% if car.is_owner %}
+                <div class="verified-item">
+                    <span class="verified-item__icon verified-item__icon--ok">✓</span>
+                    <span>1 власник</span>
+                </div>
+                {% endif %}
+
+                {% if car.accident %}
+                <div class="verified-item">
+                    <span class="verified-item__icon {% if car.accident == 'Ні, не був у ДТП' %}verified-item__icon--ok{% else %}verified-item__icon--warn{% endif %}">
+                        {% if car.accident == 'Ні, не був у ДТП' %}✓{% else %}⚠{% endif %}
+                    </span>
+                    <span>{{ car.accident }}</span>
+                </div>
+                {% endif %}
+
+                <div class="verified-block__date">
+                    Інформація є дійсною станом на сьогодні та отримана з офіційних відкритих державних даних
+                </div>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div style="margin-bottom: 20px;">
+                <div class="section-title">Опис від продавця</div>
+                <div class="description-text" id="descText">{{ car.description }}</div>
+                {% if car.description|length > 150 %}
+                <button class="read-more-btn" onclick="toggleDesc()">
+                    Читати більше <span id="descArrow">∨</span>
+                </button>
+                {% endif %}
+            </div>
+
+            <!-- BODY TYPE LINE -->
+            {% if car.body_type %}
+            <div class="body-type-line">
+                {{ car.body_type }}{% if car.transport_type %}<span>·</span>{{ car.transport_type }}{% endif %}
+            </div>
+            {% endif %}
+
+            <div class="check-before">
+                <span>ⓘ</span>
+                <a href="#">Що перевірити перед покупкою?</a>
+            </div>
+
+            <!-- SPECS GRID -->
+            <div class="specs-grid">
+
+                {% if car.modification %}
+                <div class="spec-item">
+                    <div class="spec-label">Покоління, комплектація, модифікація</div>
+                    <div class="spec-value">{{ car.modification }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.color %}
+                <div class="spec-item">
+                    <div class="spec-label">Колір</div>
+                    <div class="spec-value">{{ car.color }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.body_type %}
+                <div class="spec-item">
+                    <div class="spec-label">Тип кузова</div>
+                    <div class="spec-value">{{ car.body_type }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.technical_state %}
+                <div class="spec-item">
+                    <div class="spec-label">Технічний стан</div>
+                    <div class="spec-value">{{ car.technical_state }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.paintwork %}
+                <div class="spec-item">
+                    <div class="spec-label">Лакофарбове покриття</div>
+                    <div class="spec-value">{{ car.paintwork }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.imported_from %}
+                <div class="spec-item">
+                    <div class="spec-label">Пригнаний з</div>
+                    <div class="spec-value">{{ car.imported_from }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.accident %}
+                <div class="spec-item">
+                    <div class="spec-label">Участь в ДТП</div>
+                    <div class="spec-value">{{ car.accident }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.conditioner %}
+                <div class="spec-item">
+                    <div class="spec-label">Кондиціонер</div>
+                    <div class="spec-value">{{ car.conditioner }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.headlights %}
+                <div class="spec-item">
+                    <div class="spec-label">Фари</div>
+                    <div class="spec-value">{{ car.headlights }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.interior_material %}
+                <div class="spec-item">
+                    <div class="spec-label">Матеріали салону</div>
+                    <div class="spec-value">{{ car.interior_material }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.interior_color %}
+                <div class="spec-item">
+                    <div class="spec-label">Колір салону</div>
+                    <div class="spec-value">{{ car.interior_color }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.steering_assist %}
+                <div class="spec-item">
+                    <div class="spec-label">Підсилювач керма</div>
+                    <div class="spec-value">{{ car.steering_assist }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.steering_adjustment %}
+                <div class="spec-item">
+                    <div class="spec-label">Регулювання керма</div>
+                    <div class="spec-value">{{ car.steering_adjustment }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.spare_wheel %}
+                <div class="spec-item">
+                    <div class="spec-label">Запасне колесо</div>
+                    <div class="spec-value">{{ car.spare_wheel }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.windows %}
+                <div class="spec-item">
+                    <div class="spec-label">Електросклопідйомники</div>
+                    <div class="spec-value">{{ car.windows }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.seat_height %}
+                <div class="spec-item">
+                    <div class="spec-label">Регулювання сидінь по висоті</div>
+                    <div class="spec-value">{{ car.seat_height }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.seat_memory %}
+                <div class="spec-item">
+                    <div class="spec-label">Пам'ять положення сидіння</div>
+                    <div class="spec-value">{{ car.seat_memory }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.seat_heating %}
+                <div class="spec-item">
+                    <div class="spec-label">Підігрів сидінь</div>
+                    <div class="spec-value">{{ car.seat_heating }}</div>
+                </div>
+                {% endif %}
+
+                {% if car.seat_ventilation %}
+                <div class="spec-item">
+                    <div class="spec-label">Вентиляція сидінь</div>
+                    <div class="spec-value">{{ car.seat_ventilation }}</div>
+                </div>
+                {% endif %}
+
+            </div>
+
+            <button class="btn-all-options">Дивитись всі опції</button>
+
+            <!-- LEARN MORE -->
+            <div class="learn-more-section">
+                <div class="section-title">Дізнайтесь більше про авто</div>
+
+                <div class="discount-banner">
+                    Продавець потурбувався про вас: <strong>-10%</strong> на будь-яку перевірку
+                </div>
+
+                <!-- Inspection service -->
+                <div class="service-card">
+                    <div class="service-card__info">
+                        <div class="service-card__title">Виїзна перевірка Myria</div>
+                        <div class="service-card__desc">Перевірте технічний стан авто з експертом або дистанційно з відеозвітом</div>
+                        <div class="service-card__price">від 1 500 грн</div>
+                    </div>
+                    <button class="service-card__btn service-card__btn--new">Замовити перевірку</button>
+                </div>
+
+                <!-- Extended history -->
+                <div class="service-card">
+                    <div class="service-card__info">
+                        <div class="service-card__title">Розширена історія авто в Україні, країнах Європи, США та Південній Кореї</div>
+                        <div class="service-card__desc">Дізнайтесь, що відомо про авто у міжнародних реєстрах</div>
+                        <div class="service-card__tags">
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>Історія пробігу</span>
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>ДТП та страхові випадки</span>
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>Ремонти у офіц. дилера</span>
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>Комплектація авто</span>
+                        </div>
+                        <div class="service-card__price">від 150 грн</div>
+                    </div>
+                    <button class="service-card__btn">Замовити</button>
+                </div>
+
+                <!-- Technical check -->
+                <div class="service-card">
+                    <div class="service-card__info">
+                        <div class="service-card__title">Технічна перевірка на СТО</div>
+                        <div class="service-card__desc">Звіт про технічний стан по 27 параметрам від Сертифікованого центру перевірки Myria</div>
+                        <div class="service-card__tags">
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>Стан кузова</span>
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>Технічний стан</span>
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>Стан салону</span>
+                            <span class="service-tag"><span class="service-tag__lock">🔒</span>Тестова поїздка</span>
+                        </div>
+                        <div class="service-card__price">від 2 140 грн</div>
+                    </div>
+                    <button class="service-card__btn">Замовити</button>
+                </div>
+
+                <!-- Truth card -->
+                <div class="truth-card">
+                    <div class="truth-card__info">
+                        <div class="truth-card__title">Знаєте більше про це авто?</div>
+                        <div class="truth-card__desc">Напишіть коментар, і ми перевіримо, щоб все було чесно</div>
+                        <div class="truth-card__links">
+                            <a href="#">📊 Мої досягнення в перевірках ›</a>
+                            <a href="#">🛡 Про безпечні угоди ›</a>
+                        </div>
+                    </div>
+                    <button class="truth-card__btn">Розказати правду</button>
+                </div>
+            </div>
+
+            <!-- LISTING META -->
+            <div class="listing-meta">
+                <div>Оголошення створене {{ car.id }}</div>
+                <div>Переглядів авто —</div>
+                <div>Додано в Обране —</div>
+                <div>ID авто {{ car.id }}</div>
+            </div>
+
+            <!-- INSTALLMENT -->
+            <div class="installment-card">
+                <div>
+                    <div class="installment-card__title">Оформити розстрочку на {{ car.brand }} {{ car.model_name }} {{ car.year }}</div>
+                    <div class="installment-card__desc">Ти можеш дозволити собі більше. Купуй авто вже зараз!</div>
+                    <div class="installment-card__price">— грн на місяць · протягом 5 років</div>
+                </div>
+                <button class="installment-card__btn">Отримати пропозицію</button>
             </div>
 
         </div>
+        <!-- END LEFT COL -->
 
-        <div class="right-column">
-            <div class="price-box">${{ car.price }}</div>
-            <div style="color: #718096; font-size: 14px;">• Стан хороший, можливий торг</div>
+        <!-- ===================== RIGHT COLUMN ===================== -->
+        <div class="right-col">
+            <div class="sticky-panel">
 
-            <div class="seller-info">
-                <h3 style="margin: 0 0 5px 0;">Продавець Приватна Особа</h3>
-                <p style="color: #4a5568; font-size: 14px; margin: 0;">📍 На AUTO.RIA з нами більше року</p>
-                
-                <a href="tel:#" class="btn-phone" onclick="alert('Телефон продавця: (095) XXX-XX-XX')">📞 Показати телефон</a>
+                <div class="right-card">
+                    <!-- Compact title -->
+                    <div class="right-title">{{ car.brand }} {{ car.model_name }} {{ car.year }}</div>
+                    <div class="right-subtitle">
+                        {% if car.modification %}{{ car.modification }} · {% endif %}{{ car.body_type }}
+                    </div>
+
+                    <!-- Price -->
+                    <div class="right-price-main">{{ car.price }} {{ car.currency }}</div>
+                    <div class="right-price-uah">
+                        {% if car.bargain_possible %}Можливий торг{% endif %}
+                        {% if car.exchange_possible %} · Обмін{% endif %}
+                    </div>
+
+                    <!-- History link -->
+                    <div class="history-link">
+                        <div>
+                            <strong>Розширена історія авто</strong>
+                            <span>Доступна перевірка · від 150 грн</span>
+                        </div>
+                        <span class="history-link__arrow">›</span>
+                    </div>
+
+                    <!-- Seller -->
+                    <div class="seller-box">
+                        <div class="seller-box__header">
+                            <div class="seller-avatar">👤</div>
+                            <div>
+                                <div class="seller-box__type">
+                                    {% if car.is_owner %}Власник{% else %}Продавець{% endif %} ›
+                                </div>
+                                <div class="seller-box__name">
+                                    {{ car.seller.get_full_name|default:car.seller.username|default:"Продавець" }}
+                                    <span class="verified-check">✔</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seller-meta">
+                            {% if car.seller %}
+                            <div class="seller-meta__row">
+                                <span class="seller-meta__icon">⭐</span>
+                                На Myria
+                            </div>
+                            {% endif %}
+                            <div class="seller-meta__row">
+                                <span class="seller-meta__icon">🚗</span>
+                                {{ car.region }}{% if car.city %}, {{ car.city }}{% endif %}
+                            </div>
+                        </div>
+
+                        <div class="seller-online">Продавець активний</div>
+                    </div>
+
+                    <!-- Phone button -->
+                    {% if car.seller and car.seller.profile.phone %}
+                        <a href="tel:{{ car.seller.profile.phone }}" class="btn-phone">
+                            📞 {{ car.seller.profile.phone }}
+                        </a>
+                    {% else %}
+                        <button class="btn-phone" onclick="alert('Телефон продавця недоступний')">
+                            📞 Показати телефон
+                        </button>
+                    {% endif %}
+
+                    <!-- Chat button -->
+                    <button class="btn-chat">
+                        💬 Написати в чат
+                    </button>
+
+                    <div class="response-speed">Відповідає протягом кількох хвилин</div>
+                </div>
+
             </div>
         </div>
+        <!-- END RIGHT COL -->
 
     </div>
 
-    <a href="{% url 'car_list' %}" class="back-link">← Назад до списку автомобілів</a>
-</div>
+    <a href="{% url 'car_list' %}" class="back-link">← Назад до списку</a>
+
+</div><!-- end page-wrap -->
 
 <script>
-    function changeImage(imageUrl) {
-        document.getElementById('current-main-img').src = imageUrl;
+    // ===== GALLERY =====
+    const photoEl = document.getElementById('photoData');
+    const mainSrc = photoEl.dataset.main;
+    const extraSrcs = photoEl.dataset.extra ? photoEl.dataset.extra.split(',') : [];
+    const allPhotos = [mainSrc, ...extraSrcs].filter(Boolean);
+
+    let currentIdx = 0;
+    const mainPhoto = document.getElementById('mainPhoto');
+
+    function setPhoto(el, url) {
+        if (!mainPhoto) return;
+        mainPhoto.src = url;
+        currentIdx = allPhotos.indexOf(url);
+        document.querySelectorAll('.thumbs img').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+        updateCounter();
+    }
+
+    function prevPhoto() {
+        if (allPhotos.length === 0) return;
+        currentIdx = (currentIdx - 1 + allPhotos.length) % allPhotos.length;
+        showPhoto(currentIdx);
+    }
+
+    function nextPhoto() {
+        if (allPhotos.length === 0) return;
+        currentIdx = (currentIdx + 1) % allPhotos.length;
+        showPhoto(currentIdx);
+    }
+
+    function showPhoto(idx) {
+        if (!mainPhoto || allPhotos.length === 0) return;
+        mainPhoto.src = allPhotos[idx];
+        const thumbs = document.querySelectorAll('.thumbs img');
+        thumbs.forEach(t => t.classList.remove('active'));
+        if (thumbs[idx]) {
+            thumbs[idx].classList.add('active');
+            thumbs[idx].scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+        }
+        updateCounter();
+    }
+
+    function updateCounter() {
+        const c = document.querySelector('.gallery__counter');
+        if (c && allPhotos.length > 0) c.textContent = (currentIdx + 1) + ' з ' + allPhotos.length;
+    }
+
+    function openFullscreen() {
+        if (!mainPhoto) return;
+        const w = window.open('', '_blank');
+        w.document.write('<img src="' + mainPhoto.src + '" style="max-width:100%;max-height:100vh;">');
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') prevPhoto();
+        if (e.key === 'ArrowRight') nextPhoto();
+    });
+
+    // ===== DESCRIPTION TOGGLE =====
+    function toggleDesc() {
+        const el = document.getElementById('descText');
+        const arrow = document.getElementById('descArrow');
+        if (el.classList.contains('expanded')) {
+            el.classList.remove('expanded');
+            arrow.textContent = '∨';
+        } else {
+            el.classList.add('expanded');
+            arrow.textContent = '∧';
+        }
+    }
+
+    // ===== COPY VIN =====
+    function copyVin(vin) {
+        navigator.clipboard.writeText(vin).then(function() {
+            alert('VIN скопійовано: ' + vin);
+        }).catch(function() {
+            prompt('Скопіюйте VIN-код:', vin);
+        });
     }
 </script>
 

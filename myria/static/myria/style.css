@@ -448,7 +448,7 @@ body {
     background: #f5f5f5;
 }
 
-.news-list {
+.news-list1 {
     display: flex;
     gap: 16px;
     overflow-x: auto;
@@ -457,7 +457,7 @@ body {
     margin-bottom: -24px;
 }
 
-.news-list::-webkit-scrollbar {
+.news-list1::-webkit-scrollbar {
     display: none;
 }
 
@@ -953,6 +953,203 @@ body {
     color: #252a34;
     line-height: 1;
 }
+
+/* =============================================
+   AUTO NEWS SECTION — auto-news.css
+   ============================================= */
+
+/* ---------- Секція ---------- */
+.news-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 16px 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1a1a1a;
+}
+
+/* ---------- Заголовок ---------- */
+.news-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #111;
+}
+
+/* ---------- Теги ---------- */
+.news-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 7px 16px;
+  border: 1.5px solid #c0c0c0;
+  border-radius: 50px;
+  background: #fff;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  border-color: #555;
+}
+
+.tag.active {
+  border-color: #111;
+  background: #fff;
+  font-weight: 600;
+}
+
+/* ---------- Контент: featured + список ---------- */
+.news-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ---------- Головне фото ---------- */
+.news-featured {
+  position: relative;
+  display: block;
+  flex: 0 0 430px;
+  max-width: 430px;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.news-featured__img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  background-color: #d0d0d0;
+}
+
+/* Підпис поверх фото (знизу) */
+.news-featured__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px 14px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.news-featured__label-sub {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.news-featured__label-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ---------- Список новин ---------- */
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.news-item {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item__link {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s;
+}
+
+.news-item__link:hover {
+  opacity: 0.78;
+}
+
+/* Мініатюра новини */
+.news-item__img {
+  width: 110px;
+  height: 75px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 4px;
+  display: block;
+  /* Поки немає фото — сірий плейсхолдер */
+  background-color: #d0d0d0;
+}
+
+.news-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.news-item__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111;
+}
+
+.news-item__date {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ---------- Кнопка "Читати все" ---------- */
+.news-footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.btn-read-all {
+  display: inline-block;
+  padding: 13px 60px;
+  border: 1.5px solid #222;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111;
+  background: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-read-all:hover {
+  background: #111;
+  color: #fff;
+}
+
+
 
 /* 
    ФУТЕР

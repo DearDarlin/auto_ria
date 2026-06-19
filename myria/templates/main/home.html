@@ -335,41 +335,82 @@
 
 <section class="recommendations-section">
     <div class="section-header">
-        <h2>AUTO.RIA рекомендує <span class="badge-ai">На основі AI</span></h2>
+        <h2>Myria рекомендує <span class="badge-ai">На основі AI</span></h2>
     </div>
 
     <div class="cars-grid">
         {% for car in cars %}
         <a href="{% url 'car_detail' car.id %}" class="car-card-link">
             <div class="car-card">
-                
+
                 <div class="car-image-box">
-                    {% if car.image %}
-                        <img src="{{ car.image }}" alt="{{ car.brand }} {{ car.model }}" class="car-img">
+                    {% if car.main_photo %}
+                        <img src="{{ car.main_photo }}" alt="{{ car.brand }} {{ car.model_name }}" class="car-img">
                     {% else %}
-                        <div style="background: #e2e8f0; height: 180px; display:flex; align-items:center; justify-content:center; color: #777;">Немає фото</div>
+                        <div class="car-no-photo">Немає фото</div>
                     {% endif %}
-                    <button class="heart-btn">💙</button>
+
+                    <!-- Крапки галереї -->
+                    <div class="photo-dots">
+                        <span class="dot dot--active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    {% if car.vin_code %}
+                    <div class="card-bottom-badges">
+                        <span class="badge-vin">🚗 Перевірений VIN</span>
+                        {% if car.region %}
+                        <span class="badge-plate">
+                            <span class="plate-ua">UA</span>
+                            {{ car.region }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    <button class="heart-btn" onclick="event.preventDefault(); toggleFav(this)">♡</button>
                 </div>
 
                 <div class="car-card-content">
-                    <h3 class="car-card-title">{{ car.brand }} {{ car.model }} {{ car.year }}</h3>
-                    
+                    <h3 class="car-card-title">{{ car.brand }} {{ car.model_name }} {{ car.year }}</h3>
+
                     <div class="car-card-price">
-                        <span class="price-usd">{{ car.price }} $</span>
+                        <span class="price-usd">{{ car.price }} {{ car.currency }}</span>
+                        <span class="price-sep">·</span>
+                        <span class="price-uah">— грн</span>
                     </div>
 
                     <div class="car-card-tech">
-                        <span class="tech-item">⏱ {{ car.mileage }} тис. км</span>
-                        <span class="tech-item">⛽ {{ car.fuel }}</span>
-                        <span class="tech-item">📍 {{ car.city }}</span>
+                        <div class="tech-row">
+                            <span class="tech-item">
+                                <svg class="tech-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+                                {{ car.mileage }} тис. км
+                            </span>
+                            <span class="tech-item">
+                                <svg class="tech-icon" viewBox="0 0 16 16"><circle cx="8" cy="10" r="3" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M8 2v5M5 4l3-2 3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+                                {{ car.body_type|default:"—" }}
+                            </span>
+                        </div>
+                        <div class="tech-row">
+                            <span class="tech-item">
+                                <svg class="tech-icon" viewBox="0 0 16 16"><rect x="2" y="6" width="12" height="7" rx="2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M5 6V4a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>
+                                {{ car.color|default:"—" }}
+                            </span>
+                            <span class="tech-item">
+                                <svg class="tech-icon" viewBox="0 0 16 16"><path d="M8 2C5.2 2 3 4.2 3 7c0 3.5 5 9 5 9s5-5.5 5-9c0-2.8-2.2-5-5-5z" stroke="currentColor" stroke-width="1.3" fill="none"/><circle cx="8" cy="7" r="1.5" fill="currentColor"/></svg>
+                                {{ car.city }}
+                            </span>
+                        </div>
+                        <div class="card-date">{{ car.id }} · нещодавно</div>
                     </div>
                 </div>
 
             </div>
         </a>
         {% empty %}
-        <p>Наразі немає доступних автомобілів на головній сторінці.</p>
+        <p>Наразі немає доступних автомобілів.</p>
         {% endfor %}
     </div>
 

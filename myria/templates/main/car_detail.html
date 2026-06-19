@@ -32,7 +32,7 @@
             <!-- GALLERY -->
             <div class="gallery">
                 {% if car.main_photo %}
-                    <img id="mainPhoto" class="gallery__main" src="{{ car.main_photo.url }}" alt="{{ car.brand }} {{ car.model_name }}">
+                    <img id="mainPhoto" class="gallery__main" src="{{ car.main_photo}}" alt="{{ car.brand }} {{ car.model_name }}">
                 {% else %}
                     <div class="gallery__no-photo">Немає фото</div>
                 {% endif %}
@@ -44,7 +44,7 @@
                 <button class="gallery__next" onclick="nextPhoto()">›</button>
             </div>
             <div id="photoData"
-                data-main="{% if car.main_photo %}{{ car.main_photo.url }}{% endif %}"
+                data-main="{% if car.main_photo %}{{ car.main_photo }}{% endif %}"
                 data-extra="{% for img in car.images.all %}{{ img.image }}{% if not forloop.last %},{% endif %}{% endfor %}"
                 style="display:none;">
             </div>
@@ -52,10 +52,10 @@
             <!-- THUMBNAILS -->
             <div class="thumbs" id="thumbsRow">
                 {% if car.main_photo %}
-                    <img src="{{ car.main_photo.url }}"
+                    <img src="{{ car.main_photo }}"
                          alt="Фото 1"
                          class="active"
-                         onclick="setPhoto(this, '{{ car.main_photo.url }}')">
+                         onclick="setPhoto(this, '{{ car.main_photo }}')">
                 {% endif %}
                 {% for img in car.images.all %}
                     <img src="{{ img.image }}"

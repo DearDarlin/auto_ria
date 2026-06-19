@@ -688,40 +688,33 @@ body {
 }
 
 
-
-
-/* 
-БЛОК "AUTO.RIA РЕКОМЕНДУЄ"
- */
+/* ===== RECOMMENDATIONS SECTION ===== */
 .recommendations-section {
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin: 40px auto 50px;
     max-width: 1250px;
-    margin-left: auto;
-    margin-right: auto;
-
+    padding: 0 16px;
 }
 
-/* Маленька сіра плашка "На основі AI" */
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .badge-ai {
-    font-size: 13px;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 4px 7px;
-    border-radius: 50px;
-    border: 2px solid #cacaca;
-    font-weight: 600;
-    margin-left: 10px;
-    vertical-align: middle;
+    font-size: 12px;
+    background: #fff;
+    color: #333;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-weight: 500;
 }
 
-
-.car-card-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-
+/* ===== GRID ===== */
 .cars-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -729,128 +722,234 @@ body {
     margin-top: 20px;
 }
 
-/* Стиль картки автомобіля */
+
+
+/* ===== CARD ===== */
+.car-card-link { text-decoration: none; color: inherit; }
+
 .car-card {
-    background-color: #ffffff;
-    border: 1px solid #e6ebf0;
+    background: #fff;
     border-radius: 12px;
+    border: 1px solid #e6ebf0;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-/* Ефект підняття картки при наведенні мишкою */
 .car-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.09);
 }
 
+/* ===== IMAGE BOX ===== */
 .car-image-box {
     position: relative;
     width: 100%;
-    height: 220px;
-    background-color: #f0f2f5;
+    height: 210px;
+    background: #eef0f3;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .car-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
+    display: block;
 }
 
-.heart-btn {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
-    background: #ffffff;
-    border: none;
-    border-radius: 50%;
+.car-no-photo {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Dots */
+.photo-dots {
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+}
+
+.dot--active {
+    background: #fff;
+}
+
+/* Bottom badges (VIN + plate) */
+.card-bottom-badges {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.badge-vin {
+    background: #222;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.badge-plate {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #222;
+    letter-spacing: 0.5px;
+}
+
+.plate-ua {
+    background: #003DA5;
+    color: #FFD700;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+/* Heart button */
+.heart-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transition: transform 0.1s ease;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.18);
+    color: #aaa;
+    transition: color 0.15s, transform 0.1s;
+    line-height: 1;
 }
 
-.heart-btn:hover {
-    transform: scale(1.1);
-}
+.heart-btn:hover { transform: scale(1.1); }
+.heart-btn.active { color: #db3727; }
 
-/* Текстовий вміст картки (назва, ціна, характеристики) */
+/* ===== CARD CONTENT ===== */
 .car-card-content {
-    padding: 16px;
+    padding: 14px 16px 16px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-/* Заголовок: Марка + Модель + Рік */
 .car-card-title {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
-    color: #252a34;
-    margin-bottom: 8px;
-    line-height: 1.4;
+    color: #222;
+    margin-bottom: 6px;
+    line-height: 1.35;
 }
 
-
 .car-card-price {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
 .price-usd {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 800;
-    color: #24ae60; 
+    color: #2eb85c;
 }
 
+.price-sep { color: #bbb; font-size: 14px; }
 
+.price-uah {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Tech specs */
 .car-card-tech {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 6px;
-    font-size: 13px;
-    color: #494b55;
-    border-top: 1px dashed #e6ebf0;
-    padding-top: 12px;
-    margin-top: auto; 
+}
+
+.tech-row {
+    display: flex;
+    gap: 16px;
 }
 
 .tech-item {
     display: flex;
     align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #555;
+    flex: 1;
 }
 
-/* Нижня кнопка "Показати всі авто" */
-.show-more-box {
-    text-align: center;
-    margin-top: 35px;
+.tech-icon {
+    width: 14px;
+    height: 14px;
+    color: #aaa;
+    flex-shrink: 0;
 }
+
+.card-date {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 4px;
+}
+
+/* ===== SHOW MORE ===== */
+.show-more-box { text-align: center; margin-top: 35px; }
 
 .btn-show-more {
     display: inline-block;
-    padding: 12px 45px;
-    border: 1px solid #252a34;
-    color: #252a34;
+    padding: 11px 44px;
+    border: 1px solid #333;
+    color: #333;
     text-decoration: none;
     border-radius: 24px;
     font-weight: 700;
     font-size: 14px;
-    background-color: #ffffff;
-    transition: all 0.2s ease;
+    background: #fff;
+    transition: all 0.2s;
 }
 
-.btn-show-more:hover {
-    background-color: #252a34;
-    color: #ffffff;
-}
-
+.btn-show-more:hover { background: #222; color: #fff; }
 
 .transport-types h2 {
     font-size: 22px;

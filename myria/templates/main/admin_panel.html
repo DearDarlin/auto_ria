@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель адміністратора Myria</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .admin-box { border: 2px solid red; padding: 20px; border-radius: 8px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Секретна Адмін-панель</h1>
+    
+    <div class="admin-box">
+        <p id="result">Перевірка прав доступу...</p>
+    </div>
+
+    <br>
+    <a href="{% url 'home' %}">Повернутися на головну</a>
+
+    <script>
+        async function checkAdminAccess() {
+            const token = localStorage.getItem('access_token');
+
+            if (!token) {
+                document.getElementById('result').innerHTML = '<span class="error">Ви не авторизовані! Перенаправлення...</span>';
+                setTimeout(() => { window.location.href = '/login/'; }, 2000);
+                return;
+            }
+
+            const response = await fetch('/api/admin-data/', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+
+            if (!response.ok) {
+                document.getElementById('result').innerHTML = '<span class="error">Доступ заборонено. Ви звичайний користувач.</span>';
+                return;
+            }
+
+            const data = await response.json();
+            document.getElementById('result').innerText = data.message + '\n\n' + data.secret;
+        }
+
+        checkAdminAccess();
+    </script>
+</body>
+</html>

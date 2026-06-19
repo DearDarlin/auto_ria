@@ -69,6 +69,7 @@ SIMPLE_JWT = {
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = [
+    'myria.backends.EmailOrUsernameModelBackend',
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]

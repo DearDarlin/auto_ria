@@ -43,6 +43,9 @@
                         </div>
                         <a href="#" class="nav-item">GARAGE AUTO.RIA</a>
                         <a href="#" class="nav-item">Підтримка 24/7</a>
+                        <a href="{% url 'admin_panel_view' %}" id="adminPanelLink" class="nav-item" style="display: none; color: red; font-weight: bold; padding: 10px;">
+                            ⚙️ Адмін-панель
+                        </a>
                     </nav>
                 </div>
 
@@ -743,6 +746,16 @@
     lucide.createIcons();
   </script>
   <script src="{% static 'myria/main.js' %}"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const isStaff = localStorage.getItem('is_staff');
+        
+        if (isStaff === 'true') {
+            document.getElementById('adminPanelLink').style.display = 'inline-block';
+        }
+    });
+</script>
     
 </body>
 </html>

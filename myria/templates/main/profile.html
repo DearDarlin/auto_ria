@@ -5,13 +5,92 @@
     <meta charset="UTF-8">
     <title>Кабінет користувача | AUTO.RIA</title>
     <link rel="stylesheet" href="{% static 'myria/profile_style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<div class="navbar">
-    <a href="{% url 'home' %}" class="logo">AUTO.RIA</a>
-    <a href="{% url 'home' %}" class="home-link">🏠 На головну</a>
+<div class="topbar">
+    <div class="topbar-left">
+        <a href="{% url 'home' %}">RIA.com</a>
+        <a href="#">Автомобілі</a>
+        <a href="#">Нерухомість</a>
+        <a href="#">Автозапчастини</a>
+        <a class="ukraine-flag">
+            <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+            <rect width="1200" height="800" fill="#0057B7"/>
+            <rect width="1200" height="400" y="400" fill="#FFD700"/>
+        </svg> Збір на авто для ЗСУ</a>
+    </div>
+    <div class="topbar-right">
+    <a href="#" class="topbar-icon-link">
+        <i data-lucide="heart" class="topbar-icon"></i>
+    </a>
+    
+    <a href="#" class="topbar-icon-link">
+        <i data-lucide="bell" class="topbar-icon"></i>
+    </a>
+    
+    <a href="#" class="topbar-user-link">
+        <i data-lucide="user-circle" class="topbar-icon user-avatar"></i>
+        <span>Увійти в кабінет</span>
+    </a>
 </div>
+</div>
+
+<header class="site-header">
+    <div class="header-top">
+        <div class="header-container">
+            
+            <div class="header-left-group">
+                <div class="header-logo">
+                    <img src="{% static 'myria/image/logo.png' %}" alt="AUTO.RIA Logo" class="logo-image">
+                </div>
+
+                <nav class="header-nav">
+                    <a href="#" class="nav-item">Вживані авто</a>
+                    <a href="#" class="nav-item">Нові авто</a>
+                    <a href="#" class="nav-item">Новини</a>
+            
+                    <div class="dropdown">
+                        <button class="dropdown-button">
+                            <span>Все для авто</span>
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Каталог СТО</a></li>
+                            <li><a href="#">Автозапчастини на RIA.com</a></li>
+                            <li><a href="#">16 видів перевірок на AUTO.RIA</a></li>
+                            <li><a href="#">Перевірка по номеру авто та VIN-коду</a></li>
+                            <li><a href="#">Підрахунок середньої ціни авто</a></li>
+                            <li><a href="#">Митний калькулятор</a></li>
+                            <li><a href="#">Авто з пробігом від Автодилерів</a></li>
+                            <li><a href="#">Авто з-за кордону</a></li>
+                            <li><a href="#">Відгуки про авто</a></li>
+                            <li><a href="#">Фінансування авто на AUTO.RIA</a></li>
+                            <li><a href="#">Новини про авто</a></li>
+                            <li><a href="#">Перереєструвати ТЗ через Дію</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <a href="{% url 'car_list' %}" class="btn-sell-car">
+                <i data-lucide="plus"></i> Продати авто
+            </a>
+            
+            
+        </div> 
+    </div> 
+    <div class="donation-bar">
+        <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+            <rect width="1200" height="800" fill="#0057B7"/>
+            <rect width="1200" height="400" y="400" fill="#FFD700"/>
+        </svg>
+        <a href="#" class="donation-link">Не вивозиш? А ЗСУ – так. І їм потрібне авто</a>
+    </div>
+        
+</header>
 
 <div class="cabinet-layout">
      <aside class="sidebar">
@@ -60,7 +139,10 @@
  
         <nav class="sidebar-nav">
             <a href="#" class="nav-item nav-item--ukraine">
-                <span class="nav-icon">🇺🇦</span>
+                <span class="nav-icon"><svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+            <rect width="1200" height="800" fill="#0057B7"/>
+            <rect width="1200" height="400" y="400" fill="#FFD700"/>
+        </svg></span>
                 <span>Збір на авто для ЗСУ</span>
             </a>
             <a href="#" class="nav-item nav-item--active">
@@ -311,12 +393,165 @@
     <div id="userInfo" class="debug-block">Очікування відповіді від API...</div>
 </div>
 
+<footer>
+    <div class="footer-banner">
+        <div class="footer-banner-inner">
+            <div class="footer-banner-text">
+                <div class="footer-app-title">AUTO.RIA<br>у вашому смартфоні</div>
+                <p class="footer-app-desc">Все для купівлі та продажу авто<br>в додатку AUTO.RIA</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        🍎
+                        <span>
+                            <span class="app-btn-label">ЗАВАНТАЖИТИ З</span>
+                            <span class="app-btn-store">App Store</span>
+                        </span>
+                    </a>
+                    <a href="#" class="app-btn">
+                        ▶
+                        <span>
+                            <span class="app-btn-label">ЗАВАНТАЖИТИ З</span>
+                            <span class="app-btn-store">Google Play</span>
+                        </span>
+                    </a>
+                    <a href="#" class="app-btn" style="background:#c00;">
+                        ⚙
+                        <span>
+                            <span class="app-btn-label">ДОСЛІДУЙ</span>
+                            <span class="app-btn-store">AppGallery</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-phones-img">
+                <img src="{% static 'myria/image/phone.webp' %}" alt="AUTO.RIA app phones">
+                
+            </div>
+
+            <div class="footer-banner-social">
+                <p class="footer-social-title">Приєднуйтесь до спільноти<br>автолюбителів AUTO.RIA</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon fb">f</a>
+                    <a href="#" class="social-icon ig">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon yt">▶</a>
+                    <a href="#" class="social-icon tw">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.213 5.567 5.95-5.567zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon tg">✈</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-main">
+        <div class="footer-main-inner">
+
+            <div class="footer-col">
+                <h4>Вживані авто</h4>
+                <ul>
+                    <li><a href="#">Автодилери</a> • <a href="#">Електромобілі</a> • <a href="#">Пригнані авто</a></li>
+                    <li><a href="#">Нерозмитнені авто</a> • <a href="#">GARAGE AUTO.RIA</a></li>
+                </ul>
+                <h4>Нові авто</h4>
+                <ul>
+                    <li><a href="#">Автосалони</a> • <a href="#">Мотосалони</a> • <a href="#">Спецтехніка</a></li>
+                    <li><a href="#">Нові Електромобілі</a> • <a href="#">Автоцентр AUTO.RIA</a></li>
+                </ul>
+                <h4>Сільгосптехніка</h4>
+                <ul>
+                    <li><a href="#">Нова</a> • <a href="#">Вживані</a> • <a href="#">Оренда</a> • <a href="#">Послуги</a></li>
+                </ul>
+                <h4>Всі послуги для авто</h4>
+                <ul><li><a href="#">СТО</a></li></ul>
+                <h4>Сервіси</h4>
+                <ul>
+                    <li><a href="#">Калькулятор розмитнення</a> • <a href="#">Порівняння авто</a></li>
+                    <li><a href="#">Ціни на пальне</a> • <a href="#">Автотерміни</a> • <a href="#">Фінансування авто</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Новини</h4>
+                <ul>
+                    <li><a href="#">Тест-драйви</a> • <a href="#">Електромобілі</a> • <a href="#">Розмитнення</a></li>
+                    <li><a href="#">Онлайн-журнал</a> • <a href="#">Як підготувати авто до зими</a></li>
+                </ul>
+                <ul class="footer-standalone-links">
+                    <li><a href="#">Відгуки про авто</a></li>
+                    <li><a href="#">Авто Лідер</a></li>
+                    <li><a href="#">RIA.com для бізнесу</a></li>
+                    <li><a href="#">RIA.com Marketplaces</a></li>
+                    <li><a href="#">API для розробників</a></li>
+                    <li><a href="#">Вікіпедія про AUTO.RIA</a></li>
+                    <li><a href="#">Банк ідей</a></li>
+                    <li><a href="#">Мапа сайту</a></li>
+                    <li><a href="#">Партнерська ініціатива — Біле світло</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-help">
+                <div class="footer-help-block">
+                    <div class="footer-avatars-grid">
+                        <div>
+                            <img src="{% static 'myria/image/managers.webp' %}" alt="Avatar 1" class="footer-avatar">
+                        </div>
+                        
+                    </div>
+                    <a href="#" class="footer-help-link">Допомога по сайту<br>AUTO.RIA.com →</a>
+                </div>
+
+                <div class="footer-contact-icons">
+                    <a href="#" class="footer-contact-icon" style="color:#0088cc;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.247l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#0084ff;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.143 19.5c-1.116 0-2.199-.21-3.189-.593L5.5 19.5l.661-3.17a8.918 8.918 0 01-1.161-4.33C5 7.41 8.41 4 12.143 4 15.875 4 19 7.41 19 11.143c0 3.732-3.125 8.357-6.857 8.357z"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#7c3aed;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#ef6c00;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#3cb54a;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+                    </a>
+                </div>
+
+                <a href="#" class="footer-write-btn">Написати нам</a>
+
+                <ul class="footer-legal-links">
+                    <li><a href="#">Безпечні угоди</a></li>
+                    <li><a href="#">Угода про надання послуг</a></li>
+                    <li><a href="#">Допомога по сайту AUTO.RIA.com</a></li>
+                    <li><a href="#">Політика приватності</a></li>
+                    <li><a href="#">Вакансії AUTO.RIA</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-copy">
+            <span class="ria-badge">RIA</span>
+            <p>© 2014–2026 RIA.com</p>
+        </div>
+        <div class="lang-switch">
+            <a href="#" class="active">Укр</a>
+            <a href="#">Рус</a>
+        </div>
+    </div>
+</footer>
+
 <script>
     async function loadProfile() {
     const isDjangoAuthenticated = "{{ user.is_authenticated }}" === "True";
     const token = localStorage.getItem('access_token');
     
-    // Элементы интерфейса
     const welcomeMsg = document.getElementById('welcomeMessage');
     const userLogin = document.getElementById('userLogin');
     const userAvatar = document.getElementById('userAvatar');
@@ -328,7 +563,6 @@
         return;
     }
 
-    // ВАРИАНТ А: Авторизация через Google (Сессии Django)
     if (isDjangoAuthenticated) {
         if (welcomeMsg) welcomeMsg.innerText = "Вітаємо, {{ user.username }}!";
         if (userLogin) userLogin.innerText = "{{ user.email|default:user.username }}";
@@ -345,7 +579,6 @@
         return; 
     }
 
-    // ВАРИАНТ Б: Стандартная авторизация по форме (JWT Токен)
     try {
         const response = await fetch("{% url 'me' %}", {
             headers: {
@@ -390,7 +623,6 @@
     
     let currentIndex = 0;
 
-    // 1. Динамически создаем точки под количество слайдов
     slides.forEach((_, index) => {
         const dot = document.createElement('span');
         dot.classList.add('carousel-dot');
@@ -428,7 +660,6 @@
         moveToSlide(currentIndex - 1);
     });
 
-    // Слушатели на клики по точкам
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             moveToSlide(index);
@@ -436,6 +667,10 @@
     });
 });
 </script>
+<script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
 
 </body>
 </html>

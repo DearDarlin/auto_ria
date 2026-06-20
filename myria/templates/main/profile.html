@@ -313,53 +313,65 @@
 
 <script>
     async function loadProfile() {
-        const isDjangoAuthenticated = "{{ user.is_authenticated }}" === "True";
+    const isDjangoAuthenticated = "{{ user.is_authenticated }}" === "True";
+    const token = localStorage.getItem('access_token');
+    
+    // Элементы интерфейса
+    const welcomeMsg = document.getElementById('welcomeMessage');
+    const userLogin = document.getElementById('userLogin');
+    const userAvatar = document.getElementById('userAvatar');
+    const userInfoDebug = document.getElementById('userInfo');
+
+    if (!isDjangoAuthenticated && !token) {
+        console.log("Користувач не авторизований жодним методом. Редірект на логін.");
+        window.location.href = "{% url 'login_view' %}";
+        return;
+    }
+
+    // ВАРИАНТ А: Авторизация через Google (Сессии Django)
+    if (isDjangoAuthenticated) {
+        if (welcomeMsg) welcomeMsg.innerText = "Вітаємо, {{ user.username }}!";
+        if (userLogin) userLogin.innerText = "{{ user.email|default:user.username }}";
+        if (userAvatar) userAvatar.innerText = "{{ user.username }}".slice(0, 1).toUpperCase();
         
-        const token = localStorage.getItem('access_token');
-        if (!isDjangoAuthenticated && !token) {
-            console.log("Користувач не авторизований жодним методом. Редірект на логін.");
-            window.location.href = "{% url 'login_view' %}";
-            return;
-        }
-        if (isDjangoAuthenticated) {
-            document.getElementById('welcomeMessage').innerText = "Вітаємо, {{ user.username }}!";
-            document.getElementById('userLogin').innerText = "{{ user.email|default:user.username }}";
-            document.getElementById('userAvatar').innerText = "{{ user.username }}".slice(0, 1);
-            
-            document.getElementById('userInfo').innerText = JSON.stringify({
+        if (userInfoDebug) {
+            userInfoDebug.innerText = JSON.stringify({
                 "auth_method": "Google Social Auth",
                 "username": "{{ user.username }}",
                 "email": "{{ user.email }}",
                 "is_staff": "{{ user.is_staff }}" === "True"
             }, null, 4);
-            
-            return; 
         }
-
-        try {
-            const response = await fetch("{% url 'me' %}", {
-                headers: {
-                    'Authorization': 'Bearer ' + token
-                }
-            });
-
-            if (!response.ok) {
-                localStorage.clear();
-                window.location.href = "{% url 'login_view' %}";
-                return;
-            }
-
-            const user = await response.json();
-            
-            document.getElementById('userInfo').innerText = JSON.stringify(user, null, 4);
-            document.getElementById('welcomeMessage').innerText = `Вітаємо, ${user.username}!`;
-            document.getElementById('userLogin').innerText = user.username;
-            document.getElementById('userAvatar').innerText = user.username.slice(0, 1);
-            
-        } catch (error) {
-            console.error("Помилка зв'язку з API:", error);
-        }
+        return; 
     }
+
+    // ВАРИАНТ Б: Стандартная авторизация по форме (JWT Токен)
+    try {
+        const response = await fetch("{% url 'me' %}", {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        });
+
+        if (!response.ok) {
+            console.log("Токен недійсний або прострочений. Очищення та редірект.");
+            localStorage.clear();
+            window.location.href = "{% url 'login_view' %}";
+            return;
+        }
+
+        const user = await response.json();
+        
+        if (userInfoDebug) userInfoDebug.innerText = JSON.stringify(user, null, 4);
+        if (welcomeMsg) welcomeMsg.innerText = `Вітаємо, ${user.username}!`;
+        if (userLogin) userLogin.innerText = user.username;
+        if (userAvatar) userAvatar.innerText = user.username.slice(0, 1).toUpperCase();
+        
+    } catch (error) {
+        console.error("Помилка зв'язку з API:", error);
+        if (welcomeMsg) welcomeMsg.innerText = "Помилка завантаження даних.";
+    }
+}
 
     function logout() {
         localStorage.clear();

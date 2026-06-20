@@ -1,86 +1,489 @@
-{% load socialaccount %}
 {% load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вхід на сайт AUTO.RIA</title>
     <link rel="stylesheet" href="{% static 'myria/register_style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f2f4f7; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .main-wrapper { display: flex; max-width: 1000px; width: 100%; padding: 20px; box-sizing: border-box; justify-content: space-between; align-items: center; }
-        .left-promo { width: 50%; color: #04434f; padding-right: 40px; }
-        .left-promo h1 { font-size: 36px; font-weight: bold; line-height: 1.2; text-align: center; margin-bottom: 30px; }
-        .right-auth-box { background: white; padding: 30px; border-radius: 8px; border: 1px solid #e0e3e8; width: 100%; max-width: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .auth-title { font-size: 16px; font-weight: bold; color: #333; margin-top: 0; margin-bottom: 15px; }
-        .auth-title span { color: #db5c00; }
-        .social-btn { display: flex; align-items: center; justify-content: center; width: 100%; background: white; color: #212529; border: 1px solid #999; padding: 10px; border-radius: 4px; text-decoration: none; font-size: 14px; margin-bottom: 10px; box-sizing: border-box; transition: background 0.2s; }
-        .social-btn:hover { background: #f8f9fa; }
-        .social-btn img { width: 16px; height: 16px; margin-right: 12px; }
-        .divider { text-align: center; margin: 15px 0; color: #666; font-size: 13px; position: relative; }
-        .divider::before, .divider::after { content: ""; position: absolute; top: 50%; width: 42%; height: 1px; background: #e0e3e8; }
-        .divider::before { left: 0; } .divider::after { right: 0; }
-        .form-group { margin-bottom: 12px; }
-        .form-group input { width: 100%; padding: 11px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px; background: #fafafa; }
-        .form-group input:focus { border-color: #db5c00; outline: none; background: #fff; }
-        .options-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin-bottom: 15px; }
-        .options-row a { color: #0b5ed7; text-decoration: none; }
-        .btn-green-submit { width: 100%; background: #79a600; color: white; border: none; padding: 12px; border-radius: 4px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
-        .btn-green-submit:hover { background: #668c00; }
-        .register-link-box { text-align: center; margin-top: 20px; font-size: 14px; }
-        .register-link-box a { color: #0b5ed7; text-decoration: none; font-weight: bold; }
+        
+        .register-card .icon-google svg,
+        .register-card .icon-telegram svg {
+            width: 24px;
+            height: 24px;
+        }
+        .register-card .icon-diia {
+            background: #000;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            width: 28px;
+            height: 18px;
+        }
+
+        .register-card > div.divider {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin: 18px 0;
+        }
+
+        .register-card .form-field {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        
+        .register-card .form-field input::placeholder {
+            color: #9aa0a6;
+        }
+        .register-card .form-field input:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        .register-card .field-icons {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .register-card .field-warning i {
+            width: 15px;
+            height: 15px;
+            color: #c2410c;
+        }
+        .register-card .field-icons .info-icon,
+        .register-card .field-icons .eye-icon {
+            width: 18px;
+            height: 18px;
+            color: #9aa0a6;
+            cursor: pointer;
+        }
+
+        .register-card .checkbox-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+            font-size: 14px;
+            color: #374151;
+        }
+        .register-card .checkbox-row label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .register-card .checkbox-row a {
+            color: #1a5fb4;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .register-card .checkbox-row a:hover {
+            text-decoration: underline;
+        }
+
+        .register-card form button[type="submit"] {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 16px;
+            margin-bottom: 22px;
+            border: none;
+            border-radius: 10px;
+            background: #6cb22c;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: .2px;
+            cursor: pointer;
+            transition: background .15s ease;
+        }
+        .register-card form button[type="submit"]:hover {
+            background: #5c9a23;
+        }
+
+        .register-card form > a {
+            display: block;
+            text-align: center;
+            color: #1a5fb4;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .register-card form > a:hover {
+            text-decoration: underline;
+        }
+
+        .register-card .partner-logos-block i[data-lucide="smartphone"] {
+            color: #4b5563;
+        }
     </style>
 </head>
 <body>
 
-<div class="main-wrapper">
-    <div class="left-promo">
-        <h1>Автівки,<br>перевірені<br>людьми</h1>
+<div class="topbar">
+    <div class="topbar-left">
+        <a href="#">RIA.com</a>
+        <a href="#">Автомобілі</a>
+        <a href="#">Нерухомість</a>
+        <a href="#">Автозапчастини</a>
+        <a class="ukraine-flag">
+            <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+            <rect width="1200" height="800" fill="#0057B7"/>
+            <rect width="1200" height="400" y="400" fill="#FFD700"/>
+        </svg> Збір на авто для ЗСУ</a>
     </div>
+    <div class="topbar-right">
+    <a href="#" class="topbar-icon-link">
+        <i data-lucide="heart" class="topbar-icon"></i>
+    </a>
+    
+    <a href="#" class="topbar-icon-link">
+        <i data-lucide="bell" class="topbar-icon"></i>
+    </a>
+    
+    <a href="#" class="topbar-user-link">
+        <i data-lucide="user-circle" class="topbar-icon user-avatar"></i>
+        <span>Увійти в кабінет</span>
+    </a>
+</div>
+</div>
 
-    <div class="right-auth-box">
-        <p class="auth-title">Вхід на сайт <span>AUTO.RIA</span></p>
+<header class="site-header">
+    <div class="header-top">
+        <div class="header-container">
+            
+            <div class="header-left-group">
+                <div class="header-logo">
+                    <img src="{% static 'myria/image/logo.png' %}" alt="AUTO.RIA Logo" class="logo-image">
+                </div>
 
-        <a href="{% provider_login_url 'google' %}" class="social-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="18" height="18">
+                <nav class="header-nav">
+                    <a href="#" class="nav-item">Вживані авто</a>
+                    <a href="#" class="nav-item">Нові авто</a>
+                    <a href="#" class="nav-item">Новини</a>
+            
+                    <div class="dropdown">
+                        <button class="dropdown-button">
+                            <span>Все для авто</span>
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Каталог СТО</a></li>
+                            <li><a href="#">Автозапчастини на RIA.com</a></li>
+                            <li><a href="#">16 видів перевірок на AUTO.RIA</a></li>
+                            <li><a href="#">Перевірка по номеру авто та VIN-коду</a></li>
+                            <li><a href="#">Підрахунок середньої ціни авто</a></li>
+                            <li><a href="#">Митний калькулятор</a></li>
+                            <li><a href="#">Авто з пробігом від Автодилерів</a></li>
+                            <li><a href="#">Авто з-за кордону</a></li>
+                            <li><a href="#">Відгуки про авто</a></li>
+                            <li><a href="#">Фінансування авто на AUTO.RIA</a></li>
+                            <li><a href="#">Новини про авто</a></li>
+                            <li><a href="#">Перереєструвати ТЗ через Дію</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <a href="{% url 'car_list' %}" class="btn-sell-car">
+                <i data-lucide="plus"></i> Продати авто
+            </a>
+            
+            
+        </div> 
+    </div> 
+    <div class="donation-bar">
+        <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+            <rect width="1200" height="800" fill="#0057B7"/>
+            <rect width="1200" height="400" y="400" fill="#FFD700"/>
+        </svg>
+        <a href="#" class="donation-link">Не вивозиш? А ЗСУ – так. І їм потрібне авто</a>
+    </div>
+        
+</header>
+
+
+<div class="page-wrapper">
+
+    <section class="hero-section">
+    <div class="hero-float-area">
+        <h1 class="hero-title">Автівки,<br>перевірені<br>людьми</h1>
+
+        <div class="review-bubble bubble-top-left-stars">
+            <span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-empty">☆</span>
+        </div>
+
+        <div class="review-bubble bubble-top-right">
+            Чесний продавець,<br>розказав все як є
+        </div>
+
+        <div class="review-bubble bubble-mid-left">
+            Машинка дійсно<br>в салоні
+        </div>
+
+        <div class="review-bubble bubble-bottom-left-stars">
+            <span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span><span class="star-fill">★</span>
+        </div>
+
+        <div class="review-bubble bubble-bottom-right">
+            Ну трошки фарбована
+        </div>
+
+        <div class="decor-bubble decor-top-center"></div>
+        <div class="decor-bubble decor-mid-right"></div>
+        <div class="decor-bubble decor-bottom-left"></div>
+        <div class="decor-bubble decor-bottom-right"></div>
+    </div>
+    </section>
+
+    <aside class="register-card">
+        <h2 class="card-title">Вхід на сайт <span>AUTO.RIA</span></h2>
+        <a href="{% provider_login_url 'google' %}" class="btn-social">
+            <span class="icon-google">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                     <path fill="#EA4335" d="M24 9.5c3.1 0 5.8 1.1 8 2.9l6-6C34.3 3.1 29.4 1 24 1 14.9 1 7.2 6.6 3.9 14.5l7 5.4C12.7 13.6 17.9 9.5 24 9.5z"/>
                     <path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2l7.4 5.7c4.3-4 6.8-9.9 7.2-16.9z"/>
                     <path fill="#FBBC05" d="M10.9 28.4c-.6-1.7-.9-3.5-.9-5.4s.3-3.7.9-5.4l-7-5.4C2.5 15 1 19.3 1 24s1.5 9 3.9 11.8l6-4.6z"/>
                     <path fill="#34A853" d="M24 47c5.4 0 10-1.8 13.3-4.8l-7.4-5.7c-1.9 1.3-4.3 2-5.9 2-6.1 0-11.3-4.1-13.1-9.9l-6 4.6C7.2 41.4 14.9 47 24 47z"/>
                 </svg>
+            </span>
             Увійти через Google
         </a>
 
-        <div class="divider">Або</div>
-        <div id="errorMessage" class="error-message"></div>
+        <a href="#" class="btn-social">
+            <span class="icon-telegram">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.64 8.8C16.49 10.38 15.84 14.24 15.51 16.02C15.37 16.77 15.09 17.02 14.83 17.04C14.25 17.1 13.81 16.66 13.25 16.29C12.37 15.71 11.87 15.35 11.02 14.79C10.03 14.14 10.67 13.78 11.23 13.19C11.38 13.04 13.97 10.67 14.02 10.45C14.03 10.42 14.04 10.31 13.97 10.25C13.9 10.19 13.8 10.21 13.73 10.23C13.63 10.25 12.03 11.31 8.93 13.4C8.48 13.71 8.07 13.86 7.71 13.85C7.31 13.84 6.54 13.62 5.97 13.44C5.27 13.21 4.71 13.09 4.76 12.7C4.79 12.5 5.07 12.29 5.61 12.08C8.96 10.62 11.2 9.66 12.33 9.19C15.55 7.84 16.22 7.6 16.66 7.61C16.75 7.61 16.96 7.63 17.1 7.75C17.22 7.85 17.25 8.01 17.26 8.11C17.26 8.21 16.73 8.36 16.64 8.8Z" fill="#31A3E3"/>
+                </svg>
+            </span>
+            Увійти через Telegram
+        </a>
 
-        <form id="loginForm">
+        <a href="#" class="btn-social">
+            <span class="icon-diia">Дія</span>
+            Увійти через Дію
+        </a>
+
+        <div class="divider">Або</div>
+
+        <form method="POST" id="loginForm">
             {% csrf_token %}
-            <div class="form-group">
+            <div id="errorMessage" style="display: none; color: #ea4335; font-size: 14px; margin-bottom: 15px; font-weight: 500;"></div>
+
+            {% if error %}
+                <p style="color: #ea4335; font-size: 14px; margin-bottom: 15px; font-weight: 500;">{{ error }}</p>
+            {% endif %}
+
+            <div class="form-field">
                 <input type="text" id="username" name="username" required placeholder="Телефон або e-mail">
+                <div class="field-icons">
+                    <span class="field-warning"></span>
+                    <i data-lucide="info" class="info-icon"></i>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="password" id="password" name="password" required placeholder="Пароль">
+
+            <div class="form-field">
+               <input type="password" id="password" name="password" required placeholder="Пароль">
+                <div class="field-icons">
+                    <span class="field-warning"></span>
+                    <i data-lucide="eye" class="eye-icon" id="togglePassword"></i>
+                </div>
             </div>
-            
-            <div class="options-row">
+
+            <div class="checkbox-row">
                 <label><input type="checkbox" checked> Запам'ятати мене</label>
                 <a href="#">Забули пароль?</a>
             </div>
 
-            <button type="submit" class="btn-green-submit">Увійти</button>
+            
+
+            <button type="submit">Увійти</button>
+            <a href="{% url 'register_view' %}">Зареєструватися на AUTO.RIA</a>
         </form>
 
-        <div class="register-link-box">
-            <a href="{% url 'register_view' %}">Зареєструватися на AUTO.RIA</a>
+        <div class="partner-logos-block">
+            <p style="font-size:13px; font-weight:700; color:#1a1a1a; margin-bottom:4px; margin-top: 45px;">Виникли питання?</p>
+            <p style="font-size:13px; color: #1148b6; font-weight:600; margin-bottom:8px;">Служба турботи про користувачів:</p>
+            <p style="font-size:15px; color:#4b5563; line-height: 1.5; position: relative; padding-left: 24px; margin: 0;">
+                <i data-lucide="smartphone" style="position: absolute; left: 0; top: 2px; height: 18px; width: 18px;"></i>
+                (067) 431-82-29, (093) 170-77-40,<br>
+                (050) 416-86-88, 0-800-21-00-12,<br>
+                (0432) 503-100
+            </p>
+        </div>
+
+    </aside>
+
+</div>
+
+<footer>
+    <div class="footer-banner">
+        <div class="footer-banner-inner">
+            <div class="footer-banner-text">
+                <div class="footer-app-title">AUTO.RIA<br>у вашому смартфоні</div>
+                <p class="footer-app-desc">Все для купівлі та продажу авто<br>в додатку AUTO.RIA</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        🍎
+                        <span>
+                            <span class="app-btn-label">ЗАВАНТАЖИТИ З</span>
+                            <span class="app-btn-store">App Store</span>
+                        </span>
+                    </a>
+                    <a href="#" class="app-btn">
+                        ▶
+                        <span>
+                            <span class="app-btn-label">ЗАВАНТАЖИТИ З</span>
+                            <span class="app-btn-store">Google Play</span>
+                        </span>
+                    </a>
+                    <a href="#" class="app-btn" style="background:#c00;">
+                        ⚙
+                        <span>
+                            <span class="app-btn-label">ДОСЛІДУЙ</span>
+                            <span class="app-btn-store">AppGallery</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-phones-img">
+                <img src="{% static 'myria/image/phone.webp' %}" alt="AUTO.RIA app phones">
+                
+            </div>
+
+            <div class="footer-banner-social">
+                <p class="footer-social-title">Приєднуйтесь до спільноти<br>автолюбителів AUTO.RIA</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon fb">f</a>
+                    <a href="#" class="social-icon ig">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon yt">▶</a>
+                    <a href="#" class="social-icon tw">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.213 5.567 5.95-5.567zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="social-icon tg">✈</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="footer-main">
+        <div class="footer-main-inner">
+
+            <div class="footer-col">
+                <h4>Вживані авто</h4>
+                <ul>
+                    <li><a href="#">Автодилери</a> • <a href="#">Електромобілі</a> • <a href="#">Пригнані авто</a></li>
+                    <li><a href="#">Нерозмитнені авто</a> • <a href="#">GARAGE AUTO.RIA</a></li>
+                </ul>
+                <h4>Нові авто</h4>
+                <ul>
+                    <li><a href="#">Автосалони</a> • <a href="#">Мотосалони</a> • <a href="#">Спецтехніка</a></li>
+                    <li><a href="#">Нові Електромобілі</a> • <a href="#">Автоцентр AUTO.RIA</a></li>
+                </ul>
+                <h4>Сільгосптехніка</h4>
+                <ul>
+                    <li><a href="#">Нова</a> • <a href="#">Вживані</a> • <a href="#">Оренда</a> • <a href="#">Послуги</a></li>
+                </ul>
+                <h4>Всі послуги для авто</h4>
+                <ul><li><a href="#">СТО</a></li></ul>
+                <h4>Сервіси</h4>
+                <ul>
+                    <li><a href="#">Калькулятор розмитнення</a> • <a href="#">Порівняння авто</a></li>
+                    <li><a href="#">Ціни на пальне</a> • <a href="#">Автотерміни</a> • <a href="#">Фінансування авто</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Новини</h4>
+                <ul>
+                    <li><a href="#">Тест-драйви</a> • <a href="#">Електромобілі</a> • <a href="#">Розмитнення</a></li>
+                    <li><a href="#">Онлайн-журнал</a> • <a href="#">Як підготувати авто до зими</a></li>
+                </ul>
+                <ul class="footer-standalone-links">
+                    <li><a href="#">Відгуки про авто</a></li>
+                    <li><a href="#">Авто Лідер</a></li>
+                    <li><a href="#">RIA.com для бізнесу</a></li>
+                    <li><a href="#">RIA.com Marketplaces</a></li>
+                    <li><a href="#">API для розробників</a></li>
+                    <li><a href="#">Вікіпедія про AUTO.RIA</a></li>
+                    <li><a href="#">Банк ідей</a></li>
+                    <li><a href="#">Мапа сайту</a></li>
+                    <li><a href="#">Партнерська ініціатива — Біле світло</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-help">
+                <div class="footer-help-block">
+                    <div class="footer-avatars-grid">
+                        <div>
+                            <img src="{% static 'myria/image/managers.webp' %}" alt="Avatar 1" class="footer-avatar">
+                        </div>
+                        
+                    </div>
+                    <a href="#" class="footer-help-link">Допомога по сайту<br>AUTO.RIA.com →</a>
+                </div>
+
+                <div class="footer-contact-icons">
+                    <a href="#" class="footer-contact-icon" style="color:#0088cc;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.247l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#0084ff;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.143 19.5c-1.116 0-2.199-.21-3.189-.593L5.5 19.5l.661-3.17a8.918 8.918 0 01-1.161-4.33C5 7.41 8.41 4 12.143 4 15.875 4 19 7.41 19 11.143c0 3.732-3.125 8.357-6.857 8.357z"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#7c3aed;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#ef6c00;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                    <a href="#" class="footer-contact-icon" style="color:#3cb54a;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+                    </a>
+                </div>
+
+                <a href="#" class="footer-write-btn">Написати нам</a>
+
+                <ul class="footer-legal-links">
+                    <li><a href="#">Безпечні угоди</a></li>
+                    <li><a href="#">Угода про надання послуг</a></li>
+                    <li><a href="#">Допомога по сайту AUTO.RIA.com</a></li>
+                    <li><a href="#">Політика приватності</a></li>
+                    <li><a href="#">Вакансії AUTO.RIA</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-copy">
+            <span class="ria-badge">RIA</span>
+            <p>© 2014–2026 RIA.com</p>
+        </div>
+        <div class="lang-switch">
+            <a href="#" class="active">Укр</a>
+            <a href="#">Рус</a>
+        </div>
+    </div>
+</footer>
+
 <script>
-document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
     e.preventDefault(); 
     
     const usernameField = document.getElementById('username').value;
@@ -125,6 +528,22 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     }
 });
 </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    if (togglePassword && passwordInput) {
+        togglePassword.addEventListener('click', function() {
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+            togglePassword.setAttribute('data-lucide', isHidden ? 'eye-off' : 'eye');
+            lucide.createIcons();
+        });
+    }
+  </script>
 
 </body>
 </html>

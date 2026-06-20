@@ -63,8 +63,8 @@ def profile_view(request):
 def admin_panel_view(request):
     return render(request, 'main/admin_panel.html')
 
-def add_car(request):
-    return render(request, 'main/add_car.html')
+# def add_car(request):
+#     return render(request, 'main/add_car.html')
 
 def logout_view(request):
     logout(request)
@@ -127,6 +127,8 @@ def upload_to_imgbb(file_object):
 def add_car_view(request):
     if request.method == 'POST':
         form = CarForm(request.POST, request.FILES)
+        print("FILES:", request.FILES)  # ← додай це
+        print("gallery_images:", request.FILES.getlist('gallery_images'))
         if form.is_valid():
             car = form.save(commit=False)
             

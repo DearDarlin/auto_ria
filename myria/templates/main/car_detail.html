@@ -43,28 +43,23 @@
                 <button class="gallery__prev" onclick="prevPhoto()">‹</button>
                 <button class="gallery__next" onclick="nextPhoto()">›</button>
             </div>
-            <div id="photoData"
-                data-main="{% if car.main_photo %}{{ car.main_photo }}{% endif %}"
-                data-extra="{% for img in car.images.all %}{{ img.image }}{% if not forloop.last %},{% endif %}{% endfor %}"
-                style="display:none;">
-            </div>
+            <div id="photoData" data-main="{% if car.main_photo %}{{ car.main_photo }}{% endif %}" data-extra="{% for img in car.images.all %}{{ img.image }}{% if not forloop.last %},{% endif %}{% endfor %}" style="display:none;"></div>
 
-            <!-- THUMBNAILS -->
             <div class="thumbs" id="thumbsRow">
                 {% if car.main_photo %}
                     <img src="{{ car.main_photo }}"
-                         alt="Фото 1"
-                         class="active"
-                         onclick="setPhoto(this, '{{ car.main_photo }}')">
+                        alt="Фото 1"
+                        class="active"
+                        onclick="setPhoto(this, '{{ car.main_photo }}')">
                 {% endif %}
+                
                 {% for img in car.images.all %}
                     <img src="{{ img.image }}"
-                         alt="Фото {{ forloop.counter|add:1 }}"
-                         onclick="setPhoto(this, '{{ img.image }}')">
+                        alt="Фото {{ forloop.counter|add:1 }}"
+                        onclick="setPhoto(this, '{{ img.image }}')">
                 {% endfor %}
             </div>
 
-            <!-- CAR TITLE + PRICE -->
             <div class="car-info-top">
                 <div class="car-title-block">
                     <h1>{{ car.brand }} {{ car.model_name }} {{ car.year }}</h1>

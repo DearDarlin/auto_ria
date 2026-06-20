@@ -21,7 +21,6 @@
                 <a href="#" class="user-bar__switch">Зайти як інший користувач</a>
             </div>
         </div>
-        <button class="btn-switch-user" type="button">Зайти як інший користувач</button>
     </div>
 
     <h1 class="page-title">Додавання оголошення</h1>
@@ -37,81 +36,81 @@
         </div>
     </div>
 
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" action="{% url 'add_car' %}">
         {% csrf_token %}
 
-        <!-- SECTION 1: PHOTOS -->
         <div class="form-section">
-    <div class="section-header">
-        <div class="section-header__left">
-            <div class="section-num">1</div>
-            <div class="section-title">
-                Додайте 2-3 фото з відкритим держ. номером
-                <small>щоб автоматично заповнити технічні дані авто</small>
-            </div>
-        </div>
-        <div class="section-toggle">&#8743;</div>
-    </div>
-
-    <div class="photo-section">
-        <div class="photo-upload-hint">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z" stroke="#0b66c3" stroke-width="1.2" fill="none"/>
-            </svg>
-            Ви можете редагувати фото
-        </div>
-
-        <div class="photo-grid">
-            <div class="photo-upload-box" id="mainPhotoBox" style="position: relative; overflow: hidden;">
-                <div class="upload-stub" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <svg width="32" height="28" viewBox="0 0 32 28" fill="none">
-                        <rect x="1" y="5" width="30" height="22" rx="3" stroke="#0b66c3" stroke-width="1.5"/>
-                        <circle cx="16" cy="16" r="6" stroke="#0b66c3" stroke-width="1.5"/>
-                        <path d="M12 5l2-4h4l2 4" stroke="#0b66c3" stroke-width="1.5"/>
-                    </svg>
-                    <span>Додати<br>фото</span>
+            <div class="section-header">
+                <div class="section-header__left">
+                    <div class="section-num">1</div>
+                    <div class="section-title">
+                        Додайте 2-3 фото з відкритим держ. номером
+                        <small>щоб автоматично заповнити технічні дані авто</small>
+                    </div>
                 </div>
-                
-                <img id="mainPhotoPreview" src="" alt="Прев'ю" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                
-                <input type="file" name="main_photo" id="mainPhotoInput" accept="image/*" required>
+                <div class="section-toggle">&#8743;</div>
             </div>
 
-            <div class="photo-upload-box" style="border-color:#ccc; background:#fafafa; color:#aaa;">
-                <svg width="28" height="24" viewBox="0 0 28 24" fill="none">
-                    <rect x="1" y="3" width="26" height="20" rx="3" stroke="#bbb" stroke-width="1.5"/>
-                    <circle cx="14" cy="13" r="5" stroke="#bbb" stroke-width="1.5"/>
-                    <path d="M10 3l2-3h4l2 3" stroke="#bbb" stroke-width="1.5"/>
-                </svg>
-                <span>Галерея</span>
-                <input type="file" name="gallery_images" accept="image/*" multiple>
-            </div>
-        </div>
-
-        <div id="galleryPreviewContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;"></div>
-
-        <div class="photo-how-to">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="8" r="7" stroke="#0b66c3" stroke-width="1.2"/>
-                <path d="M8 7v5M8 5v1" stroke="#0b66c3" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-            <a href="#">Як фотографувати автомобіль</a>
-        </div>
-        
-        <div>
-            <label class="form-label" style="font-size:13px; font-weight:normal; display:block; margin-bottom:6px;">
-                <a href="#" class="youtube-link">
-                    <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
-                        <rect x="1" y="1" width="16" height="12" rx="3" fill="#db3727"/>
-                        <path d="M7 4.5l5 2.5-5 2.5V4.5z" fill="#fff"/>
+            <div class="photo-section">
+                <div class="photo-upload-hint">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 1l1.5 3 3.5.5-2.5 2.5.5 3.5L8 9l-3 1.5.5-3.5L3 4.5 6.5 4z" stroke="#0b66c3" stroke-width="1.2" fill="none"/>
                     </svg>
-                    Додати відео з YouTube
-                </a>
-            </label>
-            <input type="url" name="youtube_link" id="youtube_link" placeholder="https://youtube.com/watch?v=..." style="display:none; max-width:420px;">
+                    Ви можете редагувати фото
+                </div>
+
+                <div class="photo-grid">
+                    <!-- Головне фото -->
+                    <div class="photo-upload-box" id="mainPhotoBox" style="position: relative; overflow: hidden;">
+                        <div class="upload-stub" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <svg width="32" height="28" viewBox="0 0 32 28" fill="none">
+                                <rect x="1" y="5" width="30" height="22" rx="3" stroke="#0b66c3" stroke-width="1.5"/>
+                                <circle cx="16" cy="16" r="6" stroke="#0b66c3" stroke-width="1.5"/>
+                                <path d="M12 5l2-4h4l2 4" stroke="#0b66c3" stroke-width="1.5"/>
+                            </svg>
+                            <span>Додати<br>фото</span>
+                        </div>
+                        <img id="mainPhotoPreview" src="" alt="Прев'ю" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <input type="file" name="main_photo" id="mainPhotoInput" accept="image/*" required>
+                    </div>
+
+                    <div class="photo-upload-box" id="galleryAddBtn" style="border-color:#ccc; background:#fafafa; color:#aaa; cursor:pointer;">
+                        <svg width="28" height="24" viewBox="0 0 28 24" fill="none">
+                            <rect x="1" y="3" width="26" height="20" rx="3" stroke="#bbb" stroke-width="1.5"/>
+                            <circle cx="14" cy="13" r="5" stroke="#bbb" stroke-width="1.5"/>
+                            <path d="M10 3l2-3h4l2 3" stroke="#bbb" stroke-width="1.5"/>
+                        </svg>
+                        <span>Галерея</span>
+                    </div>
+
+                    <input type="file" name="gallery_images" id="galleryInput" accept="image/*" multiple style="display:none;">
+                </div>
+
+                <div id="galleryPreviewContainer" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;"></div>
+                <div id="galleryCount" style="font-size:12px; color:#888; margin-top:4px;"></div>
+
+                <div class="photo-how-to">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <circle cx="8" cy="8" r="7" stroke="#0b66c3" stroke-width="1.2"/>
+                        <path d="M8 7v5M8 5v1" stroke="#0b66c3" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                    <a href="#">Як фотографувати автомобіль</a>
+                </div>
+
+                <div>
+                    <label class="form-label" style="font-size:13px; font-weight:normal; display:block; margin-bottom:6px;">
+                        <a href="#" class="youtube-link">
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+                                <rect x="1" y="1" width="16" height="12" rx="3" fill="#db3727"/>
+                                <path d="M7 4.5l5 2.5-5 2.5V4.5z" fill="#fff"/>
+                            </svg>
+                            Додати відео з YouTube
+                        </a>
+                    </label>
+                    <input type="url" name="youtube_link" id="youtube_link" placeholder="https://youtube.com/watch?v=..." style="display:none; max-width:420px;">
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
         <div class="form-section">
             <div class="section-header">
@@ -129,22 +128,18 @@
                     <div class="form-row__label">Тип транспорту <span class="required">*</span></div>
                     <div class="form-row__control">{{ form.transport_type }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Марка авто <span class="required">*</span></div>
                     <div class="form-row__control">{{ form.brand }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Модель авто <span class="required">*</span></div>
                     <div class="form-row__control">{{ form.model_name }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Рік випуску <span class="required">*</span></div>
                     <div class="form-row__control form-row__control--narrow">{{ form.year }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Пробіг <span class="required">*</span></div>
                     <div class="form-row__control form-row__control--narrow">
@@ -154,22 +149,18 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Тип кузова <span class="required">*</span></div>
                     <div class="form-row__control">{{ form.body_type }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Модифікація</div>
                     <div class="form-row__control">{{ form.modification }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Регіон <span class="required">*</span></div>
                     <div class="form-row__control">{{ form.region }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Місто <span class="required">*</span></div>
                     <div class="form-row__control">{{ form.city }}</div>
@@ -181,7 +172,6 @@
                         Ми безкоштовно перевіряємо авто за офіційними відкритими державними даними,
                         порталом відкритих даних і дилерськими базами, а ви отримаєте вищі місця в пошуку
                     </div>
-
                     <div class="vin-row">
                         <label for="{{ form.vin_code.id_for_label }}">VIN-код</label>
                         <div class="vin-input-wrap">
@@ -194,7 +184,6 @@
                             <a href="#" class="vin-where">ⓘ Де знайти VIN-код авто?</a>
                         </div>
                     </div>
-
                     <div class="owner-block">
                         <div class="owner-block__title">Ви власник авто?</div>
                         <div class="owner-block__desc">Розкажіть про це — покупці активно шукають авто від власників</div>
@@ -215,17 +204,14 @@
                 </div>
                 <div class="section-toggle">&#8743;</div>
             </div>
-
             <div class="section-body">
                 <div class="desc-warning">
                     <div class="desc-warning__title">В даному полі забороняється:</div>
                     <div class="desc-warning__item">Залишати посилання або контактні дані</div>
                     <div class="desc-warning__item">Пропонувати послуги (прижену під замовлення, є інші авто, допоможу вибрати)</div>
                 </div>
-
                 {{ form.description }}
                 <div class="char-counter">Доступно 2000 символів</div>
-
                 <div class="form-check" style="margin-top:12px;">
                     <input type="checkbox" id="no_dealers" name="no_dealers">
                     <label for="no_dealers">Не зацікавлений у дзвінках від автобізнесменів</label>
@@ -241,9 +227,7 @@
                 </div>
                 <div class="section-toggle">&#8743;</div>
             </div>
-
             <div class="section-body">
-
                 <div class="form-row">
                     <div class="form-row__label">Колір</div>
                     <div class="form-row__control">
@@ -256,27 +240,22 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Пригнаний з</div>
                     <div class="form-row__control">{{ form.imported_from }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Участь в ДТП</div>
                     <div class="form-row__control">{{ form.accident }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Лакофарбове покриття</div>
                     <div class="form-row__control">{{ form.paintwork }}</div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-row__label">Технічний стан</div>
                     <div class="form-row__control">{{ form.technical_state }}</div>
                 </div>
-
             </div>
         </div>
 
@@ -288,70 +267,20 @@
                 </div>
                 <div class="section-toggle">&#8743;</div>
             </div>
-
             <div class="section-body">
                 <div class="options-grid">
-
-                    <div class="option-row">
-                        <label>Кондиціонер:</label>
-                        {{ form.conditioner }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Електросклопідйомники:</label>
-                        {{ form.windows }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Матеріали салону:</label>
-                        {{ form.interior_material }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Колір салону:</label>
-                        {{ form.interior_color }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Підсилювач керма:</label>
-                        {{ form.steering_assist }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Регулювання керма:</label>
-                        {{ form.steering_adjustment }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Запасне колесо:</label>
-                        {{ form.spare_wheel }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Фари:</label>
-                        {{ form.headlights }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Регулювання сидінь по висоті:</label>
-                        {{ form.seat_height }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Пам'ять положення сидіння:</label>
-                        {{ form.seat_memory }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Підігрів сидінь:</label>
-                        {{ form.seat_heating }}
-                    </div>
-
-                    <div class="option-row">
-                        <label>Вентиляція сидінь:</label>
-                        {{ form.seat_ventilation }}
-                    </div>
-
+                    <div class="option-row"><label>Кондиціонер:</label>{{ form.conditioner }}</div>
+                    <div class="option-row"><label>Електросклопідйомники:</label>{{ form.windows }}</div>
+                    <div class="option-row"><label>Матеріали салону:</label>{{ form.interior_material }}</div>
+                    <div class="option-row"><label>Колір салону:</label>{{ form.interior_color }}</div>
+                    <div class="option-row"><label>Підсилювач керма:</label>{{ form.steering_assist }}</div>
+                    <div class="option-row"><label>Регулювання керма:</label>{{ form.steering_adjustment }}</div>
+                    <div class="option-row"><label>Запасне колесо:</label>{{ form.spare_wheel }}</div>
+                    <div class="option-row"><label>Фари:</label>{{ form.headlights }}</div>
+                    <div class="option-row"><label>Регулювання сидінь по висоті:</label>{{ form.seat_height }}</div>
+                    <div class="option-row"><label>Пам'ять положення сидіння:</label>{{ form.seat_memory }}</div>
+                    <div class="option-row"><label>Підігрів сидінь:</label>{{ form.seat_heating }}</div>
+                    <div class="option-row"><label>Вентиляція сидінь:</label>{{ form.seat_ventilation }}</div>
                 </div>
             </div>
         </div>
@@ -367,9 +296,7 @@
                 </div>
                 <div class="section-toggle">&#8743;</div>
             </div>
-
             <div class="section-body">
-
                 <div class="price-row">
                     <label>Ціна <span class="required" style="color:#db3727;">*</span></label>
                     <div class="price-input-group">
@@ -377,7 +304,6 @@
                         {{ form.currency }}
                     </div>
                 </div>
-
                 <div class="price-options">
                     <div class="form-check">
                         <input type="checkbox" id="not_cleared" name="not_cleared">
@@ -396,7 +322,6 @@
                         <label for="installment_possible">Можлива оплата частинами</label>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -421,6 +346,7 @@
 </div>
 
 <script>
+    // === YouTube ===
     document.querySelector('.youtube-link').addEventListener('click', function(e) {
         e.preventDefault();
         const inp = document.getElementById('youtube_link');
@@ -428,53 +354,98 @@
         if (inp.style.display !== 'none') inp.focus();
     });
 
+    // === Лічильник символів ===
     const desc = document.querySelector('textarea[name="description"]');
     const counter = document.querySelector('.char-counter');
     if (desc && counter) {
         desc.addEventListener('input', function() {
-            const remaining = 2000 - this.value.length;
-            counter.textContent = 'Доступно ' + remaining + ' символів';
+            counter.textContent = 'Доступно ' + (2000 - this.value.length) + ' символів';
         });
     }
 
+    // === Головне фото ===
     document.getElementById('mainPhotoInput').addEventListener('change', function(event) {
-    const file = event.target.files[0]; 
-    if (file) {
-        const reader = new FileReader();
-        
-        reader.onload = function(e) {
-            const previewImg = document.getElementById('mainPhotoPreview');
-            const stub = document.querySelector('#mainPhotoBox .upload-stub');
-            
-            previewImg.src = e.target.result; 
-            previewImg.style.display = 'block'; 
-            if(stub) stub.style.display = 'none'; 
-        }
-        
-        reader.readAsDataURL(file); 
-    }
-});
-
-    document.querySelector('input[name="gallery_images"]').addEventListener('change', function(event) {
-        const container = document.getElementById('galleryPreviewContainer');
-        container.innerHTML = ''; 
-        
-        Array.from(event.target.files).forEach(file => {
+        const file = event.target.files[0];
+        if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.width = '80px';
-                img.style.height = '60px';
-                img.style.objectFit = 'cover';
-                img.style.borderRadius = '4px';
-                img.style.border = '1px solid #ccc';
-                container.appendChild(img);
-            }
+                const previewImg = document.getElementById('mainPhotoPreview');
+                const stub = document.querySelector('#mainPhotoBox .upload-stub');
+                previewImg.src = e.target.result;
+                previewImg.style.display = 'block';
+                if (stub) stub.style.display = 'none';
+            };
             reader.readAsDataURL(file);
-        });
+        }
     });
 
+    // === Галерея ===
+    let galleryFiles = [];
+    const galleryInput = document.getElementById('galleryInput');
+    const galleryBtn = document.getElementById('galleryAddBtn');
+
+    // Клік на кнопку — відкриваємо діалог вибору файлів
+    galleryBtn.addEventListener('click', function() {
+        galleryInput.click();
+    });
+
+    function syncGalleryInput() {
+        const dt = new DataTransfer();
+        galleryFiles.forEach(f => dt.items.add(f));
+        galleryInput.files = dt.files;
+    }
+
+    function updateGalleryCount() {
+        const count = galleryFiles.length;
+        document.getElementById('galleryCount').textContent =
+            count > 0 ? 'Додано фото: ' + count : '';
+    }
+
+    function renderGalleryPreviews() {
+        const container = document.getElementById('galleryPreviewContainer');
+        container.innerHTML = '';
+        galleryFiles.forEach(function(file, index) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const wrapper = document.createElement('div');
+                wrapper.style.cssText = 'position:relative; display:inline-block;';
+
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.cssText = 'width:100px; height:75px; object-fit:cover; border-radius:6px; border:1px solid #ccc; display:block;';
+
+                const removeBtn = document.createElement('button');
+                removeBtn.type = 'button';
+                removeBtn.textContent = '✕';
+                removeBtn.style.cssText = 'position:absolute; top:3px; right:3px; background:rgba(0,0,0,0.55); color:#fff; border:none; border-radius:50%; width:20px; height:20px; font-size:12px; line-height:20px; text-align:center; cursor:pointer; padding:0;';
+                removeBtn.addEventListener('click', function() {
+                    galleryFiles.splice(index, 1);
+                    syncGalleryInput();
+                    updateGalleryCount();
+                    renderGalleryPreviews();
+                });
+
+                wrapper.appendChild(img);
+                wrapper.appendChild(removeBtn);
+                container.appendChild(wrapper);
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    galleryInput.addEventListener('change', function(event) {
+        Array.from(event.target.files).forEach(function(newFile) {
+            const isDuplicate = galleryFiles.some(function(f) {
+                return f.name === newFile.name && f.size === newFile.size;
+            });
+            if (!isDuplicate) {
+                galleryFiles.push(newFile);
+            }
+        });
+        syncGalleryInput();
+        updateGalleryCount();
+        renderGalleryPreviews();
+    });
 </script>
 
 </body>

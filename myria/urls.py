@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home, cars_list, car_detail, login_view, register_view, profile_view, logout_view, admin_panel_view, add_car
+from .views import home, cars_list, car_detail, login_view, register_view, profile_view, logout_view, admin_panel_view, add_car_view
 from . import views
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 urlpatterns = [

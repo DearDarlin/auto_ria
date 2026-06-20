@@ -350,23 +350,23 @@ a {
 
 .bubble-mid-left {
     top: 185px;
-    left: -70px;
+    left: -90px;
     border-radius: 30px 4px 30px 30px;
 }
 
 .bubble-bottom-left-stars {
-    bottom: 10px;
-    left: 100px;
+    bottom: 0px;
+    left: 90px;
     font-size: 20px;
     border-radius: 30px 4px 30px 30px;
-    padding: 10px 10px;
+    padding: 5px 10px;
     letter-spacing: 2px;
 }
 
 .bubble-bottom-right {
-    bottom: 55px;
+    bottom: 40px;
     right: -40px;
-    
+    padding: 15px 15px;
     border-radius: 4px 30px 30px 30px;
 }
 
@@ -379,8 +379,8 @@ a {
 }
 
 .decor-top-center {
-    top: 15px;
-    left: 190px;
+    top: 5px;
+    left: 100px;
     width: 60px;
     height: 22px;
     border-radius: 4px 30px 30px 30px;
@@ -395,7 +395,7 @@ a {
 }
 
 .decor-bottom-left {
-    bottom: 100px;
+    bottom: 60px;
     left: 10px;
     width: 45px;
     height: 18px;
@@ -442,8 +442,6 @@ a {
     width: auto;                    
     object-fit: contain;           
 }
-
-
 
 /* ===== REGISTRATION CARD ===== */
 .register-card {

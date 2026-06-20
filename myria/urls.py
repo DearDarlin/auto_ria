@@ -31,6 +31,7 @@ urlpatterns = [
     path('add_car/', views.add_car_view, name='add_car'),
 
     path('api/me/', views.me, name='me'),
+    path('api/my-cars/', views.my_cars, name='my_cars'),
     path('api/admin-data/', views.admin_data, name='admin_data'),
     path('api/token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

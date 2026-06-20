@@ -4,8 +4,10 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.authentication import SessionAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
@@ -96,6 +98,36 @@ def me(request):
         'is_staff': user.is_staff,
         'is_superuser': user.is_superuser,
     })
+
+
+class CsrfExemptSessionAuthentication(SessionAuthentication):
+    """SessionAuthentication без CSRF-перевірки для GET-запитів через JS."""
+    def enforce_csrf(self, request):
+        return  
+
+
+@api_view(['GET'])
+@authentication_classes([CsrfExemptSessionAuthentication, JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def my_cars(request):
+    """Отримання оголошень поточного користувача"""
+    cars = Car.objects.filter(seller=request.user).order_by('-id')
+    cars_data = []
+    for c in cars:
+        cars_data.append({
+            'id': c.id,
+            'brand': c.brand,
+            'model_name': c.model_name,
+            'year': c.year,
+            'price': str(c.price),
+            'currency': c.currency,
+            'region': c.region,
+            'city': c.city,
+            'mileage': c.mileage,
+            'main_photo': str(c.main_photo) if c.main_photo else None,
+            'transport_type': c.transport_type,
+        })
+    return Response(cars_data)
 
 
 @api_view(['GET'])
@@ -192,7 +224,6 @@ def get_all_cars(request):
         cars_data = []
         
         for c in cars:
-            # Проверяем, привязана ли машина к продавцу (seller)
             if c.seller:
                 author = c.seller.username
             else:
@@ -201,11 +232,10 @@ def get_all_cars(request):
             cars_data.append({
                 "id": c.id,
                 "brand": getattr(c, 'brand', '—'),
-                # Проверяем, как названо поле в БД: model_name или model
                 "model_name": getattr(c, 'model_name', None) or getattr(c, 'model', '—'),
                 "year": getattr(c, 'year', '—'),
                 "transport_type": getattr(c, 'transport_type', '—'),
-                "user": author  # Передаем имя продавца на фронтенд
+                "user": author  
             })
             
         return Response(cars_data)

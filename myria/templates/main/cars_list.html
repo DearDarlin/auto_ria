@@ -1,39 +1,186 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список автомобілів</title>
+    <title>Список автомобілів | AUTO.RIA</title>
+    <link rel="stylesheet" href="{% static 'myria/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Список автомобілів</h1>
 
-    {% for car in cars %}
-        <div style="margin-bottom: 20px; padding: 10px; border: 1px solid gray; display: flex; gap: 20px; align-items: center;">
-            
-            {% if car.image %}
-                <img src="{{ car.image }}" alt="{{ car.brand }}" style="width: 150px; height: 100px; object-fit: cover; border-radius: 4px;">
-            {% else %}
-                <div style="width: 150px; height: 100px; background: #eee; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #777;">
-                    Немає фото
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+    <div class="header-top">
+        <div class="header-container">
+            <div class="header-left-group">
+                <div class="header-logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'myria/image/logo.png' %}" alt="AUTO.RIA Logo" class="logo-image">
+                    </a>
                 </div>
-            {% endif %}
-
-            <div>
-                <h2>{{ car.brand }} {{ car.model }}</h2>
-                <p><b>Рік:</b> {{ car.year }} | <b>Місто:</b> {{ car.city }}</p>
-                <p><b>Пробіг:</b> {{ car.mileage }} | <b>Пальне:</b> {{ car.fuel }}</p>
-                <p style="font-size: 18px; color: green; font-weight: bold;">Ціна: ${{ car.price }}</p>
-                
-                <a href="{% url 'car_detail' car.id %}">Детальніше</a>
+                <nav class="header-nav">
+                    <a href="#" class="nav-item nav-item--active">Вживані авто</a>
+                    <a href="#" class="nav-item">Нові авто</a>
+                    <div class="dropdown">
+                        <button class="dropdown-button">
+                            <span>Все для авто</span>
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Каталог СТО</a></li>
+                            <li><a href="#">Автозапчастини на RIA.com</a></li>
+                            <li><a href="#">16 видів перевірок на AUTO.RIA</a></li>
+                            <li><a href="#">Перевірка по номеру авто та VIN-коду</a></li>
+                            <li><a href="#">Підрахунок середньої ціни авто</a></li>
+                            <li><a href="#">Митний калькулятор</a></li>
+                            <li><a href="#">Авто з пробігом від Автодилерів</a></li>
+                            <li><a href="#">Відгуки про авто</a></li>
+                            <li><a href="#">Фінансування авто на AUTO.RIA</a></li>
+                            <li><a href="#">Новини про авто</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
 
-        </div>
-    {% empty %}
-        <p>Машин у базі даних поки немає.</p>
-    {% endfor %}
+            <div class="header-right">
+                <div class="header-icons">
+                    <div class="icon-wrapper">
+                        <button class="icon-btn" title="Обране">
+                            <i data-lucide="heart"></i>
+                        </button>
+                    </div>
+                    <div class="icon-wrapper">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'profile_view' %}" style="text-decoration:none;color:inherit;">
+                        {% else %}
+                            <a href="{% url 'login_view' %}" style="text-decoration:none;color:inherit;">
+                        {% endif %}
+                            <button class="icon-btn" title="Кабінет">
+                                <i data-lucide="user"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <br>
-    <a href="{% url 'home' %}">На головну</a>
+            <a href="{% url 'add_car' %}" class="btn-sell-car">
+                <i data-lucide="plus"></i> Продати авто
+            </a>
+        </div>
+
+        <div class="donation-bar">
+            <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+                <rect width="1200" height="800" fill="#0057B7"/>
+                <rect width="1200" height="400" y="400" fill="#FFD700"/>
+            </svg>
+            <a href="#" class="donation-link">Долучайся до збору, подвоїмо кожну гривню</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="recommendations-section">
+        <div class="section-header">
+            <h2>Всі оголошення</h2>
+        </div>
+
+        <div class="cars-grid">
+            {% for car in cars %}
+            <a href="{% url 'car_detail' car.id %}" class="car-card-link">
+                <div class="car-card">
+
+                    <div class="car-image-box">
+                        {% if car.main_photo %}
+                            <img src="{{ car.main_photo }}" alt="{{ car.brand }} {{ car.model_name }}" class="car-img">
+                        {% else %}
+                            <div class="car-no-photo">Немає фото</div>
+                        {% endif %}
+
+                        <div class="photo-dots">
+                            <span class="dot dot--active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+
+                        {% if car.vin_code %}
+                        <div class="card-bottom-badges">
+                            <span class="badge-vin">🚗 Перевірений VIN</span>
+                            {% if car.region %}
+                            <span class="badge-plate">
+                                <span class="plate-ua">UA</span>
+                                {{ car.region }}
+                            </span>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+
+                        <button class="heart-btn" onclick="event.preventDefault(); toggleFav(this)">♡</button>
+                    </div>
+
+                    <div class="car-card-content">
+                        <h3 class="car-card-title">{{ car.brand }} {{ car.model_name }} {{ car.year }}</h3>
+
+                        <div class="car-card-price">
+                            <span class="price-usd">{{ car.price }} {{ car.currency }}</span>
+                        </div>
+
+                        <div class="car-card-tech">
+                            <div class="tech-row">
+                                <span class="tech-item">
+                                    <svg class="tech-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M8 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+                                    {{ car.mileage }} тис. км
+                                </span>
+                                <span class="tech-item">
+                                    <svg class="tech-icon" viewBox="0 0 16 16"><circle cx="8" cy="10" r="3" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M8 2v5M5 4l3-2 3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
+                                    {{ car.body_type|default:"—" }}
+                                </span>
+                            </div>
+                            <div class="tech-row">
+                                <span class="tech-item">
+                                    <svg class="tech-icon" viewBox="0 0 16 16"><rect x="2" y="6" width="12" height="7" rx="2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M5 6V4a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>
+                                    {{ car.color|default:"—" }}
+                                </span>
+                                <span class="tech-item">
+                                    <svg class="tech-icon" viewBox="0 0 16 16"><path d="M8 2C5.2 2 3 4.2 3 7c0 3.5 5 9 5 9s5-5.5 5-9c0-2.8-2.2-5-5-5z" stroke="currentColor" stroke-width="1.3" fill="none"/><circle cx="8" cy="7" r="1.5" fill="currentColor"/></svg>
+                                    {{ car.city }}
+                                </span>
+                            </div>
+                            <div class="card-date">{{ car.transport_type }} · {{ car.region }}</div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+            {% empty %}
+            <p style="grid-column:1/-1; text-align:center; color:#888; padding:40px 0;">
+                Наразі немає доступних автомобілів.
+            </p>
+            {% endfor %}
+        </div>
+
+        <div class="show-more-box">
+            <a href="{% url 'home' %}" class="btn-show-more">На головну</a>
+        </div>
+    </section>
+</main>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+
+    function toggleFav(btn) {
+        btn.classList.toggle('active');
+        btn.textContent = btn.classList.contains('active') ? '♥' : '♡';
+    }
+</script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="{% static 'myria/main.js' %}"></script>
 </body>
 </html>

@@ -60,7 +60,6 @@
                 </div>
 
                 <div class="photo-grid">
-                    <!-- Головне фото -->
                     <div class="photo-upload-box" id="mainPhotoBox" style="position: relative; overflow: hidden;">
                         <div class="upload-stub" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
                             <svg width="32" height="28" viewBox="0 0 32 28" fill="none">
@@ -445,6 +444,45 @@
         syncGalleryInput();
         updateGalleryCount();
         renderGalleryPreviews();
+    });
+
+
+    const transportTypeSelect = document.getElementById('id_transport_type');
+    const brandSelect = document.getElementById('id_brand');
+    const modelSelect = document.getElementById('id_model_name');
+
+    transportTypeSelect.addEventListener('change', function() {
+        const typeValue = this.value;
+
+        brandSelect.innerHTML = '<option value="">---------</option>';
+        modelSelect.innerHTML = '<option value="">---------</option>';
+
+        if (typeValue) {
+            fetch(`/ajax/load-brands/?transport_type=${encodeURIComponent(typeValue)}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(brand => {
+                        brandSelect.innerHTML += `<option value="${brand.id}">${brand.name}</option>`;
+                    });
+                })
+                .catch(error => console.error('Помилка завантаження марок:', error));
+        }
+    });
+    brandSelect.addEventListener('change', function() {
+        const brandId = this.value;
+
+        modelSelect.innerHTML = '<option value="">---------</option>';
+
+        if (brandId) {
+            fetch(`/ajax/load-models/?brand_id=${brandId}`)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(model => {
+                        modelSelect.innerHTML += `<option value="${model.id}">${model.name}</option>`;
+                    });
+                })
+                .catch(error => console.error('Помилка завантаження моделей:', error));
+        }
     });
 </script>
 

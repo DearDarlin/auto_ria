@@ -3,18 +3,35 @@ from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 import datetime
 
-def current_year():
-    return datetime.date.today().year
 
-class Car(models.Model):
-
-    TRANSPORT_CHOICES = [
+TRANSPORT_CHOICES = [
         ('Легкові', 'Легкові'), ('Мото', 'Мото'), ('Вантажівки', 'Вантажівки'),
         ('Причепи', 'Причепи'), ('Спецтехніка', 'Спецтехніка'), 
         ('Сільгосптехніка', 'Сільгосптехніка'), ('Автобуси', 'Автобуси'),
         ('Водний транспорт', 'Водний транспорт'), ('Повітряний транспорт', 'Повітряний транспорт'),
         ('Автобудинки', 'Автобудинки'),
     ]
+
+def current_year():
+    return datetime.date.today().year
+
+class Brand(models.Model):
+    transport_type = models.CharField(max_length=50, choices=TRANSPORT_CHOICES, verbose_name="Тип транспорту")
+    name = models.CharField(max_length=100, verbose_name="Марка авто")
+
+    def __str__(self):
+        return f"{self.name} {self.transport_type}"
+    
+class CarModel(models.Model):
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='models', verbose_name="Тип транспорту")
+    name = models.CharField(max_length=100, verbose_name="Модель")
+
+    def __str__(self):
+        return self.name
+
+class Car(models.Model):
+
+    
 
     REGION_CHOICES = [
         ('Київ', 'Київ'), ('Вінниця', 'Вінниця'), ('Кропивницький', 'Кропивницький (Кіровоград)'),
@@ -64,8 +81,8 @@ class Car(models.Model):
     youtube_link = models.URLField(max_length=255, blank=True, null=True, verbose_name="Додати відео з YouTube")
 
     transport_type = models.CharField(max_length=50, choices=TRANSPORT_CHOICES, verbose_name="Тип транспорту")
-    brand = models.CharField(max_length=100, verbose_name="Марка авто")
-    model_name = models.CharField(max_length=100, verbose_name="Модель авто")
+    brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True, verbose_name="Марка авто")
+    model_name = models.ForeignKey(CarModel, on_delete=models.SET_NULL, null=True,max_length=100, verbose_name="Модель авто")
     
     year = models.IntegerField(
         validators=[MinValueValidator(1900), MaxValueValidator(current_year)],

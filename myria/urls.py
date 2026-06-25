@@ -41,4 +41,7 @@ urlpatterns = [
     path('api/admin/cars/', views.get_all_cars, name='admin_cars_list'),
     path('api/admin/cars/<int:car_id>/delete/', views.delete_car, name='admin_delete_car'),
 
+    path('ajax/load-brands/', views.load_brands, name='ajax_load_brands'),
+    path('ajax/load-models/', views.load_models, name='ajax_load_models'),
+
 ]

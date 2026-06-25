@@ -12,7 +12,8 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import status
-from .models import Car, CarImage  
+from .models import Car, CarImage, CarModel, Brand
+from django.http import JsonResponse
 from .forms import CarForm
 import requests
 
@@ -252,3 +253,13 @@ def delete_car(request, car_id):
         return Response({"message": "Оголошення успішно видалено"})
     except Car.DoesNotExist:
         return Response({"error": "Оголошення не знайдено"}, status=status.HTTP_404_NOT_FOUND)
+    
+def load_brands(request):
+    transport_type = request.GET.get('transport_type')
+    brands = Brand.objects.filter(transport_type=transport_type).order_by('name')
+    return JsonResponse(list(brands.values('id', 'name')), safe=False)
+
+def load_models(request):
+    brand_id = request.GET.get('brand_id')
+    models = CarModel.objects.filter(brand_id=brand_id).order_by('name')
+    return JsonResponse(list(models.values('id', 'name')), safe=False)

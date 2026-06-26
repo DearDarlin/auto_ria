@@ -277,18 +277,7 @@ textarea {
     flex: 1;
 }
 
-.input-group__append {
-    background: #f0f0f0;
-    border: 1px solid #d0d0d0;
-    border-left: none;
-    border-radius: 0 4px 4px 0;
-    padding: 9px 12px;
-    color: #777;
-    font-size: 13px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-}
+
 
 /* ===== CHECKBOXES ===== */
 .form-check {

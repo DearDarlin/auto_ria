@@ -14,6 +14,15 @@ class CarForm(forms.ModelForm):
         choices=[], 
         widget=forms.Select(attrs={'class': 'form-select'})
     )
+
+    mileage = forms.IntegerField(
+        min_value=0, 
+        widget=forms.NumberInput(attrs={
+            'placeholder': 'тис. км',
+            'min': '0',       
+            'step': '1',      
+            'onkeypress': 'return event.charCode >= 48 && event.charCode <= 57'
+        }))
     
     class Meta:
         model = Car
@@ -40,6 +49,7 @@ class CarForm(forms.ModelForm):
             'year': forms.Select(
                choices=get_years_choices(),
             ),
+            
   
         }
 

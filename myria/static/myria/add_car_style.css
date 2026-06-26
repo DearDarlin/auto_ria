@@ -784,7 +784,7 @@ textarea {
 /* ===== ADDITIONAL OPTIONS GRID ===== */
 .options-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 12px 24px;
 }
 

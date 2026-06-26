@@ -22,6 +22,15 @@ class CarForm(forms.ModelForm):
             'onkeypress': 'return event.charCode >= 48 && event.charCode <= 57'
         })
     )
+
+    price = forms.DecimalField(
+        min_value=1, 
+        widget=forms.NumberInput(attrs={
+            'min': '0',       
+            'step': '1',      
+            'onkeypress': 'return event.charCode >= 48 && event.charCode <= 57'
+        })
+    )
     
     class Meta:
         model = Car

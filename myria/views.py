@@ -34,30 +34,67 @@ def login_view(request):
 
 def register_view(request):
     if request.method == 'POST':
-        first_name = request.POST.get('username')  
-        last_name = request.POST.get('last_name')
-        phone_or_email = request.POST.get('phone_or_email').strip()  
-        password = request.POST.get('password')
-        system_username = phone_or_email 
-        
-        if User.objects.filter(username=system_username).exists():
+        first_name = (request.POST.get('username') or '').strip()
+        last_name = (request.POST.get('last_name') or '').strip()
+        phone_or_email = (request.POST.get('phone_or_email') or '').strip()
+        password = request.POST.get('password') or ''
+
+        errors = {}
+
+        if not first_name:
+            errors['username'] = "Введіть своє ім'я."
+
+        if not phone_or_email:
+            errors['phone_or_email'] = 'Введіть телефон або e-mail.'
+        else:
+            import re
+            is_email = '@' in phone_or_email
+            is_phone = re.fullmatch(r'[\+]?[\d\s\(\)\-]{7,15}', phone_or_email)
+
+            if is_email:
+                email_pattern = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]{2,}$')
+                if not email_pattern.match(phone_or_email):
+                    errors['phone_or_email'] = 'Введіть коректний e-mail (наприклад, user@example.com).'
+            elif not is_phone:
+                errors['phone_or_email'] = 'Введіть коректний e-mail або номер телефону.'
+
+        # Валідація пароля
+        if not password or not password.strip():
+            errors['password'] = 'Введіть пароль.'
+        elif password != password.strip():
+            errors['password'] = 'Пароль не може починатися або закінчуватися пробілами.'
+        elif ' ' in password:
+            errors['password'] = 'Пароль не може містити пробіли.'
+        elif len(password) < 4:
+            errors['password'] = 'Пароль повинен містити щонайменше 4 символів.'
+        elif password.isdigit():
+            errors['password'] = 'Пароль не може складатися лише з цифр.'
+
+        # Перевірка унікальності
+        if not errors and User.objects.filter(username=phone_or_email).exists():
+            errors['phone_or_email'] = 'Користувач з таким телефоном або e-mail вже зареєстрований!'
+
+        if errors:
             return render(request, 'main/register.html', {
-                'error': 'Користувач з таким телефоном або e-mail вже зареєстрований!'
+                'errors': errors,
+                'form_data': {
+                    'username': first_name,
+                    'last_name': last_name,
+                    'phone_or_email': phone_or_email,
+                }
             })
-            
-        user_email = ""
-        if "@" in phone_or_email:
-            user_email = phone_or_email  
+
+        user_email = phone_or_email if '@' in phone_or_email else ''
 
         user = User.objects.create_user(
-            username=system_username,  
+            username=phone_or_email,
             email=user_email,
             password=password,
-            first_name=first_name,   
-            last_name=last_name        
+            first_name=first_name,
+            last_name=last_name,
         )
         return redirect('login_view')
-            
+
     return render(request, 'main/register.html')
 
 def profile_view(request):

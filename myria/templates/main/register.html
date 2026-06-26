@@ -131,26 +131,43 @@
 
     <aside class="register-card">
         <h2 class="card-title">Реєстрація на сайті <span>AUTO.RIA</span></h2>
-        <form method="POST" action="{% url 'register_view' %}">
+
+        <style>
+            .field-error { color: #ea4335; font-size: 12px; margin-top: 4px; display: block; }
+            .form-field input.input-invalid { border-color: #ea4335 !important; }
+        </style>
+
+        <form method="POST" action="{% url 'register_view' %}" id="registerForm" novalidate>
             {% csrf_token %}
-            {% if error %}
-                <p style="color: #ea4335; font-size: 14px; margin-bottom: 10px; font-weight: 500;">{{ error }}</p>
-            {% endif %}
 
             <div class="form-field">
-                <input type="text" name="username" placeholder="Ім'я" required>
+                <input type="text" name="username" id="id_username"
+                    placeholder="Ім'я"
+                    value="{{ form_data.username|default:'' }}"
+                    class="{% if errors.username %}input-invalid{% endif %}">
+                {% if errors.username %}<span class="field-error">{{ errors.username }}</span>{% endif %}
             </div>
 
             <div class="form-field">
-                <input type="text" name="last_name" placeholder="Прізвище">
+                <input type="text" name="last_name" id="id_last_name"
+                    placeholder="Прізвище"
+                    value="{{ form_data.last_name|default:'' }}">
             </div>
 
             <div class="form-field">
-                <input type="text" name="phone_or_email" placeholder="Телефон або e-mail" required>
+                <input type="text" name="phone_or_email" id="id_phone_or_email"
+                    placeholder="Телефон або e-mail"
+                    value="{{ form_data.phone_or_email|default:'' }}"
+                    class="{% if errors.phone_or_email %}input-invalid{% endif %}">
                 <span class="field-hint" title="Введіть номер телефону або email">?</span>
+                {% if errors.phone_or_email %}<span class="field-error">{{ errors.phone_or_email }}</span>{% endif %}
             </div>
+
             <div class="form-field">
-                <input type="password" name="password" placeholder="Пароль" required>
+                <input type="password" name="password" id="id_password"
+                    placeholder="Пароль"
+                    class="{% if errors.password %}input-invalid{% endif %}">
+                {% if errors.password %}<span class="field-error">{{ errors.password }}</span>{% endif %}
             </div>
 
             <div class="checkbox-row">
@@ -382,6 +399,64 @@
     if (checkbox && btn) {
         checkbox.addEventListener('change', () => {
             btn.classList.toggle('active', checkbox.checked);
+        });
+    }
+
+    // Клієнтська валідація форми
+    const form = document.getElementById('registerForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            let valid = true;
+            form.querySelectorAll('.client-error').forEach(el => el.remove());
+            form.querySelectorAll('.input-invalid').forEach(el => el.classList.remove('input-invalid'));
+
+            function showError(inputId, message) {
+                const input = document.getElementById(inputId);
+                if (!input) return;
+                input.classList.add('input-invalid');
+                const span = document.createElement('span');
+                span.className = 'field-error client-error';
+                span.textContent = message;
+                input.parentNode.insertBefore(span, input.nextSibling);
+                valid = false;
+            }
+
+            const nameEl = document.getElementById('id_username');
+            if (nameEl && !nameEl.value.trim()) {
+                showError('id_username', "Введіть своє ім'я.");
+            }
+
+            const phoneEmail = document.getElementById('id_phone_or_email');
+            if (phoneEmail) {
+                const val = phoneEmail.value.trim();
+                if (!val) {
+                    showError('id_phone_or_email', 'Введіть телефон або e-mail.');
+                } else if (val.includes('@')) {
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)) {
+                        showError('id_phone_or_email', 'Введіть коректний e-mail (наприклад, user@example.com).');
+                    }
+                } else {
+                    if (!/^[\+]?[\d\s\(\)\-]{7,15}$/.test(val)) {
+                        showError('id_phone_or_email', 'Введіть коректний e-mail або номер телефону.');
+                    }
+                }
+            }
+
+            const pwd = document.getElementById('id_password');
+            if (pwd) {
+                const p = pwd.value;
+                if (!p || !p.trim()) {
+                    showError('id_password', 'Введіть пароль.');
+                } else if (p.includes(' ')) {
+                    showError('id_password', 'Пароль не може містити пробіли.');
+                } else if (p.length < 4) {
+                    showError('id_password', 'Пароль повинен містити щонайменше 4 символів.');
+                } else if (/^\d+$/.test(p)) {
+                    showError('id_password', 'Пароль не може складатися лише з цифр.');
+                }
+            }
+
+            if (!valid) e.preventDefault();
         });
     }
 </script>

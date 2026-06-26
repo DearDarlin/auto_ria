@@ -94,7 +94,7 @@
 
     <div class="user-bar">
         <div class="user-bar__info">
-            <div class="user-bar__avatar">U</div>
+            <div class="user-bar__avatar"><img src="{% static 'myria/image/noname.png' %}" alt="img" style="border-radius: 50%;"></div>
             <div>
                 <div class="user-bar__name">{{ request.user.get_full_name|default:request.user.username|default:"Гість" }}</div>
                 <div class="user-bar__meta">ID {{ request.user.id|default:"—" }}</div>

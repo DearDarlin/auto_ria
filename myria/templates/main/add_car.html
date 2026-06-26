@@ -451,39 +451,44 @@
     const brandSelect = document.getElementById('id_brand');
     const modelSelect = document.getElementById('id_model_name');
 
-    transportTypeSelect.addEventListener('change', function() {
-        const typeValue = this.value;
+    if (transportTypeSelect) {
+        transportTypeSelect.addEventListener('change', function() {
+            const typeValue = this.value;
 
-        brandSelect.innerHTML = '<option value="">---------</option>';
-        modelSelect.innerHTML = '<option value="">---------</option>';
+            brandSelect.innerHTML = '<option value="">Оберіть</option>';
+            modelSelect.innerHTML = '<option value="">Оберіть</option>';
 
-        if (typeValue) {
-            fetch(`/ajax/load-brands/?transport_type=${encodeURIComponent(typeValue)}`)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(brand => {
-                        brandSelect.innerHTML += `<option value="${brand.id}">${brand.name}</option>`;
-                    });
-                })
-                .catch(error => console.error('Помилка завантаження марок:', error));
-        }
-    });
-    brandSelect.addEventListener('change', function() {
-        const brandId = this.value;
+            if (typeValue) {
+                fetch(`/ajax/load-brands/?transport_type=${encodeURIComponent(typeValue)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(brand => {
+                            brandSelect.innerHTML += `<option value="${brand.id}">${brand.name}</option>`;
+                        });
+                    })
+                    .catch(error => console.error('Помилка завантаження марок:', error));
+            }
+        });
+    }
 
-        modelSelect.innerHTML = '<option value="">---------</option>';
+    if (brandSelect) {
+        brandSelect.addEventListener('change', function() {
+            const brandId = this.value;
 
-        if (brandId) {
-            fetch(`/ajax/load-models/?brand_id=${brandId}`)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(model => {
-                        modelSelect.innerHTML += `<option value="${model.id}">${model.name}</option>`;
-                    });
-                })
-                .catch(error => console.error('Помилка завантаження моделей:', error));
-        }
-    });
+            modelSelect.innerHTML = '<option value="">Оберіть</option>';
+
+            if (brandId) {
+                fetch(`/ajax/load-models/?brand_id=${brandId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(model => {
+                            modelSelect.innerHTML += `<option value="${model.id}">${model.name}</option>`;
+                        });
+                    })
+                    .catch(error => console.error('Помилка завантаження моделей:', error));
+            }
+        });
+    }
 </script>
 
 </body>

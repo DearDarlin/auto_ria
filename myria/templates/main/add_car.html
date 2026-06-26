@@ -9,7 +9,87 @@
     <link rel="stylesheet" href="{% static 'myria/add_car_style.css' %}">
 </head>
 <body>
+<div class="topbar">
+    <div class="topbar-left">
+        <a href="{% url 'home' %}">RIA.com</a>
+        <a href="#">Автомобілі</a>
+        <a href="#">Нерухомість</a>
+        <a href="#">Автозапчастини</a>
+        <a class="ukraine-flag">
+            <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+            <rect width="1200" height="800" fill="#0057B7"/>
+            <rect width="1200" height="400" y="400" fill="#FFD700"/>
+        </svg> Збір на авто для ЗСУ</a>
+    </div>
+    <div class="topbar-right">
+    <a href="#" class="topbar-icon-link">
+        <i data-lucide="heart" class="topbar-icon"></i>
+    </a>
+    
+    <a href="#" class="topbar-icon-link">
+        <i data-lucide="bell" class="topbar-icon"></i>
+    </a>
+    
+    <a href="#" class="topbar-user-link">
+        <i data-lucide="user-circle" class="topbar-icon user-avatar"></i>
+        <span>Увійти в кабінет</span>
+    </a>
+</div>
+</div>
 
+<header class="site-header">
+    <div class="header-top">
+        <div class="header-container">
+            
+            <div class="header-left-group">
+                <div class="header-logo">
+                    <img src="{% static 'myria/image/logo.png' %}" alt="AUTO.RIA Logo" class="logo-image">
+                </div>
+
+                <nav class="header-nav">
+                    <a href="#" class="nav-item">Вживані авто</a>
+                    <a href="#" class="nav-item">Нові авто</a>
+                    <a href="#" class="nav-item">Новини</a>
+            
+                    <div class="dropdown">
+                        <button class="dropdown-button">
+                            <span>Все для авто</span>
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Каталог СТО</a></li>
+                            <li><a href="#">Автозапчастини на RIA.com</a></li>
+                            <li><a href="#">16 видів перевірок на AUTO.RIA</a></li>
+                            <li><a href="#">Перевірка по номеру авто та VIN-коду</a></li>
+                            <li><a href="#">Підрахунок середньої ціни авто</a></li>
+                            <li><a href="#">Митний калькулятор</a></li>
+                            <li><a href="#">Авто з пробігом від Автодилерів</a></li>
+                            <li><a href="#">Авто з-за кордону</a></li>
+                            <li><a href="#">Відгуки про авто</a></li>
+                            <li><a href="#">Фінансування авто на AUTO.RIA</a></li>
+                            <li><a href="#">Новини про авто</a></li>
+                            <li><a href="#">Перереєструвати ТЗ через Дію</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <a href="{% url 'car_list' %}" class="btn-sell-car">
+                <i data-lucide="plus"></i> Продати авто
+            </a>
+            
+            
+        </div> 
+    </div> 
+    <div class="donation-bar">
+        <svg class="flag-ua-svg" viewBox="0 0 1200 800" width="26" height="19">
+            <rect width="1200" height="800" fill="#0057B7"/>
+            <rect width="1200" height="400" y="400" fill="#FFD700"/>
+        </svg>
+        <a href="#" class="donation-link">Не вивозиш? А ЗСУ – так. І їм потрібне авто</a>
+    </div>
+        
+</header>
 <div class="container">
 
     <div class="user-bar">
@@ -488,6 +568,10 @@
             }
         });
     }
+</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
 </script>
 
 </body>

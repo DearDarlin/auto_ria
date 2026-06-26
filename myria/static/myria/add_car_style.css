@@ -9,9 +9,259 @@ body {
     line-height: 1.5;
 }
 
-a { color: #0b66c3; text-decoration: none; }
-a:hover { text-decoration: underline; }
 
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ 
+/* ---- NAVBAR ---- */
+.topbar {
+    background: #f0f1fb;
+    border-bottom: 1px solid #e5e8ed;
+    padding: 0 20px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.topbar-left a {
+    font-size: 15px;
+    color: #4a5568;
+    font-weight: 500;    
+}
+
+.topbar-left a:hover { 
+    text-decoration: underline; 
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 105px;
+}
+
+.topbar-right a {
+    font-size: 12px;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.topbar-right a:hover { 
+   text-decoration: underline;
+}
+
+.topbar-icon {
+    width: 22px;       
+    height: 22px;
+    stroke: #4a5568;  
+    stroke-width: 1px; 
+    fill: none;        
+    transition: stroke 0.2s ease;
+}
+
+.user-avatar {
+    stroke-width: 1px; 
+    width: 32px;
+    height: 32px;
+}
+
+.ukraine-flag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    color: #4a5568;
+    font-weight: 500;
+}
+.header-top {
+    background-color: #ffffff;
+    padding: 2px 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.header-left-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Логотип */
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 60px; 
+    width: auto;
+    margin-left: -10px;
+}
+
+/* Навигация */
+.header-nav {
+    display: flex;
+    align-items: center; 
+    gap: 27px;
+    margin-left: 25px; 
+}
+
+.header-nav .nav-item {
+    text-decoration: none;
+    color: #000000;    
+    font-size: 18px;    
+    white-space: nowrap; 
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    text-decoration: underline;
+}
+
+.header-nav .nav-item:hover {
+    color: red;
+}
+
+/* Выпадающее меню  */
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0; 
+    text-decoration: underline;
+}
+
+.dropdown-button:hover {
+    color: red;
+}
+
+.chevron-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5px;
+    transition: transform 0.2s ease;
+}
+
+/* Выпадающее окно */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    z-index: 100;    
+    display: none;   
+    min-width: 280px; 
+    background-color: #ffffff;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12); 
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #252a34;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f7fa; 
+    color: #000000;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; 
+}
+
+/* Правая часть с иконками */
+.header-right {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Кнопка "Продати авто" */
+.btn-sell-car {
+    display: inline-flex;     
+    align-items: center;      
+    justify-content: center;   
+    gap: 6px;                  
+    background-color: rgb(96, 212, 50);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 40px;        
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 1;           
+    white-space: nowrap;
+    margin-left: 50px;
+
+}
+
+.btn-sell-car:hover {
+    background-color: #e2e2e2;
+    
+}
+
+.donation-bar {
+    padding: 15px 250px;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    background-color: white;
+    text-decoration: none;
+    margin-top: -20px;
+}
+
+.donation-link {
+    color: #1148b6;
+    font-weight: 500;
+}
+
+.flag-ua-svg {
+    margin-right: 8px; 
+    border-radius: 2px; 
+    display: inline-block;
+    vertical-align: middle;
+}
 .container {
     max-width: 860px;
     margin: 0 auto;

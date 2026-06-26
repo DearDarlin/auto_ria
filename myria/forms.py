@@ -7,8 +7,6 @@ def get_years_choices():
     years =[(str(y), str(y)) for y in range(current_year, 1899, -1)]
     return [('', 'Оберіть')] + years
 
-
-
 class CarForm(forms.ModelForm):
     ransport_type = forms.ChoiceField(
         choices=[], 

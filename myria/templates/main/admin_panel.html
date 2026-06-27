@@ -80,14 +80,13 @@
     function authFetch(url, extra = {}) {
         const headers = {
             ...(extra.headers || {}),
-            ...(token
-                ? { 'Authorization': 'Bearer ' + token }
-                : { 'X-CSRFToken': '{{ csrf_token }}' })
+            'X-CSRFToken': '{{ csrf_token }}',
+            ...(token ? { 'Authorization': 'Bearer ' + token } : {})
         };
         const options = {
             ...extra,
             headers,
-            ...(token ? {} : { credentials: 'include' })
+            credentials: 'include'
         };
         return fetch(url, options);
     }

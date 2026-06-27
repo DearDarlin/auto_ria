@@ -103,9 +103,11 @@ def register_view(request):
 
     return render(request, 'main/register.html')
 
+@login_required(login_url='login_view')
 def profile_view(request):
     return render(request, 'main/profile.html')
 
+@login_required(login_url='login_view')
 def admin_panel_view(request):
     return render(request, 'main/admin_panel.html')
 
@@ -127,6 +129,17 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
+
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        if response.status_code == 200:
+            from django.contrib.auth import authenticate, login as django_login
+            username = request.data.get('username')
+            password = request.data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user:
+                django_login(request, user)
+        return response
 
 
 @api_view(['GET'])

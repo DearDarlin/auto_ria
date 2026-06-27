@@ -12,7 +12,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import status
-from .models import Car, CarImage, CarModel, Brand
+from .models import Car, CarImage, CarModel, Brand, City
 from django.http import JsonResponse
 from .forms import CarForm
 import requests
@@ -300,3 +300,10 @@ def load_models(request):
     brand_id = request.GET.get('brand_id')
     models = CarModel.objects.filter(brand_id=brand_id).order_by('name')
     return JsonResponse(list(models.values('id', 'name')), safe=False)
+
+def load_cities(request):
+    region_id = request.GET.get('region_id')
+    if region_id:
+        cities = City.objects.filter(region_id=region_id).order_by('name')
+        return JsonResponse(list(cities.values('id', 'name')), safe=False)
+    return JsonResponse([], safe=False)

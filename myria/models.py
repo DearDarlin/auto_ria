@@ -12,6 +12,17 @@ TRANSPORT_CHOICES = [
         ('Автобудинки', 'Автобудинки'),
     ]
 
+REGION_CHOICES = [
+        ('Київ', 'Київ'), ('Вінниця', 'Вінниця'), ('Кропивницький', 'Кропивницький (Кіровоград)'),
+        ('Полтава', 'Полтава'), ('Черкаси', 'Черкаси'), ('Тернопіль', 'Тернопіль'),
+        ('Хмельницький', 'Хмельницький'), ('Львів', 'Львів'), ('Рівне', 'Рівне'),
+        ('Івано-Франківськ', 'Івано-Франківськ'), ('Луцьк', 'Луцьк'), ('Ужгород', 'Ужгород'),
+        ('Чернівці', 'Чернівці'), ('Харків', 'Харків'), ('Дніпро', 'Дніпро (Дніпропетровськ)'),
+        ('Донецька обл.', 'Донецька обл.'), ('Запоріжжя', 'Запоріжжя'), ('Одеса', 'Одеса'),
+        ('Миколаїв', 'Миколаїв'), ('Херсон', 'Херсон'), ('Житомир', 'Житомир'),
+        ('Чернігів', 'Чернігів'), ('Суми', 'Суми'),
+    ]
+
 def current_year():
     return datetime.date.today().year
 
@@ -23,26 +34,26 @@ class Brand(models.Model):
         return f"{self.name} {self.transport_type}"
     
 class CarModel(models.Model):
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='models', verbose_name="Тип транспорту")
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='models', verbose_name="Марка авто")
     name = models.CharField(max_length=100, verbose_name="Модель")
+
+    def __str__(self):
+        return self.name
+    
+class Region(models.Model):
+    name = models.CharField(max_length=50, choices=REGION_CHOICES, verbose_name="Регіон")
+
+    def __str__(self):
+        return self.get_name_display()
+
+class City(models.Model):
+    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name='cities', verbose_name="Регіон")
+    name = models.CharField(max_length=100, verbose_name="Місто")
 
     def __str__(self):
         return self.name
 
 class Car(models.Model):
-
-    
-
-    REGION_CHOICES = [
-        ('Київ', 'Київ'), ('Вінниця', 'Вінниця'), ('Кропивницький', 'Кропивницький (Кіровоград)'),
-        ('Полтава', 'Полтава'), ('Черкаси', 'Черкаси'), ('Тернопіль', 'Тернопіль'),
-        ('Хмельницький', 'Хмельницький'), ('Львів', 'Львів'), ('Рівне', 'Рівне'),
-        ('Івано-Франківськ', 'Івано-Франківськ'), ('Луцьк', 'Луцьк'), ('Ужгород', 'Ужгород'),
-        ('Чернівці', 'Чернівці'), ('Харків', 'Харків'), ('Дніпро', 'Дніпро (Дніпропетровськ)'),
-        ('Донецька обл.', 'Донецька обл.'), ('Запоріжжя', 'Запоріжжя'), ('Одеса', 'Одеса'),
-        ('Миколаїв', 'Миколаїв'), ('Херсон', 'Херсон'), ('Житомир', 'Житомир'),
-        ('Чернігів', 'Чернігів'), ('Суми', 'Суми'),
-    ]
 
     COUNTRY_CHOICES = [
         ('Австралія', 'Австралія'), ('Австрія', 'Австрія'), ('Алжир', 'Алжир'), ('Англія', 'Англія'),
@@ -75,6 +86,25 @@ class Car(models.Model):
     HEATING_VENT_CHOICES = [('Передні сидіння', 'Передні сидіння'), ('Передні та задні сидіння', 'Передні та задні сидіння')]
     CURRENCY_CHOICES = [('$', '$'), ('€', '€'), ('грн.', 'грн.')]
 
+    PAINT_CHOICES = [
+        ('perfect', 'Як нове\nОригінальне лакофарбове покриття, без слідів користування та підфарбовувань'),
+        ('repaired', 'Професійно виправлені сліди використання\nНаприклад, повторне лакування, дрібний ремонт, рихтування невеликих вм\'ятин'),
+        ('not_repaired', 'Невиправлені сліди використання\nНормальне зношення, наприклад, невеликі вм\'ятини, подряпини лакофарбового покриття, сколи'),
+    ]
+
+    CONDITION_CHOICES = [
+        ('perfect', 'Повністю непошкоджене\nПошкодження відсутні'),
+        ('repaired', 'Професійно відремонтовані пошкодження\nПошкодження усунуті, не потребує ремонту'),
+        ('damaged', 'Невідремонтовані пошкодження\nВнаслідок бойових дій чи ДТП, пошкодження кузова, несправність рульового управління, коробки передач, осей, сліди граду, тощо'),
+        ('not_running', 'Не на ходу / На запчастини\nВнаслідок бойових дій, ДТП чи пожежі, несправності двигуна, тощо'),
+    ]
+
+    COLOR_CHOICES = [
+        ('beige', 'Бежевий'), ('black', 'Чорний'), ('blue', 'Синій'), ('brown', 'Коричневий'),
+        ('green', 'Зелений'), ('grey', 'Сірий'), ('orange', 'Помаранчевий'), ('purple', 'Фолетовий'),
+        ('red', 'Червоний'), ('white', 'Білий'), ('yellow', 'Жовтий'),
+    ]
+
     seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name='my_cars', null=True, blank=True)
     
     main_photo = models.ImageField(upload_to='cars_photos/', blank=True, null=True, verbose_name="Головне фото")
@@ -92,20 +122,17 @@ class Car(models.Model):
     body_type = models.CharField(max_length=100, verbose_name="Тип кузова", blank=True, null=True)
     modification = models.CharField(max_length=100, blank=True, null=True, verbose_name="Модифікація")
     
-    region = models.CharField(max_length=50, choices=REGION_CHOICES, verbose_name="Регіон")
-    city = models.CharField(max_length=100, verbose_name="Місто")
+    region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True, verbose_name="Регіон")
+    city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, verbose_name="Місто")
     vin_code = models.CharField(max_length=17, blank=True, null=True, verbose_name="VIN-код")
     is_owner = models.BooleanField(default=True, verbose_name="Ви власник авто?")
 
 
     description = models.TextField(max_length=2000, verbose_name="Опис автомобіля")
 
-    color = models.CharField(max_length=50, verbose_name="Колір")
     imported_from = models.CharField(max_length=50, choices=COUNTRY_CHOICES, blank=True, null=True, verbose_name="Пригнаний з")
     accident = models.CharField(max_length=50, choices=ACCIDENT_CHOICES, blank=True, null=True, verbose_name="Участь в ДТП")
-    paintwork = models.CharField(max_length=100, blank=True, null=True, verbose_name="Лакофарбове покриття")
-    technical_state = models.CharField(max_length=100, blank=True, null=True, verbose_name="Технічний стан")
-
+    
     conditioner = models.CharField(max_length=50, choices=CONDITIONER_CHOICES, blank=True, null=True, verbose_name="Кондиціонер")
     windows = models.CharField(max_length=50, choices=WINDOWS_CHOICES, blank=True, null=True, verbose_name="Електросклопідйомники")
     interior_material = models.CharField(max_length=50, choices=MATERIAL_CHOICES, blank=True, null=True, verbose_name="Матеріали салону")
@@ -119,6 +146,10 @@ class Car(models.Model):
     seat_heating = models.CharField(max_length=50, choices=HEATING_VENT_CHOICES, blank=True, null=True, verbose_name="Підігрів сидінь")
     seat_ventilation = models.CharField(max_length=50, choices=HEATING_VENT_CHOICES, blank=True, null=True, verbose_name="Вентиляція сидінь")
 
+    paint_condition = models.CharField(max_length=30, choices=PAINT_CHOICES, default='perfect', verbose_name="Лакофарбове покриття")
+    technical_condition = models.CharField(max_length=30, choices=CONDITION_CHOICES, default='perfect', verbose_name="Технічний стан")
+    color = models.CharField(max_length=20, choices=COLOR_CHOICES, default='white', verbose_name="Колір")
+    is_metallic = models.BooleanField(default=False, verbose_name="Металік")
 
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Ціна")
     currency = models.CharField(max_length=10, choices=CURRENCY_CHOICES, default='$', verbose_name="Валюта")

@@ -306,10 +306,10 @@
                 <div class="section-toggle">&#8743;</div>
             </div>
             <div class="section-body">
-                <div class="form-row">
+                <div class="form-row form-row--color">
                     <div class="form-row__label">Колір</div>
                     <div class="form-row__control">
-                        <div class="color-row">
+                        <div class="color-picker-block">
                             {{ form.color }}
                             <div class="metallic-check">
                                 <input type="checkbox" id="is_metallic" name="is_metallic">
@@ -328,11 +328,11 @@
                 </div>
                 <div class="form-row">
                     <div class="form-row__label">Лакофарбове покриття</div>
-                    <div class="form-row__control">{{ form.paintwork }}</div>
+                    <div class="form-row__control">{{ form.paint_condition }}</div>
                 </div>
                 <div class="form-row">
                     <div class="form-row__label">Технічний стан</div>
-                    <div class="form-row__control">{{ form.technical_state }}</div>
+                    <div class="form-row__control">{{ form.technical_condition }}</div>
                 </div>
             </div>
         </div>
@@ -462,7 +462,6 @@
     const galleryInput = document.getElementById('galleryInput');
     const galleryBtn = document.getElementById('galleryAddBtn');
 
-    // Клік на кнопку — відкриваємо діалог вибору файлів
     galleryBtn.addEventListener('click', function() {
         galleryInput.click();
     });
@@ -568,6 +567,156 @@
             }
         });
     }
+
+    const regionSelect = document.getElementById('id_region');
+    const citySelect = document.getElementById('id_city');
+
+    if (regionSelect && citySelect) {
+        regionSelect.addEventListener('change', function() {
+            const regionId = this.value;
+
+            citySelect.innerHTML = '<option value="">Оберіть</option>';
+
+            if (regionId) {
+                fetch(`/ajax/load-cities/?region_id=${regionId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(city => {
+                            citySelect.innerHTML += `<option value="${city.id}">${city.name}</option>`;
+                        });
+                    })
+                    .catch(error => console.error('Помилка завантаження міст:', error));
+            }
+        });
+    }
+
+    var COLOR_HEX = {
+        'beige': '#f5f5dc', 'black': '#111111', 'blue': '#0d6efd',
+        'brown': '#795548', 'green': '#198754', 'grey': '#6c757d',
+        'orange': '#fd7e14', 'purple': '#6f42c1', 'red': '#dc3545',
+        'white': '#ffffff', 'yellow': '#ffc107'
+    };
+
+    function buildCustomSelect(nativeSelect, renderOption, renderTrigger) {
+        nativeSelect.style.display = 'none';
+
+        var wrapper = document.createElement('div');
+        wrapper.className = 'custom-select-wrapper';
+        nativeSelect.parentNode.insertBefore(wrapper, nativeSelect);
+        wrapper.appendChild(nativeSelect);
+
+        var trigger = document.createElement('div');
+        trigger.className = 'custom-select-trigger';
+
+        var optionsContainer = document.createElement('div');
+        optionsContainer.className = 'custom-options';
+
+        wrapper.appendChild(trigger);
+        wrapper.appendChild(optionsContainer);
+
+        function updateTrigger() {
+            var sel = nativeSelect.options[nativeSelect.selectedIndex];
+            trigger.innerHTML = '';
+            if (sel) renderTrigger(trigger, sel);
+        }
+
+        Array.from(nativeSelect.options).forEach(function(option) {
+            var optDiv = document.createElement('div');
+            optDiv.className = 'custom-option';
+            optDiv.dataset.value = option.value;
+            renderOption(optDiv, option);
+
+            optDiv.addEventListener('click', function(e) {
+                e.stopPropagation();
+                nativeSelect.value = this.dataset.value;
+                nativeSelect.dispatchEvent(new Event('change'));
+                updateTrigger();
+                wrapper.classList.remove('open');
+            });
+
+            optionsContainer.appendChild(optDiv);
+        });
+
+        updateTrigger();
+
+        trigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelectorAll('.custom-select-wrapper').forEach(function(w) {
+                if (w !== wrapper) w.classList.remove('open');
+            });
+            wrapper.classList.toggle('open');
+        });
+    }
+
+    ['id_paint_condition', 'id_technical_condition'].forEach(function(id) {
+        var sel = document.getElementById(id);
+        if (!sel) return;
+
+        buildCustomSelect(sel,
+            function(optDiv, option) {
+                var parts = option.text.split('|||');
+                if (parts.length > 1) {
+                    optDiv.innerHTML = '<span class="option-title">' + parts[0].trim() + '</span><span class="option-desc">' + parts[1].trim() + '</span>';
+                } else {
+                    optDiv.innerHTML = '<span class="option-title">' + option.text + '</span>';
+                }
+            },
+            function(trigger, option) {
+                var parts = option.text.split('|||');
+                trigger.textContent = parts[0].trim() || 'Оберіть';
+            }
+        );
+    });
+
+    (function() {
+        var sel = document.getElementById('id_color');
+        if (!sel) return;
+
+        if (!sel.options[0] || sel.options[0].value !== '') {
+            var emptyOpt = document.createElement('option');
+            emptyOpt.value = '';
+            emptyOpt.text = 'Оберіть';
+            sel.insertBefore(emptyOpt, sel.options[0]);
+        }
+        sel.selectedIndex = 0;
+
+        buildCustomSelect(sel,
+            function(optDiv, option) {
+                if (!option.value) {
+                    optDiv.innerHTML = '<span class="option-title">' + option.text + '</span>';
+                    return;
+                }
+                var hex = COLOR_HEX[option.value] || '#ccc';
+                optDiv.innerHTML =
+                    '<span class="color-swatch-inline" style="background:' + hex + ';' +
+                    (option.value === 'white' ? 'border:1px solid #ccc;' : '') + '"></span>' +
+                    '<span class="option-title">' + option.text + '</span>';
+                optDiv.style.flexDirection = 'row';
+                optDiv.style.alignItems = 'center';
+                optDiv.style.gap = '10px';
+            },
+            function(trigger, option) {
+                if (!option.value) {
+                    trigger.textContent = 'Оберіть';
+                    return;
+                }
+                var hex = COLOR_HEX[option.value] || '#ccc';
+                trigger.innerHTML =
+                    '<span class="color-swatch-inline" style="background:' + hex + ';' +
+                    (option.value === 'white' ? 'border:1px solid #ccc;' : '') + '"></span>' +
+                    '<span>' + option.text + '</span>';
+                trigger.style.display = 'flex';
+                trigger.style.alignItems = 'center';
+                trigger.style.gap = '10px';
+            }
+        );
+    })();
+
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.custom-select-wrapper').forEach(function(w) {
+            w.classList.remove('open');
+        });
+    });
 </script>
 <script src="https://unpkg.com/lucide@latest"></script>
   <script>

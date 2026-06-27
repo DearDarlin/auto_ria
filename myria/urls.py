@@ -43,5 +43,6 @@ urlpatterns = [
 
     path('ajax/load-brands/', views.load_brands, name='ajax_load_brands'),
     path('ajax/load-models/', views.load_models, name='ajax_load_models'),
+    path('ajax/load-cities/', views.load_cities, name='ajax_load_cities'),
 
 ]

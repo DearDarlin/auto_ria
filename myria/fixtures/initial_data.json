@@ -1,0 +1,8131 @@
+[
+  {
+    "model": "myria.brand",
+    "pk": 1,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Toyota"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 2,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Volkswagen"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 3,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "BMW"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 4,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Mercedes-Benz"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 5,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Audi"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 6,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Skoda"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 7,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Renault"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 8,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Peugeot"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 9,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Ford"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 10,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Hyundai"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 11,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Kia"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 12,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Opel"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 13,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Nissan"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 14,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Honda"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 15,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Mazda"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 16,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Chevrolet"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 17,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Mitsubishi"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 18,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Subaru"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 19,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Seat"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 20,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Fiat"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 21,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Volvo"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 22,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Lexus"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 23,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Jeep"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 24,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Land Rover"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 25,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Porsche"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 26,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Lada (ВАЗ)"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 27,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Daewoo"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 28,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "ZAZ"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 29,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Geely"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 30,
+    "fields": {
+      "transport_type": "Легкові",
+      "name": "Chery"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 31,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "Honda"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 32,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "Yamaha"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 33,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "Kawasaki"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 34,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "Suzuki"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 35,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "BMW Motorrad"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 36,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "Ducati"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 37,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "Harley-Davidson"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 38,
+    "fields": {
+      "transport_type": "Мото",
+      "name": "KTM"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 39,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "Mercedes-Benz Trucks"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 40,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "Volvo Trucks"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 41,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "MAN"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 42,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "DAF"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 43,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "Scania"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 44,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "Iveco"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 45,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "Renault Trucks"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 46,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "КАМАЗ"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 47,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "МАЗ"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 48,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "ГАЗ"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 49,
+    "fields": {
+      "transport_type": "Вантажівки",
+      "name": "ЗИЛ"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 50,
+    "fields": {
+      "transport_type": "Причепи",
+      "name": "Schmitz Cargobull"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 51,
+    "fields": {
+      "transport_type": "Причепи",
+      "name": "Kögel"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 52,
+    "fields": {
+      "transport_type": "Причепи",
+      "name": "Wielton"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 53,
+    "fields": {
+      "transport_type": "Причепи",
+      "name": "Бортовий причіп"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 54,
+    "fields": {
+      "transport_type": "Причепи",
+      "name": "Напівпричіп"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 55,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "Caterpillar"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 56,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "Komatsu"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 57,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "JCB"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 58,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "Liebherr"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 59,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "Volvo CE"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 60,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "Manitou"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 61,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "Bobcat"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 62,
+    "fields": {
+      "transport_type": "Спецтехніка",
+      "name": "Hitachi"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 63,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "John Deere"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 64,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "Case IH"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 65,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "New Holland"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 66,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "Claas"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 67,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "Fendt"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 68,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "МТЗ (Беларус)"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 69,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "ЮМЗ"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 70,
+    "fields": {
+      "transport_type": "Сільгосптехніка",
+      "name": "Т-150"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 71,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "Mercedes-Benz Bus"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 72,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "Volvo Bus"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 73,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "MAN Bus"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 74,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "Setra"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 75,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "Neoplan"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 76,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "Богдан"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 77,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "Etalon"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 78,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "ПАЗ"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 79,
+    "fields": {
+      "transport_type": "Автобуси",
+      "name": "ЛАЗА"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 80,
+    "fields": {
+      "transport_type": "Водний транспорт",
+      "name": "Bayliner"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 81,
+    "fields": {
+      "transport_type": "Водний транспорт",
+      "name": "Yamaha Marine"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 82,
+    "fields": {
+      "transport_type": "Водний транспорт",
+      "name": "Sea-Doo"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 83,
+    "fields": {
+      "transport_type": "Водний транспорт",
+      "name": "Моторний човен"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 84,
+    "fields": {
+      "transport_type": "Водний транспорт",
+      "name": "Надувний човен"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 85,
+    "fields": {
+      "transport_type": "Водний транспорт",
+      "name": "Катер"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 86,
+    "fields": {
+      "transport_type": "Водний транспорт",
+      "name": "Яхта"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 87,
+    "fields": {
+      "transport_type": "Повітряний транспорт",
+      "name": "Cessna"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 88,
+    "fields": {
+      "transport_type": "Повітряний транспорт",
+      "name": "Piper"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 89,
+    "fields": {
+      "transport_type": "Повітряний транспорт",
+      "name": "Robinson"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 90,
+    "fields": {
+      "transport_type": "Повітряний транспорт",
+      "name": "Дельтаплан"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 91,
+    "fields": {
+      "transport_type": "Повітряний транспорт",
+      "name": "Параплан"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 92,
+    "fields": {
+      "transport_type": "Повітряний транспорт",
+      "name": "Дрон/БПЛА"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 93,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "Dethleffs"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 94,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "Knaus"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 95,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "Hymer"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 96,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "LMC"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 97,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "Carado"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 98,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "Buerstner"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 99,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "Fiat Camper"
+    }
+  },
+  {
+    "model": "myria.brand",
+    "pk": 100,
+    "fields": {
+      "transport_type": "Автобудинки",
+      "name": "Volkswagen Camper"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 1,
+    "fields": {
+      "brand": 1,
+      "name": "Camry"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 2,
+    "fields": {
+      "brand": 1,
+      "name": "Corolla"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 3,
+    "fields": {
+      "brand": 1,
+      "name": "RAV4"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 4,
+    "fields": {
+      "brand": 1,
+      "name": "Land Cruiser"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 5,
+    "fields": {
+      "brand": 1,
+      "name": "Yaris"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 6,
+    "fields": {
+      "brand": 1,
+      "name": "Highlander"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 7,
+    "fields": {
+      "brand": 1,
+      "name": "C-HR"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 8,
+    "fields": {
+      "brand": 1,
+      "name": "Prius"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 9,
+    "fields": {
+      "brand": 1,
+      "name": "Auris"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 10,
+    "fields": {
+      "brand": 1,
+      "name": "Avensis"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 11,
+    "fields": {
+      "brand": 2,
+      "name": "Golf"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 12,
+    "fields": {
+      "brand": 2,
+      "name": "Polo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 13,
+    "fields": {
+      "brand": 2,
+      "name": "Passat"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 14,
+    "fields": {
+      "brand": 2,
+      "name": "Tiguan"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 15,
+    "fields": {
+      "brand": 2,
+      "name": "Touareg"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 16,
+    "fields": {
+      "brand": 2,
+      "name": "Jetta"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 17,
+    "fields": {
+      "brand": 2,
+      "name": "T-Roc"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 18,
+    "fields": {
+      "brand": 2,
+      "name": "Arteon"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 19,
+    "fields": {
+      "brand": 2,
+      "name": "Caddy"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 20,
+    "fields": {
+      "brand": 2,
+      "name": "Sharan"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 21,
+    "fields": {
+      "brand": 3,
+      "name": "3 Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 22,
+    "fields": {
+      "brand": 3,
+      "name": "5 Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 23,
+    "fields": {
+      "brand": 3,
+      "name": "7 Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 24,
+    "fields": {
+      "brand": 3,
+      "name": "X3"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 25,
+    "fields": {
+      "brand": 3,
+      "name": "X5"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 26,
+    "fields": {
+      "brand": 3,
+      "name": "X6"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 27,
+    "fields": {
+      "brand": 3,
+      "name": "1 Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 28,
+    "fields": {
+      "brand": 3,
+      "name": "2 Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 29,
+    "fields": {
+      "brand": 3,
+      "name": "X1"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 30,
+    "fields": {
+      "brand": 3,
+      "name": "X7"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 31,
+    "fields": {
+      "brand": 4,
+      "name": "C-Class"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 32,
+    "fields": {
+      "brand": 4,
+      "name": "E-Class"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 33,
+    "fields": {
+      "brand": 4,
+      "name": "S-Class"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 34,
+    "fields": {
+      "brand": 4,
+      "name": "GLC"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 35,
+    "fields": {
+      "brand": 4,
+      "name": "GLE"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 36,
+    "fields": {
+      "brand": 4,
+      "name": "A-Class"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 37,
+    "fields": {
+      "brand": 4,
+      "name": "B-Class"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 38,
+    "fields": {
+      "brand": 4,
+      "name": "CLA"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 39,
+    "fields": {
+      "brand": 4,
+      "name": "GLA"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 40,
+    "fields": {
+      "brand": 4,
+      "name": "GLB"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 41,
+    "fields": {
+      "brand": 5,
+      "name": "A3"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 42,
+    "fields": {
+      "brand": 5,
+      "name": "A4"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 43,
+    "fields": {
+      "brand": 5,
+      "name": "A6"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 44,
+    "fields": {
+      "brand": 5,
+      "name": "Q3"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 45,
+    "fields": {
+      "brand": 5,
+      "name": "Q5"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 46,
+    "fields": {
+      "brand": 5,
+      "name": "Q7"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 47,
+    "fields": {
+      "brand": 5,
+      "name": "A1"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 48,
+    "fields": {
+      "brand": 5,
+      "name": "A5"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 49,
+    "fields": {
+      "brand": 5,
+      "name": "TT"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 50,
+    "fields": {
+      "brand": 5,
+      "name": "e-tron"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 51,
+    "fields": {
+      "brand": 6,
+      "name": "Octavia"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 52,
+    "fields": {
+      "brand": 6,
+      "name": "Superb"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 53,
+    "fields": {
+      "brand": 6,
+      "name": "Fabia"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 54,
+    "fields": {
+      "brand": 6,
+      "name": "Karoq"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 55,
+    "fields": {
+      "brand": 6,
+      "name": "Kodiaq"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 56,
+    "fields": {
+      "brand": 6,
+      "name": "Scala"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 57,
+    "fields": {
+      "brand": 6,
+      "name": "Kamiq"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 58,
+    "fields": {
+      "brand": 6,
+      "name": "Rapid"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 59,
+    "fields": {
+      "brand": 6,
+      "name": "Yeti"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 60,
+    "fields": {
+      "brand": 6,
+      "name": "Citigo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 61,
+    "fields": {
+      "brand": 7,
+      "name": "Megane"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 62,
+    "fields": {
+      "brand": 7,
+      "name": "Clio"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 63,
+    "fields": {
+      "brand": 7,
+      "name": "Logan"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 64,
+    "fields": {
+      "brand": 7,
+      "name": "Duster"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 65,
+    "fields": {
+      "brand": 7,
+      "name": "Kadjar"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 66,
+    "fields": {
+      "brand": 7,
+      "name": "Captur"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 67,
+    "fields": {
+      "brand": 7,
+      "name": "Laguna"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 68,
+    "fields": {
+      "brand": 7,
+      "name": "Scenic"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 69,
+    "fields": {
+      "brand": 7,
+      "name": "Trafic"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 70,
+    "fields": {
+      "brand": 7,
+      "name": "Kangoo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 71,
+    "fields": {
+      "brand": 8,
+      "name": "206"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 72,
+    "fields": {
+      "brand": 8,
+      "name": "207"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 73,
+    "fields": {
+      "brand": 8,
+      "name": "208"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 74,
+    "fields": {
+      "brand": 8,
+      "name": "301"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 75,
+    "fields": {
+      "brand": 8,
+      "name": "307"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 76,
+    "fields": {
+      "brand": 8,
+      "name": "308"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 77,
+    "fields": {
+      "brand": 8,
+      "name": "3008"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 78,
+    "fields": {
+      "brand": 8,
+      "name": "5008"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 79,
+    "fields": {
+      "brand": 8,
+      "name": "407"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 80,
+    "fields": {
+      "brand": 8,
+      "name": "508"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 81,
+    "fields": {
+      "brand": 9,
+      "name": "Focus"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 82,
+    "fields": {
+      "brand": 9,
+      "name": "Fiesta"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 83,
+    "fields": {
+      "brand": 9,
+      "name": "Mondeo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 84,
+    "fields": {
+      "brand": 9,
+      "name": "Kuga"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 85,
+    "fields": {
+      "brand": 9,
+      "name": "EcoSport"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 86,
+    "fields": {
+      "brand": 9,
+      "name": "Mustang"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 87,
+    "fields": {
+      "brand": 9,
+      "name": "Explorer"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 88,
+    "fields": {
+      "brand": 9,
+      "name": "Edge"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 89,
+    "fields": {
+      "brand": 9,
+      "name": "Ranger"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 90,
+    "fields": {
+      "brand": 9,
+      "name": "Transit"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 91,
+    "fields": {
+      "brand": 10,
+      "name": "Tucson"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 92,
+    "fields": {
+      "brand": 10,
+      "name": "Elantra"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 93,
+    "fields": {
+      "brand": 10,
+      "name": "Sonata"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 94,
+    "fields": {
+      "brand": 10,
+      "name": "Santa Fe"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 95,
+    "fields": {
+      "brand": 10,
+      "name": "i30"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 96,
+    "fields": {
+      "brand": 10,
+      "name": "i20"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 97,
+    "fields": {
+      "brand": 10,
+      "name": "Accent"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 98,
+    "fields": {
+      "brand": 10,
+      "name": "Kona"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 99,
+    "fields": {
+      "brand": 10,
+      "name": "ix35"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 100,
+    "fields": {
+      "brand": 10,
+      "name": "Creta"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 101,
+    "fields": {
+      "brand": 11,
+      "name": "Sportage"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 102,
+    "fields": {
+      "brand": 11,
+      "name": "Ceed"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 103,
+    "fields": {
+      "brand": 11,
+      "name": "Rio"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 104,
+    "fields": {
+      "brand": 11,
+      "name": "Sorento"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 105,
+    "fields": {
+      "brand": 11,
+      "name": "Stinger"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 106,
+    "fields": {
+      "brand": 11,
+      "name": "Cerato"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 107,
+    "fields": {
+      "brand": 11,
+      "name": "Picanto"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 108,
+    "fields": {
+      "brand": 11,
+      "name": "Stonic"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 109,
+    "fields": {
+      "brand": 11,
+      "name": "Soul"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 110,
+    "fields": {
+      "brand": 11,
+      "name": "Carnival"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 111,
+    "fields": {
+      "brand": 12,
+      "name": "Astra"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 112,
+    "fields": {
+      "brand": 12,
+      "name": "Insignia"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 113,
+    "fields": {
+      "brand": 12,
+      "name": "Zafira"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 114,
+    "fields": {
+      "brand": 12,
+      "name": "Corsa"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 115,
+    "fields": {
+      "brand": 12,
+      "name": "Mokka"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 116,
+    "fields": {
+      "brand": 12,
+      "name": "Grandland"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 117,
+    "fields": {
+      "brand": 12,
+      "name": "Crossland"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 118,
+    "fields": {
+      "brand": 12,
+      "name": "Vectra"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 119,
+    "fields": {
+      "brand": 12,
+      "name": "Omega"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 120,
+    "fields": {
+      "brand": 12,
+      "name": "Meriva"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 121,
+    "fields": {
+      "brand": 13,
+      "name": "Qashqai"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 122,
+    "fields": {
+      "brand": 13,
+      "name": "X-Trail"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 123,
+    "fields": {
+      "brand": 13,
+      "name": "Juke"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 124,
+    "fields": {
+      "brand": 13,
+      "name": "Leaf"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 125,
+    "fields": {
+      "brand": 13,
+      "name": "Pathfinder"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 126,
+    "fields": {
+      "brand": 13,
+      "name": "Murano"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 127,
+    "fields": {
+      "brand": 13,
+      "name": "Navara"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 128,
+    "fields": {
+      "brand": 13,
+      "name": "Note"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 129,
+    "fields": {
+      "brand": 13,
+      "name": "Micra"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 130,
+    "fields": {
+      "brand": 13,
+      "name": "Sentra"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 131,
+    "fields": {
+      "brand": 14,
+      "name": "Civic"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 132,
+    "fields": {
+      "brand": 14,
+      "name": "Accord"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 133,
+    "fields": {
+      "brand": 14,
+      "name": "CR-V"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 134,
+    "fields": {
+      "brand": 14,
+      "name": "HR-V"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 135,
+    "fields": {
+      "brand": 14,
+      "name": "Jazz"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 136,
+    "fields": {
+      "brand": 14,
+      "name": "Pilot"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 137,
+    "fields": {
+      "brand": 14,
+      "name": "Fit"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 138,
+    "fields": {
+      "brand": 14,
+      "name": "Insight"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 139,
+    "fields": {
+      "brand": 14,
+      "name": "Ridgeline"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 140,
+    "fields": {
+      "brand": 14,
+      "name": "Passport"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 141,
+    "fields": {
+      "brand": 15,
+      "name": "Mazda3"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 142,
+    "fields": {
+      "brand": 15,
+      "name": "Mazda6"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 143,
+    "fields": {
+      "brand": 15,
+      "name": "CX-5"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 144,
+    "fields": {
+      "brand": 15,
+      "name": "CX-3"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 145,
+    "fields": {
+      "brand": 15,
+      "name": "CX-9"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 146,
+    "fields": {
+      "brand": 15,
+      "name": "MX-5"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 147,
+    "fields": {
+      "brand": 15,
+      "name": "CX-30"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 148,
+    "fields": {
+      "brand": 15,
+      "name": "Mazda2"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 149,
+    "fields": {
+      "brand": 15,
+      "name": "CX-7"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 150,
+    "fields": {
+      "brand": 15,
+      "name": "626"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 151,
+    "fields": {
+      "brand": 16,
+      "name": "Cruze"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 152,
+    "fields": {
+      "brand": 16,
+      "name": "Aveo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 153,
+    "fields": {
+      "brand": 16,
+      "name": "Captiva"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 154,
+    "fields": {
+      "brand": 16,
+      "name": "Lacetti"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 155,
+    "fields": {
+      "brand": 16,
+      "name": "Spark"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 156,
+    "fields": {
+      "brand": 16,
+      "name": "Equinox"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 157,
+    "fields": {
+      "brand": 16,
+      "name": "Malibu"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 158,
+    "fields": {
+      "brand": 16,
+      "name": "Traverse"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 159,
+    "fields": {
+      "brand": 16,
+      "name": "Silverado"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 160,
+    "fields": {
+      "brand": 16,
+      "name": "Blazer"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 161,
+    "fields": {
+      "brand": 17,
+      "name": "Outlander"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 162,
+    "fields": {
+      "brand": 17,
+      "name": "ASX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 163,
+    "fields": {
+      "brand": 17,
+      "name": "Lancer"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 164,
+    "fields": {
+      "brand": 17,
+      "name": "Pajero"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 165,
+    "fields": {
+      "brand": 17,
+      "name": "Eclipse Cross"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 166,
+    "fields": {
+      "brand": 17,
+      "name": "L200"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 167,
+    "fields": {
+      "brand": 17,
+      "name": "Galant"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 168,
+    "fields": {
+      "brand": 17,
+      "name": "Carisma"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 169,
+    "fields": {
+      "brand": 17,
+      "name": "Colt"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 170,
+    "fields": {
+      "brand": 17,
+      "name": "Grandis"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 171,
+    "fields": {
+      "brand": 18,
+      "name": "Forester"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 172,
+    "fields": {
+      "brand": 18,
+      "name": "Outback"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 173,
+    "fields": {
+      "brand": 18,
+      "name": "Impreza"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 174,
+    "fields": {
+      "brand": 18,
+      "name": "Legacy"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 175,
+    "fields": {
+      "brand": 18,
+      "name": "XV"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 176,
+    "fields": {
+      "brand": 18,
+      "name": "WRX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 177,
+    "fields": {
+      "brand": 18,
+      "name": "BRZ"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 178,
+    "fields": {
+      "brand": 18,
+      "name": "Crosstrek"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 179,
+    "fields": {
+      "brand": 18,
+      "name": "Tribeca"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 180,
+    "fields": {
+      "brand": 18,
+      "name": "Ascent"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 181,
+    "fields": {
+      "brand": 19,
+      "name": "Leon"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 182,
+    "fields": {
+      "brand": 19,
+      "name": "Ibiza"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 183,
+    "fields": {
+      "brand": 19,
+      "name": "Ateca"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 184,
+    "fields": {
+      "brand": 19,
+      "name": "Arona"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 185,
+    "fields": {
+      "brand": 19,
+      "name": "Toledo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 186,
+    "fields": {
+      "brand": 19,
+      "name": "Alhambra"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 187,
+    "fields": {
+      "brand": 19,
+      "name": "Tarraco"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 188,
+    "fields": {
+      "brand": 19,
+      "name": "Exeo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 189,
+    "fields": {
+      "brand": 19,
+      "name": "Cordoba"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 190,
+    "fields": {
+      "brand": 19,
+      "name": "Mii"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 191,
+    "fields": {
+      "brand": 20,
+      "name": "Punto"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 192,
+    "fields": {
+      "brand": 20,
+      "name": "500"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 193,
+    "fields": {
+      "brand": 20,
+      "name": "Tipo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 194,
+    "fields": {
+      "brand": 20,
+      "name": "Bravo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 195,
+    "fields": {
+      "brand": 20,
+      "name": "Ducato"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 196,
+    "fields": {
+      "brand": 20,
+      "name": "Doblo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 197,
+    "fields": {
+      "brand": 20,
+      "name": "Panda"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 198,
+    "fields": {
+      "brand": 20,
+      "name": "Stilo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 199,
+    "fields": {
+      "brand": 20,
+      "name": "Linea"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 200,
+    "fields": {
+      "brand": 20,
+      "name": "Freemont"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 201,
+    "fields": {
+      "brand": 21,
+      "name": "XC60"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 202,
+    "fields": {
+      "brand": 21,
+      "name": "XC90"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 203,
+    "fields": {
+      "brand": 21,
+      "name": "S60"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 204,
+    "fields": {
+      "brand": 21,
+      "name": "S90"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 205,
+    "fields": {
+      "brand": 21,
+      "name": "V40"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 206,
+    "fields": {
+      "brand": 21,
+      "name": "V60"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 207,
+    "fields": {
+      "brand": 21,
+      "name": "V90"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 208,
+    "fields": {
+      "brand": 21,
+      "name": "XC40"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 209,
+    "fields": {
+      "brand": 21,
+      "name": "C30"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 210,
+    "fields": {
+      "brand": 21,
+      "name": "C70"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 211,
+    "fields": {
+      "brand": 22,
+      "name": "RX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 212,
+    "fields": {
+      "brand": 22,
+      "name": "NX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 213,
+    "fields": {
+      "brand": 22,
+      "name": "ES"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 214,
+    "fields": {
+      "brand": 22,
+      "name": "IS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 215,
+    "fields": {
+      "brand": 22,
+      "name": "LS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 216,
+    "fields": {
+      "brand": 22,
+      "name": "GX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 217,
+    "fields": {
+      "brand": 22,
+      "name": "LX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 218,
+    "fields": {
+      "brand": 22,
+      "name": "UX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 219,
+    "fields": {
+      "brand": 22,
+      "name": "CT"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 220,
+    "fields": {
+      "brand": 22,
+      "name": "RC"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 221,
+    "fields": {
+      "brand": 23,
+      "name": "Cherokee"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 222,
+    "fields": {
+      "brand": 23,
+      "name": "Grand Cherokee"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 223,
+    "fields": {
+      "brand": 23,
+      "name": "Wrangler"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 224,
+    "fields": {
+      "brand": 23,
+      "name": "Compass"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 225,
+    "fields": {
+      "brand": 23,
+      "name": "Renegade"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 226,
+    "fields": {
+      "brand": 23,
+      "name": "Gladiator"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 227,
+    "fields": {
+      "brand": 23,
+      "name": "Commander"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 228,
+    "fields": {
+      "brand": 23,
+      "name": "Patriot"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 229,
+    "fields": {
+      "brand": 24,
+      "name": "Discovery"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 230,
+    "fields": {
+      "brand": 24,
+      "name": "Range Rover"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 231,
+    "fields": {
+      "brand": 24,
+      "name": "Freelander"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 232,
+    "fields": {
+      "brand": 24,
+      "name": "Defender"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 233,
+    "fields": {
+      "brand": 24,
+      "name": "Discovery Sport"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 234,
+    "fields": {
+      "brand": 24,
+      "name": "Range Rover Sport"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 235,
+    "fields": {
+      "brand": 24,
+      "name": "Range Rover Evoque"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 236,
+    "fields": {
+      "brand": 24,
+      "name": "Range Rover Velar"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 237,
+    "fields": {
+      "brand": 25,
+      "name": "Cayenne"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 238,
+    "fields": {
+      "brand": 25,
+      "name": "Macan"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 239,
+    "fields": {
+      "brand": 25,
+      "name": "Panamera"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 240,
+    "fields": {
+      "brand": 25,
+      "name": "911"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 241,
+    "fields": {
+      "brand": 25,
+      "name": "Taycan"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 242,
+    "fields": {
+      "brand": 25,
+      "name": "Boxster"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 243,
+    "fields": {
+      "brand": 25,
+      "name": "Cayman"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 244,
+    "fields": {
+      "brand": 25,
+      "name": "718"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 245,
+    "fields": {
+      "brand": 26,
+      "name": "2101"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 246,
+    "fields": {
+      "brand": 26,
+      "name": "2105"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 247,
+    "fields": {
+      "brand": 26,
+      "name": "2106"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 248,
+    "fields": {
+      "brand": 26,
+      "name": "2107"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 249,
+    "fields": {
+      "brand": 26,
+      "name": "2109"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 250,
+    "fields": {
+      "brand": 26,
+      "name": "2110"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 251,
+    "fields": {
+      "brand": 26,
+      "name": "2114"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 252,
+    "fields": {
+      "brand": 26,
+      "name": "2115"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 253,
+    "fields": {
+      "brand": 26,
+      "name": "Granta"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 254,
+    "fields": {
+      "brand": 26,
+      "name": "Vesta"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 255,
+    "fields": {
+      "brand": 26,
+      "name": "Largus"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 256,
+    "fields": {
+      "brand": 26,
+      "name": "Niva"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 257,
+    "fields": {
+      "brand": 26,
+      "name": "Kalina"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 258,
+    "fields": {
+      "brand": 26,
+      "name": "Priora"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 259,
+    "fields": {
+      "brand": 27,
+      "name": "Lanos"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 260,
+    "fields": {
+      "brand": 27,
+      "name": "Nexia"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 261,
+    "fields": {
+      "brand": 27,
+      "name": "Matiz"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 262,
+    "fields": {
+      "brand": 27,
+      "name": "Sens"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 263,
+    "fields": {
+      "brand": 27,
+      "name": "Nubira"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 264,
+    "fields": {
+      "brand": 27,
+      "name": "Leganza"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 265,
+    "fields": {
+      "brand": 27,
+      "name": "Tacuma"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 266,
+    "fields": {
+      "brand": 27,
+      "name": "Kalos"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 267,
+    "fields": {
+      "brand": 28,
+      "name": "Sens"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 268,
+    "fields": {
+      "brand": 28,
+      "name": "Chance"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 269,
+    "fields": {
+      "brand": 28,
+      "name": "Forza"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 270,
+    "fields": {
+      "brand": 28,
+      "name": "Slavuta"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 271,
+    "fields": {
+      "brand": 28,
+      "name": "Tavria"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 272,
+    "fields": {
+      "brand": 28,
+      "name": "Vida"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 273,
+    "fields": {
+      "brand": 29,
+      "name": "Atlas"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 274,
+    "fields": {
+      "brand": 29,
+      "name": "Coolray"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 275,
+    "fields": {
+      "brand": 29,
+      "name": "Emgrand"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 276,
+    "fields": {
+      "brand": 29,
+      "name": "Tugella"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 277,
+    "fields": {
+      "brand": 29,
+      "name": "Okavango"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 278,
+    "fields": {
+      "brand": 29,
+      "name": "Monjaro"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 279,
+    "fields": {
+      "brand": 29,
+      "name": "Boyue"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 280,
+    "fields": {
+      "brand": 29,
+      "name": "Azkarra"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 281,
+    "fields": {
+      "brand": 30,
+      "name": "Tiggo 4"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 282,
+    "fields": {
+      "brand": 30,
+      "name": "Tiggo 7"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 283,
+    "fields": {
+      "brand": 30,
+      "name": "Tiggo 8"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 284,
+    "fields": {
+      "brand": 30,
+      "name": "Arrizo 5"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 285,
+    "fields": {
+      "brand": 30,
+      "name": "QQ"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 286,
+    "fields": {
+      "brand": 30,
+      "name": "Amulet"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 287,
+    "fields": {
+      "brand": 30,
+      "name": "Bonus"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 288,
+    "fields": {
+      "brand": 30,
+      "name": "Eastar"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 289,
+    "fields": {
+      "brand": 31,
+      "name": "CBR600RR"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 290,
+    "fields": {
+      "brand": 31,
+      "name": "CB500F"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 291,
+    "fields": {
+      "brand": 31,
+      "name": "CB1000R"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 292,
+    "fields": {
+      "brand": 31,
+      "name": "Africa Twin"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 293,
+    "fields": {
+      "brand": 31,
+      "name": "Forza 750"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 294,
+    "fields": {
+      "brand": 31,
+      "name": "PCX 125"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 295,
+    "fields": {
+      "brand": 31,
+      "name": "CB125R"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 296,
+    "fields": {
+      "brand": 31,
+      "name": "Rebel 500"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 297,
+    "fields": {
+      "brand": 32,
+      "name": "YZF-R6"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 298,
+    "fields": {
+      "brand": 32,
+      "name": "MT-07"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 299,
+    "fields": {
+      "brand": 32,
+      "name": "MT-09"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 300,
+    "fields": {
+      "brand": 32,
+      "name": "Tracer 9"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 301,
+    "fields": {
+      "brand": 32,
+      "name": "TMAX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 302,
+    "fields": {
+      "brand": 32,
+      "name": "NMAX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 303,
+    "fields": {
+      "brand": 32,
+      "name": "Ténéré 700"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 304,
+    "fields": {
+      "brand": 32,
+      "name": "YZF-R1"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 305,
+    "fields": {
+      "brand": 33,
+      "name": "Ninja 400"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 306,
+    "fields": {
+      "brand": 33,
+      "name": "Z650"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 307,
+    "fields": {
+      "brand": 33,
+      "name": "Z900"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 308,
+    "fields": {
+      "brand": 33,
+      "name": "Versys 650"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 309,
+    "fields": {
+      "brand": 33,
+      "name": "Vulcan S"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 310,
+    "fields": {
+      "brand": 33,
+      "name": "Ninja ZX-10R"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 311,
+    "fields": {
+      "brand": 33,
+      "name": "Z400"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 312,
+    "fields": {
+      "brand": 33,
+      "name": "Ninja H2"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 313,
+    "fields": {
+      "brand": 34,
+      "name": "GSX-R750"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 314,
+    "fields": {
+      "brand": 34,
+      "name": "SV650"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 315,
+    "fields": {
+      "brand": 34,
+      "name": "V-Strom 650"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 316,
+    "fields": {
+      "brand": 34,
+      "name": "Burgman 400"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 317,
+    "fields": {
+      "brand": 34,
+      "name": "GSX-S750"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 318,
+    "fields": {
+      "brand": 34,
+      "name": "Katana"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 319,
+    "fields": {
+      "brand": 34,
+      "name": "Hayabusa"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 320,
+    "fields": {
+      "brand": 34,
+      "name": "Boulevard M109R"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 321,
+    "fields": {
+      "brand": 35,
+      "name": "R 1250 GS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 322,
+    "fields": {
+      "brand": 35,
+      "name": "F 850 GS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 323,
+    "fields": {
+      "brand": 35,
+      "name": "S 1000 RR"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 324,
+    "fields": {
+      "brand": 35,
+      "name": "R nineT"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 325,
+    "fields": {
+      "brand": 35,
+      "name": "C 400 X"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 326,
+    "fields": {
+      "brand": 35,
+      "name": "K 1600 GT"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 327,
+    "fields": {
+      "brand": 35,
+      "name": "F 750 GS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 328,
+    "fields": {
+      "brand": 35,
+      "name": "G 310 R"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 329,
+    "fields": {
+      "brand": 36,
+      "name": "Panigale V4"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 330,
+    "fields": {
+      "brand": 36,
+      "name": "Monster"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 331,
+    "fields": {
+      "brand": 36,
+      "name": "Multistrada"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 332,
+    "fields": {
+      "brand": 36,
+      "name": "Scrambler"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 333,
+    "fields": {
+      "brand": 36,
+      "name": "Diavel"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 334,
+    "fields": {
+      "brand": 36,
+      "name": "Hypermotard"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 335,
+    "fields": {
+      "brand": 36,
+      "name": "SuperSport"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 336,
+    "fields": {
+      "brand": 36,
+      "name": "Desert Sled"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 337,
+    "fields": {
+      "brand": 37,
+      "name": "Sportster"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 338,
+    "fields": {
+      "brand": 37,
+      "name": "Softail"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 339,
+    "fields": {
+      "brand": 37,
+      "name": "Touring"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 340,
+    "fields": {
+      "brand": 37,
+      "name": "Dyna"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 341,
+    "fields": {
+      "brand": 37,
+      "name": "Street"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 342,
+    "fields": {
+      "brand": 37,
+      "name": "LiveWire"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 343,
+    "fields": {
+      "brand": 37,
+      "name": "Pan America"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 344,
+    "fields": {
+      "brand": 37,
+      "name": "Nightster"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 345,
+    "fields": {
+      "brand": 38,
+      "name": "Duke 390"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 346,
+    "fields": {
+      "brand": 38,
+      "name": "Duke 790"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 347,
+    "fields": {
+      "brand": 38,
+      "name": "Adventure 890"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 348,
+    "fields": {
+      "brand": 38,
+      "name": "SMC-R 690"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 349,
+    "fields": {
+      "brand": 38,
+      "name": "RC 390"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 350,
+    "fields": {
+      "brand": 38,
+      "name": "1290 Super Duke"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 351,
+    "fields": {
+      "brand": 38,
+      "name": "EXC 300"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 352,
+    "fields": {
+      "brand": 38,
+      "name": "Freeride"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 353,
+    "fields": {
+      "brand": 39,
+      "name": "Actros"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 354,
+    "fields": {
+      "brand": 39,
+      "name": "Atego"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 355,
+    "fields": {
+      "brand": 39,
+      "name": "Arocs"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 356,
+    "fields": {
+      "brand": 39,
+      "name": "Axor"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 357,
+    "fields": {
+      "brand": 39,
+      "name": "Sprinter"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 358,
+    "fields": {
+      "brand": 39,
+      "name": "Antos"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 359,
+    "fields": {
+      "brand": 40,
+      "name": "FH"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 360,
+    "fields": {
+      "brand": 40,
+      "name": "FM"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 361,
+    "fields": {
+      "brand": 40,
+      "name": "FMX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 362,
+    "fields": {
+      "brand": 40,
+      "name": "FL"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 363,
+    "fields": {
+      "brand": 40,
+      "name": "FE"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 364,
+    "fields": {
+      "brand": 40,
+      "name": "VNL"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 365,
+    "fields": {
+      "brand": 41,
+      "name": "TGX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 366,
+    "fields": {
+      "brand": 41,
+      "name": "TGS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 367,
+    "fields": {
+      "brand": 41,
+      "name": "TGM"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 368,
+    "fields": {
+      "brand": 41,
+      "name": "TGL"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 369,
+    "fields": {
+      "brand": 41,
+      "name": "TGE"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 370,
+    "fields": {
+      "brand": 42,
+      "name": "XF"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 371,
+    "fields": {
+      "brand": 42,
+      "name": "CF"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 372,
+    "fields": {
+      "brand": 42,
+      "name": "LF"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 373,
+    "fields": {
+      "brand": 42,
+      "name": "XG"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 374,
+    "fields": {
+      "brand": 43,
+      "name": "R Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 375,
+    "fields": {
+      "brand": 43,
+      "name": "S Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 376,
+    "fields": {
+      "brand": 43,
+      "name": "P Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 377,
+    "fields": {
+      "brand": 43,
+      "name": "G Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 378,
+    "fields": {
+      "brand": 43,
+      "name": "L Series"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 379,
+    "fields": {
+      "brand": 44,
+      "name": "Stralis"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 380,
+    "fields": {
+      "brand": 44,
+      "name": "Eurocargo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 381,
+    "fields": {
+      "brand": 44,
+      "name": "Daily"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 382,
+    "fields": {
+      "brand": 44,
+      "name": "Trakker"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 383,
+    "fields": {
+      "brand": 44,
+      "name": "S-Way"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 384,
+    "fields": {
+      "brand": 45,
+      "name": "T"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 385,
+    "fields": {
+      "brand": 45,
+      "name": "C"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 386,
+    "fields": {
+      "brand": 45,
+      "name": "K"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 387,
+    "fields": {
+      "brand": 45,
+      "name": "D"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 388,
+    "fields": {
+      "brand": 45,
+      "name": "Master"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 389,
+    "fields": {
+      "brand": 46,
+      "name": "5490"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 390,
+    "fields": {
+      "brand": 46,
+      "name": "6580"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 391,
+    "fields": {
+      "brand": 46,
+      "name": "43118"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 392,
+    "fields": {
+      "brand": 46,
+      "name": "65115"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 393,
+    "fields": {
+      "brand": 46,
+      "name": "65117"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 394,
+    "fields": {
+      "brand": 46,
+      "name": "4308"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 395,
+    "fields": {
+      "brand": 47,
+      "name": "5340"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 396,
+    "fields": {
+      "brand": 47,
+      "name": "6312"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 397,
+    "fields": {
+      "brand": 47,
+      "name": "5432"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 398,
+    "fields": {
+      "brand": 47,
+      "name": "6430"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 399,
+    "fields": {
+      "brand": 47,
+      "name": "4371"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 400,
+    "fields": {
+      "brand": 47,
+      "name": "5551"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 401,
+    "fields": {
+      "brand": 48,
+      "name": "ГАЗель Next"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 402,
+    "fields": {
+      "brand": 48,
+      "name": "ГАЗель Business"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 403,
+    "fields": {
+      "brand": 48,
+      "name": "ГАЗон Next"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 404,
+    "fields": {
+      "brand": 48,
+      "name": "Садко"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 405,
+    "fields": {
+      "brand": 49,
+      "name": "130"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 406,
+    "fields": {
+      "brand": 49,
+      "name": "131"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 407,
+    "fields": {
+      "brand": 49,
+      "name": "4331"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 408,
+    "fields": {
+      "brand": 49,
+      "name": "5301 Бычок"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 409,
+    "fields": {
+      "brand": 50,
+      "name": "S.KO"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 410,
+    "fields": {
+      "brand": 50,
+      "name": "S.CS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 411,
+    "fields": {
+      "brand": 50,
+      "name": "S.CU"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 412,
+    "fields": {
+      "brand": 50,
+      "name": "S.CF"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 413,
+    "fields": {
+      "brand": 51,
+      "name": "Cargo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 414,
+    "fields": {
+      "brand": 51,
+      "name": "Maxi"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 415,
+    "fields": {
+      "brand": 51,
+      "name": "Multi"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 416,
+    "fields": {
+      "brand": 51,
+      "name": "Overland"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 417,
+    "fields": {
+      "brand": 52,
+      "name": "NS"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 418,
+    "fields": {
+      "brand": 52,
+      "name": "NW"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 419,
+    "fields": {
+      "brand": 52,
+      "name": "PC"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 420,
+    "fields": {
+      "brand": 52,
+      "name": "NR"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 421,
+    "fields": {
+      "brand": 53,
+      "name": "Одновісний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 422,
+    "fields": {
+      "brand": 53,
+      "name": "Двовісний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 423,
+    "fields": {
+      "brand": 53,
+      "name": "Тривісний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 424,
+    "fields": {
+      "brand": 54,
+      "name": "Тентований"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 425,
+    "fields": {
+      "brand": 54,
+      "name": "Рефрижератор"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 426,
+    "fields": {
+      "brand": 54,
+      "name": "Самоскид"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 427,
+    "fields": {
+      "brand": 54,
+      "name": "Цистерна"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 428,
+    "fields": {
+      "brand": 54,
+      "name": "Контейнеровоз"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 429,
+    "fields": {
+      "brand": 55,
+      "name": "D6"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 430,
+    "fields": {
+      "brand": 55,
+      "name": "966"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 431,
+    "fields": {
+      "brand": 55,
+      "name": "320"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 432,
+    "fields": {
+      "brand": 55,
+      "name": "950"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 433,
+    "fields": {
+      "brand": 55,
+      "name": "725"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 434,
+    "fields": {
+      "brand": 55,
+      "name": "336"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 435,
+    "fields": {
+      "brand": 55,
+      "name": "906"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 436,
+    "fields": {
+      "brand": 55,
+      "name": "730"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 437,
+    "fields": {
+      "brand": 56,
+      "name": "PC210"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 438,
+    "fields": {
+      "brand": 56,
+      "name": "WA380"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 439,
+    "fields": {
+      "brand": 56,
+      "name": "D65"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 440,
+    "fields": {
+      "brand": 56,
+      "name": "HM300"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 441,
+    "fields": {
+      "brand": 56,
+      "name": "PC360"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 442,
+    "fields": {
+      "brand": 56,
+      "name": "WD900"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 443,
+    "fields": {
+      "brand": 57,
+      "name": "3CX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 444,
+    "fields": {
+      "brand": 57,
+      "name": "4CX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 445,
+    "fields": {
+      "brand": 57,
+      "name": "JS220"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 446,
+    "fields": {
+      "brand": 57,
+      "name": "Fastrac"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 447,
+    "fields": {
+      "brand": 57,
+      "name": "Loadall 533"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 448,
+    "fields": {
+      "brand": 57,
+      "name": "457"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 449,
+    "fields": {
+      "brand": 58,
+      "name": "LTM 1050"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 450,
+    "fields": {
+      "brand": 58,
+      "name": "R 924"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 451,
+    "fields": {
+      "brand": 58,
+      "name": "L 550"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 452,
+    "fields": {
+      "brand": 58,
+      "name": "LR 1200"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 453,
+    "fields": {
+      "brand": 58,
+      "name": "PR 736"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 454,
+    "fields": {
+      "brand": 59,
+      "name": "EC220"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 455,
+    "fields": {
+      "brand": 59,
+      "name": "L90"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 456,
+    "fields": {
+      "brand": 59,
+      "name": "A25"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 457,
+    "fields": {
+      "brand": 59,
+      "name": "EC140"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 458,
+    "fields": {
+      "brand": 59,
+      "name": "L60"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 459,
+    "fields": {
+      "brand": 59,
+      "name": "A40"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 460,
+    "fields": {
+      "brand": 60,
+      "name": "MT 625"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 461,
+    "fields": {
+      "brand": 60,
+      "name": "MLT 735"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 462,
+    "fields": {
+      "brand": 60,
+      "name": "MHT 10120"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 463,
+    "fields": {
+      "brand": 60,
+      "name": "MC 30"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 464,
+    "fields": {
+      "brand": 60,
+      "name": "MRT 2150"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 465,
+    "fields": {
+      "brand": 61,
+      "name": "S510"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 466,
+    "fields": {
+      "brand": 61,
+      "name": "S590"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 467,
+    "fields": {
+      "brand": 61,
+      "name": "T550"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 468,
+    "fields": {
+      "brand": 61,
+      "name": "E20"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 469,
+    "fields": {
+      "brand": 61,
+      "name": "E45"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 470,
+    "fields": {
+      "brand": 61,
+      "name": "T770"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 471,
+    "fields": {
+      "brand": 62,
+      "name": "ZX200"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 472,
+    "fields": {
+      "brand": 62,
+      "name": "ZX130"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 473,
+    "fields": {
+      "brand": 62,
+      "name": "ZX350"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 474,
+    "fields": {
+      "brand": 62,
+      "name": "ZW180"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 475,
+    "fields": {
+      "brand": 62,
+      "name": "EX120"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 476,
+    "fields": {
+      "brand": 63,
+      "name": "6120M"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 477,
+    "fields": {
+      "brand": 63,
+      "name": "8R 340"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 478,
+    "fields": {
+      "brand": 63,
+      "name": "S760"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 479,
+    "fields": {
+      "brand": 63,
+      "name": "9RX 640"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 480,
+    "fields": {
+      "brand": 63,
+      "name": "6R 155"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 481,
+    "fields": {
+      "brand": 63,
+      "name": "7R 330"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 482,
+    "fields": {
+      "brand": 63,
+      "name": "5M"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 483,
+    "fields": {
+      "brand": 63,
+      "name": "4066R"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 484,
+    "fields": {
+      "brand": 64,
+      "name": "Puma 185"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 485,
+    "fields": {
+      "brand": 64,
+      "name": "Magnum 380"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 486,
+    "fields": {
+      "brand": 64,
+      "name": "Axial-Flow 9250"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 487,
+    "fields": {
+      "brand": 64,
+      "name": "Steiger 620"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 488,
+    "fields": {
+      "brand": 64,
+      "name": "Farmall 75C"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 489,
+    "fields": {
+      "brand": 64,
+      "name": "Maxxum 150"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 490,
+    "fields": {
+      "brand": 65,
+      "name": "T7.270"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 491,
+    "fields": {
+      "brand": 65,
+      "name": "T8.410"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 492,
+    "fields": {
+      "brand": 65,
+      "name": "CR10.90"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 493,
+    "fields": {
+      "brand": 65,
+      "name": "T4.75"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 494,
+    "fields": {
+      "brand": 65,
+      "name": "Boomer 55"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 495,
+    "fields": {
+      "brand": 65,
+      "name": "T6.180"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 496,
+    "fields": {
+      "brand": 65,
+      "name": "Braud 9090X"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 497,
+    "fields": {
+      "brand": 66,
+      "name": "Axion 850"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 498,
+    "fields": {
+      "brand": 66,
+      "name": "Lexion 8900"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 499,
+    "fields": {
+      "brand": 66,
+      "name": "Arion 510"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 500,
+    "fields": {
+      "brand": 66,
+      "name": "Xerion 5000"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 501,
+    "fields": {
+      "brand": 66,
+      "name": "Tucano 580"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 502,
+    "fields": {
+      "brand": 66,
+      "name": "Jaguar 970"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 503,
+    "fields": {
+      "brand": 67,
+      "name": "724 Vario"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 504,
+    "fields": {
+      "brand": 67,
+      "name": "1050 Vario"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 505,
+    "fields": {
+      "brand": 67,
+      "name": "516 Vario"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 506,
+    "fields": {
+      "brand": 67,
+      "name": "942 Vario"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 507,
+    "fields": {
+      "brand": 67,
+      "name": "313 Vario"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 508,
+    "fields": {
+      "brand": 68,
+      "name": "80"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 509,
+    "fields": {
+      "brand": 68,
+      "name": "82"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 510,
+    "fields": {
+      "brand": 68,
+      "name": "892"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 511,
+    "fields": {
+      "brand": 68,
+      "name": "1221"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 512,
+    "fields": {
+      "brand": 68,
+      "name": "1523"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 513,
+    "fields": {
+      "brand": 68,
+      "name": "3022"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 514,
+    "fields": {
+      "brand": 68,
+      "name": "320"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 515,
+    "fields": {
+      "brand": 68,
+      "name": "юМЗ-6"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 516,
+    "fields": {
+      "brand": 69,
+      "name": "6КЛ"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 517,
+    "fields": {
+      "brand": 69,
+      "name": "6АКЛ"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 518,
+    "fields": {
+      "brand": 69,
+      "name": "6М"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 519,
+    "fields": {
+      "brand": 70,
+      "name": "Т-150К"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 520,
+    "fields": {
+      "brand": 70,
+      "name": "ХТЗ-17221"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 521,
+    "fields": {
+      "brand": 70,
+      "name": "ХТЗ-21021"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 522,
+    "fields": {
+      "brand": 71,
+      "name": "Sprinter"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 523,
+    "fields": {
+      "brand": 71,
+      "name": "Tourismo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 524,
+    "fields": {
+      "brand": 71,
+      "name": "Intouro"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 525,
+    "fields": {
+      "brand": 71,
+      "name": "Citaro"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 526,
+    "fields": {
+      "brand": 71,
+      "name": "Travego"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 527,
+    "fields": {
+      "brand": 71,
+      "name": "Tourino"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 528,
+    "fields": {
+      "brand": 72,
+      "name": "9700"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 529,
+    "fields": {
+      "brand": 72,
+      "name": "9900"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 530,
+    "fields": {
+      "brand": 72,
+      "name": "7900"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 531,
+    "fields": {
+      "brand": 72,
+      "name": "B11R"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 532,
+    "fields": {
+      "brand": 72,
+      "name": "8900"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 533,
+    "fields": {
+      "brand": 73,
+      "name": "Lion's Coach"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 534,
+    "fields": {
+      "brand": 73,
+      "name": "Lion's City"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 535,
+    "fields": {
+      "brand": 73,
+      "name": "Lion's Intercity"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 536,
+    "fields": {
+      "brand": 73,
+      "name": "A23"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 537,
+    "fields": {
+      "brand": 74,
+      "name": "S 517 HDH"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 538,
+    "fields": {
+      "brand": 74,
+      "name": "S 415 GT-HD"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 539,
+    "fields": {
+      "brand": 74,
+      "name": "S 516 HDH"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 540,
+    "fields": {
+      "brand": 74,
+      "name": "ComfortClass 500"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 541,
+    "fields": {
+      "brand": 75,
+      "name": "Cityliner"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 542,
+    "fields": {
+      "brand": 75,
+      "name": "Starliner"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 543,
+    "fields": {
+      "brand": 75,
+      "name": "Tourliner"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 544,
+    "fields": {
+      "brand": 75,
+      "name": "Skyliner"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 545,
+    "fields": {
+      "brand": 76,
+      "name": "A091"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 546,
+    "fields": {
+      "brand": 76,
+      "name": "A092"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 547,
+    "fields": {
+      "brand": 76,
+      "name": "A301"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 548,
+    "fields": {
+      "brand": 76,
+      "name": "A-534"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 549,
+    "fields": {
+      "brand": 76,
+      "name": "E201"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 550,
+    "fields": {
+      "brand": 76,
+      "name": "T701"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 551,
+    "fields": {
+      "brand": 77,
+      "name": "A079"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 552,
+    "fields": {
+      "brand": 77,
+      "name": "A147"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 553,
+    "fields": {
+      "brand": 77,
+      "name": "BАЗ-2215"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 554,
+    "fields": {
+      "brand": 77,
+      "name": "Skif"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 555,
+    "fields": {
+      "brand": 78,
+      "name": "320402"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 556,
+    "fields": {
+      "brand": 78,
+      "name": "320405"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 557,
+    "fields": {
+      "brand": 78,
+      "name": "3205"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 558,
+    "fields": {
+      "brand": 78,
+      "name": "4234"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 559,
+    "fields": {
+      "brand": 79,
+      "name": "А141"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 560,
+    "fields": {
+      "brand": 79,
+      "name": "А152"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 561,
+    "fields": {
+      "brand": 80,
+      "name": "Element"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 562,
+    "fields": {
+      "brand": 80,
+      "name": "Trophy"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 563,
+    "fields": {
+      "brand": 80,
+      "name": "VR5"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 564,
+    "fields": {
+      "brand": 80,
+      "name": "VR6"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 565,
+    "fields": {
+      "brand": 80,
+      "name": "DX2050"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 566,
+    "fields": {
+      "brand": 81,
+      "name": "242X"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 567,
+    "fields": {
+      "brand": 81,
+      "name": "190 FSH"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 568,
+    "fields": {
+      "brand": 81,
+      "name": "242 Limited"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 569,
+    "fields": {
+      "brand": 81,
+      "name": "AR190"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 570,
+    "fields": {
+      "brand": 81,
+      "name": "FX Cruiser HO"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 571,
+    "fields": {
+      "brand": 82,
+      "name": "GTX 300"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 572,
+    "fields": {
+      "brand": 82,
+      "name": "RXT-X 300"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 573,
+    "fields": {
+      "brand": 82,
+      "name": "Spark"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 574,
+    "fields": {
+      "brand": 82,
+      "name": "Fish Pro"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 575,
+    "fields": {
+      "brand": 82,
+      "name": "Wake Pro 230"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 576,
+    "fields": {
+      "brand": 83,
+      "name": "3м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 577,
+    "fields": {
+      "brand": 83,
+      "name": "4м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 578,
+    "fields": {
+      "brand": 83,
+      "name": "5м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 579,
+    "fields": {
+      "brand": 83,
+      "name": "6м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 580,
+    "fields": {
+      "brand": 84,
+      "name": "ПВХ 2м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 581,
+    "fields": {
+      "brand": 84,
+      "name": "ПВХ 3м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 582,
+    "fields": {
+      "brand": 84,
+      "name": "ПВХ 4м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 583,
+    "fields": {
+      "brand": 84,
+      "name": "ПВХ 5м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 584,
+    "fields": {
+      "brand": 85,
+      "name": "Прогулянковий"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 585,
+    "fields": {
+      "brand": 85,
+      "name": "Рибальський"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 586,
+    "fields": {
+      "brand": 85,
+      "name": "Моторний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 587,
+    "fields": {
+      "brand": 85,
+      "name": "Крейсерський"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 588,
+    "fields": {
+      "brand": 86,
+      "name": "Вітрильна"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 589,
+    "fields": {
+      "brand": 86,
+      "name": "Моторна"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 590,
+    "fields": {
+      "brand": 86,
+      "name": "Каютна"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 591,
+    "fields": {
+      "brand": 87,
+      "name": "172 Skyhawk"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 592,
+    "fields": {
+      "brand": 87,
+      "name": "182 Skylane"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 593,
+    "fields": {
+      "brand": 87,
+      "name": "Citation CJ3"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 594,
+    "fields": {
+      "brand": 87,
+      "name": "208 Caravan"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 595,
+    "fields": {
+      "brand": 87,
+      "name": "150"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 596,
+    "fields": {
+      "brand": 87,
+      "name": "T206H"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 597,
+    "fields": {
+      "brand": 88,
+      "name": "PA-28 Cherokee"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 598,
+    "fields": {
+      "brand": 88,
+      "name": "PA-32 Saratoga"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 599,
+    "fields": {
+      "brand": 88,
+      "name": "PA-46 Malibu"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 600,
+    "fields": {
+      "brand": 88,
+      "name": "Archer TX"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 601,
+    "fields": {
+      "brand": 88,
+      "name": "Seneca V"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 602,
+    "fields": {
+      "brand": 89,
+      "name": "R22"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 603,
+    "fields": {
+      "brand": 89,
+      "name": "R44"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 604,
+    "fields": {
+      "brand": 89,
+      "name": "R66"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 605,
+    "fields": {
+      "brand": 90,
+      "name": "Навчальний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 606,
+    "fields": {
+      "brand": 90,
+      "name": "Спортивний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 607,
+    "fields": {
+      "brand": 91,
+      "name": "Навчальний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 608,
+    "fields": {
+      "brand": 91,
+      "name": "Маршрутний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 609,
+    "fields": {
+      "brand": 91,
+      "name": "Акробатичний"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 610,
+    "fields": {
+      "brand": 92,
+      "name": "Мультикоптер"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 611,
+    "fields": {
+      "brand": 92,
+      "name": "Літаюче крило"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 612,
+    "fields": {
+      "brand": 92,
+      "name": "Гексакоптер"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 613,
+    "fields": {
+      "brand": 93,
+      "name": "Globebus"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 614,
+    "fields": {
+      "brand": 93,
+      "name": "Nomad"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 615,
+    "fields": {
+      "brand": 93,
+      "name": "Alpa"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 616,
+    "fields": {
+      "brand": 93,
+      "name": "Trend"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 617,
+    "fields": {
+      "brand": 93,
+      "name": "Esprit"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 618,
+    "fields": {
+      "brand": 93,
+      "name": "Beduin"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 619,
+    "fields": {
+      "brand": 94,
+      "name": "Van TI"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 620,
+    "fields": {
+      "brand": 94,
+      "name": "Boxstar"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 621,
+    "fields": {
+      "brand": 94,
+      "name": "Sun TI"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 622,
+    "fields": {
+      "brand": 94,
+      "name": "Tourer"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 623,
+    "fields": {
+      "brand": 94,
+      "name": "Sport"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 624,
+    "fields": {
+      "brand": 95,
+      "name": "B-MC T"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 625,
+    "fields": {
+      "brand": 95,
+      "name": "MLT 580"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 626,
+    "fields": {
+      "brand": 95,
+      "name": "Free 600 Campus"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 627,
+    "fields": {
+      "brand": 95,
+      "name": "B-Class MasterLine"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 628,
+    "fields": {
+      "brand": 95,
+      "name": "T-Class SL"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 629,
+    "fields": {
+      "brand": 96,
+      "name": "Innova"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 630,
+    "fields": {
+      "brand": 96,
+      "name": "Explorer"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 631,
+    "fields": {
+      "brand": 96,
+      "name": "Tourer"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 632,
+    "fields": {
+      "brand": 96,
+      "name": "Vivo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 633,
+    "fields": {
+      "brand": 96,
+      "name": "Maestro"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 634,
+    "fields": {
+      "brand": 97,
+      "name": "A 339"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 635,
+    "fields": {
+      "brand": 97,
+      "name": "T 447"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 636,
+    "fields": {
+      "brand": 97,
+      "name": "T 337"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 637,
+    "fields": {
+      "brand": 97,
+      "name": "I 447"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 638,
+    "fields": {
+      "brand": 97,
+      "name": "C 347"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 639,
+    "fields": {
+      "brand": 98,
+      "name": "Lyseo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 640,
+    "fields": {
+      "brand": 98,
+      "name": "Ixeo"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 641,
+    "fields": {
+      "brand": 98,
+      "name": "Aviano"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 642,
+    "fields": {
+      "brand": 98,
+      "name": "City Car"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 643,
+    "fields": {
+      "brand": 98,
+      "name": "Nexxo Van"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 644,
+    "fields": {
+      "brand": 99,
+      "name": "Ducato Camper 4м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 645,
+    "fields": {
+      "brand": 99,
+      "name": "Ducato Camper 5м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 646,
+    "fields": {
+      "brand": 99,
+      "name": "Ducato Camper 6м"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 647,
+    "fields": {
+      "brand": 100,
+      "name": "T5 California"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 648,
+    "fields": {
+      "brand": 100,
+      "name": "T6 California"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 649,
+    "fields": {
+      "brand": 100,
+      "name": "T6.1 California"
+    }
+  },
+  {
+    "model": "myria.carmodel",
+    "pk": 650,
+    "fields": {
+      "brand": 100,
+      "name": "Crafter Grand California"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 1,
+    "fields": {
+      "name": "Київ"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 2,
+    "fields": {
+      "name": "Вінниця"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 3,
+    "fields": {
+      "name": "Кропивницький"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 4,
+    "fields": {
+      "name": "Полтава"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 5,
+    "fields": {
+      "name": "Черкаси"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 6,
+    "fields": {
+      "name": "Тернопіль"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 7,
+    "fields": {
+      "name": "Хмельницький"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 8,
+    "fields": {
+      "name": "Львів"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 9,
+    "fields": {
+      "name": "Рівне"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 10,
+    "fields": {
+      "name": "Івано-Франківськ"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 11,
+    "fields": {
+      "name": "Луцьк"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 12,
+    "fields": {
+      "name": "Ужгород"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 13,
+    "fields": {
+      "name": "Чернівці"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 14,
+    "fields": {
+      "name": "Харків"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 15,
+    "fields": {
+      "name": "Дніпро"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 16,
+    "fields": {
+      "name": "Донецька обл."
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 17,
+    "fields": {
+      "name": "Запоріжжя"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 18,
+    "fields": {
+      "name": "Одеса"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 19,
+    "fields": {
+      "name": "Миколаїв"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 20,
+    "fields": {
+      "name": "Херсон"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 21,
+    "fields": {
+      "name": "Житомир"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 22,
+    "fields": {
+      "name": "Чернігів"
+    }
+  },
+  {
+    "model": "myria.region",
+    "pk": 23,
+    "fields": {
+      "name": "Суми"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 1,
+    "fields": {
+      "region": 1,
+      "name": "Київ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 2,
+    "fields": {
+      "region": 1,
+      "name": "Бориспіль"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 3,
+    "fields": {
+      "region": 1,
+      "name": "Бровари"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 4,
+    "fields": {
+      "region": 1,
+      "name": "Васильків"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 5,
+    "fields": {
+      "region": 1,
+      "name": "Вишневе"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 6,
+    "fields": {
+      "region": 1,
+      "name": "Ірпінь"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 7,
+    "fields": {
+      "region": 1,
+      "name": "Обухів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 8,
+    "fields": {
+      "region": 1,
+      "name": "Фастів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 9,
+    "fields": {
+      "region": 1,
+      "name": "Біла Церква"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 10,
+    "fields": {
+      "region": 1,
+      "name": "Переяслав"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 11,
+    "fields": {
+      "region": 1,
+      "name": "Бучанський р-н"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 12,
+    "fields": {
+      "region": 1,
+      "name": "Вишгород"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 13,
+    "fields": {
+      "region": 1,
+      "name": "Макарів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 14,
+    "fields": {
+      "region": 1,
+      "name": "Березань"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 15,
+    "fields": {
+      "region": 1,
+      "name": "Яготин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 16,
+    "fields": {
+      "region": 2,
+      "name": "Вінниця"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 17,
+    "fields": {
+      "region": 2,
+      "name": "Жмеринка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 18,
+    "fields": {
+      "region": 2,
+      "name": "Козятин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 19,
+    "fields": {
+      "region": 2,
+      "name": "Могилів-Подільський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 20,
+    "fields": {
+      "region": 2,
+      "name": "Бар"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 21,
+    "fields": {
+      "region": 2,
+      "name": "Гайсин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 22,
+    "fields": {
+      "region": 2,
+      "name": "Ладижин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 23,
+    "fields": {
+      "region": 2,
+      "name": "Хмільник"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 24,
+    "fields": {
+      "region": 2,
+      "name": "Тульчин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 25,
+    "fields": {
+      "region": 2,
+      "name": "Немирів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 26,
+    "fields": {
+      "region": 3,
+      "name": "Кропивницький"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 27,
+    "fields": {
+      "region": 3,
+      "name": "Олександрія"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 28,
+    "fields": {
+      "region": 3,
+      "name": "Світловодськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 29,
+    "fields": {
+      "region": 3,
+      "name": "Знам'янка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 30,
+    "fields": {
+      "region": 3,
+      "name": "Бобринець"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 31,
+    "fields": {
+      "region": 3,
+      "name": "Гайворон"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 32,
+    "fields": {
+      "region": 3,
+      "name": "Помічна"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 33,
+    "fields": {
+      "region": 3,
+      "name": "Долинська"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 34,
+    "fields": {
+      "region": 4,
+      "name": "Полтава"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 35,
+    "fields": {
+      "region": 4,
+      "name": "Кременчук"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 36,
+    "fields": {
+      "region": 4,
+      "name": "Лубни"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 37,
+    "fields": {
+      "region": 4,
+      "name": "Миргород"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 38,
+    "fields": {
+      "region": 4,
+      "name": "Пирятин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 39,
+    "fields": {
+      "region": 4,
+      "name": "Гадяч"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 40,
+    "fields": {
+      "region": 4,
+      "name": "Хорол"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 41,
+    "fields": {
+      "region": 4,
+      "name": "Глобине"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 42,
+    "fields": {
+      "region": 4,
+      "name": "Карлівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 43,
+    "fields": {
+      "region": 4,
+      "name": "Зіньків"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 44,
+    "fields": {
+      "region": 5,
+      "name": "Черкаси"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 45,
+    "fields": {
+      "region": 5,
+      "name": "Умань"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 46,
+    "fields": {
+      "region": 5,
+      "name": "Сміла"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 47,
+    "fields": {
+      "region": 5,
+      "name": "Золотоноша"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 48,
+    "fields": {
+      "region": 5,
+      "name": "Ватутіне"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 49,
+    "fields": {
+      "region": 5,
+      "name": "Канів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 50,
+    "fields": {
+      "region": 5,
+      "name": "Тальне"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 51,
+    "fields": {
+      "region": 5,
+      "name": "Корсунь-Шевченківський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 52,
+    "fields": {
+      "region": 5,
+      "name": "Монастирище"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 53,
+    "fields": {
+      "region": 5,
+      "name": "Христинівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 54,
+    "fields": {
+      "region": 6,
+      "name": "Тернопіль"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 55,
+    "fields": {
+      "region": 6,
+      "name": "Кременець"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 56,
+    "fields": {
+      "region": 6,
+      "name": "Чортків"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 57,
+    "fields": {
+      "region": 6,
+      "name": "Бережани"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 58,
+    "fields": {
+      "region": 6,
+      "name": "Збараж"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 59,
+    "fields": {
+      "region": 6,
+      "name": "Зборів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 60,
+    "fields": {
+      "region": 6,
+      "name": "Теребовля"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 61,
+    "fields": {
+      "region": 6,
+      "name": "Підволочиськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 62,
+    "fields": {
+      "region": 6,
+      "name": "Борщів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 63,
+    "fields": {
+      "region": 6,
+      "name": "Бучач"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 64,
+    "fields": {
+      "region": 7,
+      "name": "Хмельницький"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 65,
+    "fields": {
+      "region": 7,
+      "name": "Кам'янець-Подільський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 66,
+    "fields": {
+      "region": 7,
+      "name": "Шепетівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 67,
+    "fields": {
+      "region": 7,
+      "name": "Нетішин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 68,
+    "fields": {
+      "region": 7,
+      "name": "Славута"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 69,
+    "fields": {
+      "region": 7,
+      "name": "Старокостянтинів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 70,
+    "fields": {
+      "region": 7,
+      "name": "Дунаївці"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 71,
+    "fields": {
+      "region": 7,
+      "name": "Ізяслав"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 72,
+    "fields": {
+      "region": 7,
+      "name": "Полонне"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 73,
+    "fields": {
+      "region": 7,
+      "name": "Красилів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 74,
+    "fields": {
+      "region": 8,
+      "name": "Львів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 75,
+    "fields": {
+      "region": 8,
+      "name": "Дрогобич"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 76,
+    "fields": {
+      "region": 8,
+      "name": "Стрий"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 77,
+    "fields": {
+      "region": 8,
+      "name": "Трускавець"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 78,
+    "fields": {
+      "region": 8,
+      "name": "Борислав"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 79,
+    "fields": {
+      "region": 8,
+      "name": "Червоноград"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 80,
+    "fields": {
+      "region": 8,
+      "name": "Самбір"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 81,
+    "fields": {
+      "region": 8,
+      "name": "Новий Розділ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 82,
+    "fields": {
+      "region": 8,
+      "name": "Золочів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 83,
+    "fields": {
+      "region": 8,
+      "name": "Моршин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 84,
+    "fields": {
+      "region": 8,
+      "name": "Броди"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 85,
+    "fields": {
+      "region": 8,
+      "name": "Яворів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 86,
+    "fields": {
+      "region": 8,
+      "name": "Городок"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 87,
+    "fields": {
+      "region": 8,
+      "name": "Жовква"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 88,
+    "fields": {
+      "region": 8,
+      "name": "Пустомити"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 89,
+    "fields": {
+      "region": 9,
+      "name": "Рівне"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 90,
+    "fields": {
+      "region": 9,
+      "name": "Дубно"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 91,
+    "fields": {
+      "region": 9,
+      "name": "Острог"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 92,
+    "fields": {
+      "region": 9,
+      "name": "Здолбунів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 93,
+    "fields": {
+      "region": 9,
+      "name": "Костопіль"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 94,
+    "fields": {
+      "region": 9,
+      "name": "Корець"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 95,
+    "fields": {
+      "region": 9,
+      "name": "Рокитне"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 96,
+    "fields": {
+      "region": 9,
+      "name": "Березне"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 97,
+    "fields": {
+      "region": 9,
+      "name": "Сарни"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 98,
+    "fields": {
+      "region": 9,
+      "name": "Радивилів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 99,
+    "fields": {
+      "region": 10,
+      "name": "Івано-Франківськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 100,
+    "fields": {
+      "region": 10,
+      "name": "Калуш"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 101,
+    "fields": {
+      "region": 10,
+      "name": "Коломия"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 102,
+    "fields": {
+      "region": 10,
+      "name": "Надвірна"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 103,
+    "fields": {
+      "region": 10,
+      "name": "Яремче"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 104,
+    "fields": {
+      "region": 10,
+      "name": "Долина"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 105,
+    "fields": {
+      "region": 10,
+      "name": "Болехів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 106,
+    "fields": {
+      "region": 10,
+      "name": "Тисмениця"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 107,
+    "fields": {
+      "region": 10,
+      "name": "Галич"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 108,
+    "fields": {
+      "region": 10,
+      "name": "Снятин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 109,
+    "fields": {
+      "region": 10,
+      "name": "Косів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 110,
+    "fields": {
+      "region": 10,
+      "name": "Городенка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 111,
+    "fields": {
+      "region": 11,
+      "name": "Луцьк"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 112,
+    "fields": {
+      "region": 11,
+      "name": "Нововолинськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 113,
+    "fields": {
+      "region": 11,
+      "name": "Ковель"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 114,
+    "fields": {
+      "region": 11,
+      "name": "Володимир"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 115,
+    "fields": {
+      "region": 11,
+      "name": "Ківерці"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 116,
+    "fields": {
+      "region": 11,
+      "name": "Рожище"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 117,
+    "fields": {
+      "region": 11,
+      "name": "Горохів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 118,
+    "fields": {
+      "region": 11,
+      "name": "Камінь-Каширський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 119,
+    "fields": {
+      "region": 11,
+      "name": "Іваничі"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 120,
+    "fields": {
+      "region": 11,
+      "name": "Устилуг"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 121,
+    "fields": {
+      "region": 12,
+      "name": "Ужгород"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 122,
+    "fields": {
+      "region": 12,
+      "name": "Мукачево"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 123,
+    "fields": {
+      "region": 12,
+      "name": "Хуст"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 124,
+    "fields": {
+      "region": 12,
+      "name": "Берегово"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 125,
+    "fields": {
+      "region": 12,
+      "name": "Виноградів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 126,
+    "fields": {
+      "region": 12,
+      "name": "Свалява"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 127,
+    "fields": {
+      "region": 12,
+      "name": "Тячів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 128,
+    "fields": {
+      "region": 12,
+      "name": "Перечин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 129,
+    "fields": {
+      "region": 12,
+      "name": "Іршава"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 130,
+    "fields": {
+      "region": 12,
+      "name": "Рахів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 131,
+    "fields": {
+      "region": 13,
+      "name": "Чернівці"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 132,
+    "fields": {
+      "region": 13,
+      "name": "Новодністровськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 133,
+    "fields": {
+      "region": 13,
+      "name": "Сторожинець"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 134,
+    "fields": {
+      "region": 13,
+      "name": "Хотин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 135,
+    "fields": {
+      "region": 13,
+      "name": "Вижниця"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 136,
+    "fields": {
+      "region": 13,
+      "name": "Заставна"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 137,
+    "fields": {
+      "region": 13,
+      "name": "Кіцмань"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 138,
+    "fields": {
+      "region": 13,
+      "name": "Герца"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 139,
+    "fields": {
+      "region": 13,
+      "name": "Сокиряни"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 140,
+    "fields": {
+      "region": 13,
+      "name": "Путила"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 141,
+    "fields": {
+      "region": 14,
+      "name": "Харків"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 142,
+    "fields": {
+      "region": 14,
+      "name": "Лозова"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 143,
+    "fields": {
+      "region": 14,
+      "name": "Мерефа"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 144,
+    "fields": {
+      "region": 14,
+      "name": "Чугуїв"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 145,
+    "fields": {
+      "region": 14,
+      "name": "Ізюм"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 146,
+    "fields": {
+      "region": 14,
+      "name": "Куп'янськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 147,
+    "fields": {
+      "region": 14,
+      "name": "Красноград"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 148,
+    "fields": {
+      "region": 14,
+      "name": "Первомайський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 149,
+    "fields": {
+      "region": 14,
+      "name": "Балаклія"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 150,
+    "fields": {
+      "region": 14,
+      "name": "Вовчанськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 151,
+    "fields": {
+      "region": 14,
+      "name": "Богодухів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 152,
+    "fields": {
+      "region": 15,
+      "name": "Дніпро"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 153,
+    "fields": {
+      "region": 15,
+      "name": "Кривий Ріг"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 154,
+    "fields": {
+      "region": 15,
+      "name": "Кам'янське"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 155,
+    "fields": {
+      "region": 15,
+      "name": "Нікополь"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 156,
+    "fields": {
+      "region": 15,
+      "name": "Павлоград"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 157,
+    "fields": {
+      "region": 15,
+      "name": "Новомосковськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 158,
+    "fields": {
+      "region": 15,
+      "name": "Жовті Води"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 159,
+    "fields": {
+      "region": 15,
+      "name": "Марганець"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 160,
+    "fields": {
+      "region": 15,
+      "name": "Тернівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 161,
+    "fields": {
+      "region": 15,
+      "name": "Синельникове"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 162,
+    "fields": {
+      "region": 15,
+      "name": "Вільногірськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 163,
+    "fields": {
+      "region": 15,
+      "name": "Першотравенськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 164,
+    "fields": {
+      "region": 16,
+      "name": "Маріуполь"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 165,
+    "fields": {
+      "region": 16,
+      "name": "Краматорськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 166,
+    "fields": {
+      "region": 16,
+      "name": "Слов'янськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 167,
+    "fields": {
+      "region": 16,
+      "name": "Бахмут"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 168,
+    "fields": {
+      "region": 16,
+      "name": "Покровськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 169,
+    "fields": {
+      "region": 16,
+      "name": "Лиман"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 170,
+    "fields": {
+      "region": 16,
+      "name": "Дружківка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 171,
+    "fields": {
+      "region": 16,
+      "name": "Костянтинівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 172,
+    "fields": {
+      "region": 16,
+      "name": "Торецьк"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 173,
+    "fields": {
+      "region": 16,
+      "name": "Доброполе"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 174,
+    "fields": {
+      "region": 17,
+      "name": "Запоріжжя"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 175,
+    "fields": {
+      "region": 17,
+      "name": "Мелітополь"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 176,
+    "fields": {
+      "region": 17,
+      "name": "Бердянськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 177,
+    "fields": {
+      "region": 17,
+      "name": "Енергодар"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 178,
+    "fields": {
+      "region": 17,
+      "name": "Пологи"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 179,
+    "fields": {
+      "region": 17,
+      "name": "Токмак"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 180,
+    "fields": {
+      "region": 17,
+      "name": "Василівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 181,
+    "fields": {
+      "region": 17,
+      "name": "Оріхів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 182,
+    "fields": {
+      "region": 17,
+      "name": "Гуляйполе"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 183,
+    "fields": {
+      "region": 17,
+      "name": "Кам'янка-Дніпровська"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 184,
+    "fields": {
+      "region": 18,
+      "name": "Одеса"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 185,
+    "fields": {
+      "region": 18,
+      "name": "Ізмаїл"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 186,
+    "fields": {
+      "region": 18,
+      "name": "Чорноморськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 187,
+    "fields": {
+      "region": 18,
+      "name": "Миколаїв (Одеська обл.)"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 188,
+    "fields": {
+      "region": 18,
+      "name": "Білгород-Дністровський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 189,
+    "fields": {
+      "region": 18,
+      "name": "Южне"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 190,
+    "fields": {
+      "region": 18,
+      "name": "Теплодар"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 191,
+    "fields": {
+      "region": 18,
+      "name": "Ізмаїл"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 192,
+    "fields": {
+      "region": 18,
+      "name": "Балта"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 193,
+    "fields": {
+      "region": 18,
+      "name": "Котовськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 194,
+    "fields": {
+      "region": 18,
+      "name": "Арциз"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 195,
+    "fields": {
+      "region": 18,
+      "name": "Болград"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 196,
+    "fields": {
+      "region": 18,
+      "name": "Тарутине"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 197,
+    "fields": {
+      "region": 19,
+      "name": "Миколаїв"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 198,
+    "fields": {
+      "region": 19,
+      "name": "Вознесенськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 199,
+    "fields": {
+      "region": 19,
+      "name": "Первомайськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 200,
+    "fields": {
+      "region": 19,
+      "name": "Очаків"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 201,
+    "fields": {
+      "region": 19,
+      "name": "Нова Одеса"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 202,
+    "fields": {
+      "region": 19,
+      "name": "Снігурівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 203,
+    "fields": {
+      "region": 19,
+      "name": "Жовтневе"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 204,
+    "fields": {
+      "region": 19,
+      "name": "Баштанка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 205,
+    "fields": {
+      "region": 19,
+      "name": "Кривоозерське"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 206,
+    "fields": {
+      "region": 19,
+      "name": "Новий Буг"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 207,
+    "fields": {
+      "region": 20,
+      "name": "Херсон"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 208,
+    "fields": {
+      "region": 20,
+      "name": "Нова Каховка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 209,
+    "fields": {
+      "region": 20,
+      "name": "Каховка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 210,
+    "fields": {
+      "region": 20,
+      "name": "Генічеськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 211,
+    "fields": {
+      "region": 20,
+      "name": "Скадовськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 212,
+    "fields": {
+      "region": 20,
+      "name": "Цюрупинськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 213,
+    "fields": {
+      "region": 20,
+      "name": "Велика Лепетиха"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 214,
+    "fields": {
+      "region": 20,
+      "name": "Голопристань"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 215,
+    "fields": {
+      "region": 20,
+      "name": "Бериславль"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 216,
+    "fields": {
+      "region": 20,
+      "name": "Антонівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 217,
+    "fields": {
+      "region": 21,
+      "name": "Житомир"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 218,
+    "fields": {
+      "region": 21,
+      "name": "Бердичів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 219,
+    "fields": {
+      "region": 21,
+      "name": "Коростень"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 220,
+    "fields": {
+      "region": 21,
+      "name": "Новоград-Волинський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 221,
+    "fields": {
+      "region": 21,
+      "name": "Малин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 222,
+    "fields": {
+      "region": 21,
+      "name": "Радомишль"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 223,
+    "fields": {
+      "region": 21,
+      "name": "Коростишів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 224,
+    "fields": {
+      "region": 21,
+      "name": "Овруч"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 225,
+    "fields": {
+      "region": 21,
+      "name": "Олевськ"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 226,
+    "fields": {
+      "region": 21,
+      "name": "Андрушівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 227,
+    "fields": {
+      "region": 22,
+      "name": "Чернігів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 228,
+    "fields": {
+      "region": 22,
+      "name": "Ніжин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 229,
+    "fields": {
+      "region": 22,
+      "name": "Прилуки"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 230,
+    "fields": {
+      "region": 22,
+      "name": "Бахмач"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 231,
+    "fields": {
+      "region": 22,
+      "name": "Борзна"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 232,
+    "fields": {
+      "region": 22,
+      "name": "Ічня"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 233,
+    "fields": {
+      "region": 22,
+      "name": "Козелець"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 234,
+    "fields": {
+      "region": 22,
+      "name": "Носівка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 235,
+    "fields": {
+      "region": 22,
+      "name": "Новгород-Сіверський"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 236,
+    "fields": {
+      "region": 22,
+      "name": "Остер"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 237,
+    "fields": {
+      "region": 23,
+      "name": "Суми"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 238,
+    "fields": {
+      "region": 23,
+      "name": "Конотоп"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 239,
+    "fields": {
+      "region": 23,
+      "name": "Шостка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 240,
+    "fields": {
+      "region": 23,
+      "name": "Ромни"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 241,
+    "fields": {
+      "region": 23,
+      "name": "Охтирка"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 242,
+    "fields": {
+      "region": 23,
+      "name": "Глухів"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 243,
+    "fields": {
+      "region": 23,
+      "name": "Лебедин"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 244,
+    "fields": {
+      "region": 23,
+      "name": "Середина-Буда"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 245,
+    "fields": {
+      "region": 23,
+      "name": "Білопілля"
+    }
+  },
+  {
+    "model": "myria.city",
+    "pk": 246,
+    "fields": {
+      "region": 23,
+      "name": "Путивль"
+    }
+  }
+]

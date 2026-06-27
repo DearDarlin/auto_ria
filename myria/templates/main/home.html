@@ -108,47 +108,63 @@
             <button class="tab-btn">Під пригон</button>
         </div>
 
-        <form class="search-form">
+        <form class="search-form" action="{% url 'search_cars' %}" method="GET">
             <div class="form-grid">
                 
                 <div class="form-group">
                     <label class="floating-label">Тип транспорту</label>
-                    <select class="form-select">
-                        <option>Легкові</option>
-                        <option>Мото</option>
-                        <option>Вантажівки</option>
+                    <select name="transport_type" class="form-select">
+                        <option value="">Оберіть</option>
+                        <option value="Легкові">Легкові</option>
+                        <option value="Мото">Мото</option>
+                        <option value="Вантажівки">Вантажівки</option>
+                        <option value="Причепи">Причепи</option>
+                        <option value="Спецтехніка">Спецтехніка</option>
+                        <option value="Сільгосптехніка">Сільгосптехніка</option>
+                        <option value="Автобуси">Автобуси</option>
+                        <option value="Водний транспорт">Водний транспорт</option>
+                        <option value="Повітряний транспорт">Повітряний транспорт</option>
+                        <option value="Автобудинки">Автобудинки</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Марка, Модель">
+                    <input type="text" name="search" class="form-input" placeholder="Марка, Модель">
                 </div>
 
-                <div class="form-group">
-                    <select class="form-select">
-                        <option disabled selected>Рік випуску</option>
-                        <option>2026</option>
-                        <option>2025</option>
-                        <option>2024</option>
-                        <option>2023</option>
+                    <div class="form-group">
+                    <select name="year_min" class="form-select">
+                        <option value="" disabled selected>Рік випуску</option>
+                        <option value="">Будь-який</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <select class="form-select">
-                        <option disabled selected>Вартість</option>
-                        <option>до 5 000 $</option>
-                        <option>до 10 000 $</option>
-                        <option>до 20 000 $</option>
+                    <select name="price_max" class="form-select">
+                        <option value="" disabled selected>Вартість</option>
+                        <option value="">Будь-яка</option>
+                        <option value="10000">До $10,000</option>
+                        <option value="20000">До $20,000</option>
+                        <option value="50000">До $50,000</option>
+                        <option value="100000">До $100,000</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <select class="form-select">
-                        <option disabled selected>Регіон</option>
-                        <option>Київська обл.</option>
-                        <option>Вінницька обл.</option>
-                        <option>Львівська обл.</option>
+                    <select name="region_id" class="form-select">
+                        <option value="">Оберіть регіон</option>
+                        <option value="1">Київ</option>
+                        <option value="2">Вінниця</option>
+                        <option value="3">Львів</option>
+                        <option value="4">Харків</option>
+                        <option value="5">Дніпро</option>
+                        <option value="6">Одеса</option>
+                        <option value="7">Запоріжжя</option>
                     </select>
                 </div>
 
@@ -165,8 +181,9 @@
                 <div class="form-group">
                     <select class="form-select">
                         <option disabled selected>Коробка передач</option>
+                        <option>Механіка</option>
                         <option>Автомат</option>
-                        <option>Ручна / Механіка</option>
+                        <option>Варіатор</option>
                     </select>
                 </div>
 
@@ -181,6 +198,132 @@
 
     </div>
 </section>
+{% if search_params %}
+{% if cars %}
+    <section class="results-section">
+        <div class="results-container">
+            <button onclick="this.closest('.results-section').remove()" 
+        style="float:right; background:none; border:none; font-size:20px; cursor:pointer;">✕</button>
+            <h2>Знайдено: {{ cars|length }} авто</h2>
+            
+            <div class="cars-results">
+                {% for car in cars %}
+                    <div class="car-result-item">
+                        <div class="car-result-image">
+                            {% if car.main_photo %}
+                                <img src="{{ car.main_photo }}" alt="{{ car.brand }} {{ car.model_name }}">
+                            {% else %}
+                                <div class="no-image">Немає фото</div>
+                            {% endif %}
+                        </div>
+                        <div class="car-result-info">
+                            <h3>{{ car.brand }} {{ car.model_name }}</h3>
+                            <p class="year">{{ car.year }} рік</p>
+                            <p class="location">{{ car.city }}, {{ car.region }}</p>
+                            <p class="mileage">Пробіг: {{ car.mileage }} км</p>
+                            <p class="price">{{ car.price }} {{ car.currency }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% elif search_params %}
+    <section class="results-section">
+        <div class="results-container no-results">
+            <button onclick="this.closest('.results-section').remove()" 
+        style="float:right; background:none; border:none; font-size:20px; cursor:pointer;">✕</button>
+            <p>На жаль, нічого не знайдено за вашими критеріями.</p>
+            <p>Спробуйте змінити параметри пошуку.</p>
+        </div>
+    </section>
+{% endif %}
+{% endif %}
+<style>
+    .results-section {
+        padding: 40px 20px;
+    }
+ 
+    .results-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+ 
+    .results-container h2 {
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: #333;
+    }
+ 
+    .cars-results {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+ 
+    .car-result-item {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+ 
+    .car-result-image {
+        width: 100%;
+        height: 200px;
+        background: #e0e0e0;
+        overflow: hidden;
+    }
+ 
+    .car-result-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+ 
+    .no-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #999;
+    }
+ 
+    .car-result-info {
+        padding: 15px;
+    }
+ 
+    .car-result-info h3 {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        color: #333;
+    }
+ 
+    .car-result-info p {
+        margin: 5px 0;
+        color: #666;
+        font-size: 14px;
+    }
+ 
+    .car-result-info .price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #e74c3c;
+        margin-top: 10px;
+    }
+ 
+    .no-results {
+        text-align: center;
+        padding: 60px 20px;
+        background: white;
+        border-radius: 8px;
+    }
+ 
+    .no-results p {
+        font-size: 18px;
+        color: #666;
+    }
+</style>
 
 <main class="main-content">
     <div class="content-container">
@@ -342,7 +485,7 @@
     </div>
 
     <div class="cars-grid">
-        {% for car in cars %}
+        {% for car in recommended_cars %}
         <a href="{% url 'car_detail' car.id %}" class="car-card-link">
             <div class="car-card">
 

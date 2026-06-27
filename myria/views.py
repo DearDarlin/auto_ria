@@ -3,7 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.authentication import SessionAuthentication
@@ -12,9 +12,9 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import status
-from .models import Car, CarImage, CarModel, Brand, City
-from django.http import JsonResponse
+from .models import Car, CarImage, CarModel, Brand, City, Region
 from .forms import CarForm
+from django.db.models import Q
 import requests
 
 def home(request):
@@ -102,9 +102,6 @@ def profile_view(request):
 
 def admin_panel_view(request):
     return render(request, 'main/admin_panel.html')
-
-# def add_car(request):
-#     return render(request, 'main/add_car.html')
 
 def logout_view(request):
     logout(request)
@@ -197,7 +194,7 @@ def upload_to_imgbb(file_object):
 def add_car_view(request):
     if request.method == 'POST':
         form = CarForm(request.POST, request.FILES)
-        print("FILES:", request.FILES)  # ← додай це
+        print("FILES:", request.FILES)
         print("gallery_images:", request.FILES.getlist('gallery_images'))
         if form.is_valid():
             car = form.save(commit=False)
@@ -307,3 +304,87 @@ def load_cities(request):
         cities = City.objects.filter(region_id=region_id).order_by('name')
         return JsonResponse(list(cities.values('id', 'name')), safe=False)
     return JsonResponse([], safe=False)
+
+
+# ============= ПОШУК АВТО (КОЛИ НАТИСКАЮТЬ ШУКАТИ) =============
+
+def search_cars(request):
+    """Пошук авто при натисканні кнопки 'Шукати'"""
+    
+    cars = Car.objects.all()
+    
+    # Фільтр за типом транспорту
+    transport_type = request.GET.get('transport_type', '').strip()
+    if transport_type:
+        cars = cars.filter(transport_type=transport_type)
+    
+    # Фільтр за маркою
+    brand_id = request.GET.get('brand_id', '').strip()
+    if brand_id:
+        cars = cars.filter(brand_id=brand_id)
+    
+    # Фільтр за моделлю
+    model_id = request.GET.get('model_id', '').strip()
+    if model_id:
+        cars = cars.filter(model_name_id=model_id)
+    
+    # Фільтр за роком (від)
+    year_min = request.GET.get('year_min', '').strip()
+    if year_min:
+        try:
+            cars = cars.filter(year__gte=int(year_min))
+        except ValueError:
+            pass
+    
+    # Фільтр за роком (до)
+    year_max = request.GET.get('year_max', '').strip()
+    if year_max:
+        try:
+            cars = cars.filter(year__lte=int(year_max))
+        except ValueError:
+            pass
+    
+    # Фільтр за регіоном
+    region_id = request.GET.get('region_id', '').strip()
+    if region_id:
+        cars = cars.filter(region_id=region_id)
+    
+    # Фільтр за містом
+    city_id = request.GET.get('city_id', '').strip()
+    if city_id:
+        cars = cars.filter(city_id=city_id)
+    
+    # Фільтр за ціною (від)
+    price_min = request.GET.get('price_min', '').strip()
+    if price_min:
+        try:
+            cars = cars.filter(price__gte=float(price_min))
+        except ValueError:
+            pass
+    
+    # Фільтр за ціною (до)
+    price_max = request.GET.get('price_max', '').strip()
+    if price_max:
+        try:
+            cars = cars.filter(price__lte=float(price_max))
+        except ValueError:
+            pass
+    
+    # Пошук по тексту
+    search_text = request.GET.get('search', '').strip()
+    if search_text:
+        cars = cars.filter(
+            Q(brand__name__icontains=search_text) |
+            Q(model_name__name__icontains=search_text) |
+            Q(description__icontains=search_text)
+        )
+    
+    # Сортування
+    cars = cars.order_by('-id')
+    recommended_cars = Car.objects.all().order_by('-id')[:10]
+    
+    return render(request, 'main/home.html', {
+        'cars': cars,
+        'recommended_cars': recommended_cars,
+        'search_params': request.GET
+    })

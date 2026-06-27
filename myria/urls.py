@@ -45,4 +45,6 @@ urlpatterns = [
     path('ajax/load-models/', views.load_models, name='ajax_load_models'),
     path('ajax/load-cities/', views.load_cities, name='ajax_load_cities'),
 
+   path('search/', views.search_cars, name='search_cars'),
+
 ]

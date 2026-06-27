@@ -76,7 +76,6 @@
     const token = localStorage.getItem('access_token');
     const isDjangoAuth = "{{ user.is_authenticated }}" === "True";
 
-    // Хелпер — повертає правильні опції для fetch залежно від методу авторизації
     function authFetch(url, extra = {}) {
         const headers = {
             ...(extra.headers || {}),

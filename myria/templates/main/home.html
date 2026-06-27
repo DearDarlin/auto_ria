@@ -279,6 +279,7 @@
             
             <div class="cars-results">
                 {% for car in cars %}
+                <a href="{% url 'car_detail' car.id %}" class="car-card-link">
                     <div class="car-result-item">
                         <div class="car-result-image">
                             {% if car.main_photo %}
@@ -295,6 +296,7 @@
                             <p class="price">{{ car.price }} {{ car.currency }}</p>
                         </div>
                     </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
@@ -567,7 +569,6 @@
                         <div class="car-no-photo">Немає фото</div>
                     {% endif %}
 
-                    <!-- Крапки галереї -->
                     <div class="photo-dots">
                         <span class="dot dot--active"></span>
                         <span class="dot"></span>

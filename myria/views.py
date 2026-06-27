@@ -19,7 +19,11 @@ import requests
 
 def home(request):
     cars = Car.objects.all()
-    return render(request, 'main/home.html', {'cars': cars})
+    recommended_cars = Car.objects.all().order_by('-id')[:10]
+    return render(request, 'main/home.html', {
+        'cars': cars,
+        'recommended_cars': recommended_cars,
+    })
 
 def cars_list(request):
     cars = Car.objects.all()
@@ -151,13 +155,13 @@ def my_cars(request):
     for c in cars:
         cars_data.append({
             'id': c.id,
-            'brand': c.brand,
-            'model_name': c.model_name,
+            'brand': c.brand.name if c.brand else '—',           
+            'model_name': c.model_name.name if c.model_name else '—',  
             'year': c.year,
             'price': str(c.price),
             'currency': c.currency,
-            'region': c.region,
-            'city': c.city,
+            'region': c.region.name if c.region else '—',        
+            'city': c.city.name if c.city else '—',              
             'mileage': c.mileage,
             'main_photo': str(c.main_photo) if c.main_photo else None,
             'transport_type': c.transport_type,
@@ -266,8 +270,8 @@ def get_all_cars(request):
 
             cars_data.append({
                 "id": c.id,
-                "brand": getattr(c, 'brand', '—'),
-                "model_name": getattr(c, 'model_name', None) or getattr(c, 'model', '—'),
+                "brand": c.brand.name if c.brand else '—',
+                "model_name": c.model_name.name if c.model_name else '—',
                 "year": getattr(c, 'year', '—'),
                 "transport_type": getattr(c, 'transport_type', '—'),
                 "user": author  

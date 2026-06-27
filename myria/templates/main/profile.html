@@ -684,6 +684,7 @@
             let response;
             if (isDjangoAuth) {
                 response = await fetch("{% url 'my_cars' %}", {
+                    credentials: 'include',
                     headers: { 'X-CSRFToken': '{{ csrf_token }}' }
                 });
             } else if (token) {

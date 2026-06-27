@@ -132,16 +132,86 @@
                     <input type="text" name="search" class="form-input" placeholder="Марка, Модель">
                 </div>
 
-                    <div class="form-group">
-                    <select name="year_min" class="form-select">
-                        <option value="" disabled selected>Рік випуску</option>
-                        <option value="">Будь-який</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                    </select>
+                <!-- Прихований input для year_min/year_max, заповнюється через JS -->
+                <input type="hidden" name="year_min" id="year_min_hidden" value="">
+                <input type="hidden" name="year_max" id="year_max_hidden" value="">
+
+                <div class="form-group year-dropdown-wrapper">
+                    <button type="button" class="form-select year-dropdown-btn" id="yearDropdownBtn">
+                        <span id="yearDropdownLabel">Рік випуску</span>
+                        <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+
+                    <div class="year-dropdown-panel" id="yearDropdownPanel">
+                        <div class="year-columns">
+                            <div class="year-col">
+                                <div class="year-col-header">Від</div>
+                                <div class="year-col-scroll">
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value=""> Будь-який</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2026"> 2026</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2025"> 2025</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2024"> 2024</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2023"> 2023</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2022"> 2022</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2021"> 2021</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2020"> 2020</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2019"> 2019</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2018"> 2018</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2017"> 2017</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2016"> 2016</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2015"> 2015</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2014"> 2014</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2013"> 2013</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2012"> 2012</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2011"> 2011</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2010"> 2010</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2009"> 2009</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2008"> 2008</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2007"> 2007</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2006"> 2006</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2005"> 2005</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="2000"> 2000</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="1995"> 1995</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_from_radio" value="1990"> 1990</label>
+                                </div>
+                            </div>
+                            <div class="year-divider"></div>
+                            <div class="year-col">
+                                <div class="year-col-header">До</div>
+                                <div class="year-col-scroll">
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value=""> Будь-який</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2026"> 2026</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2025"> 2025</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2024"> 2024</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2023"> 2023</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2022"> 2022</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2021"> 2021</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2020"> 2020</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2019"> 2019</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2018"> 2018</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2017"> 2017</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2016"> 2016</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2015"> 2015</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2014"> 2014</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2013"> 2013</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2012"> 2012</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2011"> 2011</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2010"> 2010</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2009"> 2009</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2008"> 2008</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2007"> 2007</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2006"> 2006</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2005"> 2005</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="2000"> 2000</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="1995"> 1995</label>
+                                    <label class="year-radio-item"><input type="radio" name="year_to_radio" value="1990"> 1990</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="year-apply-row">
+                            <button type="button" class="year-apply-btn" id="yearApplyBtn">Застосувати</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -158,32 +228,33 @@
                 <div class="form-group">
                     <select name="region_id" class="form-select">
                         <option value="">Оберіть регіон</option>
-                        <option value="1">Київ</option>
-                        <option value="2">Вінниця</option>
-                        <option value="3">Львів</option>
-                        <option value="4">Харків</option>
-                        <option value="5">Дніпро</option>
-                        <option value="6">Одеса</option>
-                        <option value="7">Запоріжжя</option>
+                        {% for region in regions %}
+                            <option value="{{ region.id }}"
+                                {% if search_params.region_id == region.id|stringformat:"s" %}selected{% endif %}>
+                                {{ region.name }}
+                            </option>
+                        {% endfor %}
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <select class="form-select">
-                        <option disabled selected>Пальне</option>
-                        <option>Бензин</option>
-                        <option>Дизель</option>
-                        <option>Електро</option>
-                        <option>Гібрид</option>
+                    <select name="fuel_type" class="form-select">
+                        <option value="" disabled selected>Пальне</option>
+                        <option value="">Будь-яке</option>
+                        <option value="Бензин">Бензин</option>
+                        <option value="Дизель">Дизель</option>
+                        <option value="Електро">Електро</option>
+                        <option value="Гібрид">Гібрид</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <select class="form-select">
-                        <option disabled selected>Коробка передач</option>
-                        <option>Механіка</option>
-                        <option>Автомат</option>
-                        <option>Варіатор</option>
+                    <select name="transmission" class="form-select">
+                        <option value="" disabled selected>Коробка передач</option>
+                        <option value="">Будь-яка</option>
+                        <option value="Механіка">Механіка</option>
+                        <option value="Автомат">Автомат</option>
+                        <option value="Варіатор">Варіатор</option>
                     </select>
                 </div>
 
@@ -1037,6 +1108,201 @@
             document.getElementById('adminPanelLink').style.display = 'inline-block';
         }
     });
+</script>
+
+<style>
+/* ===== YEAR DROPDOWN ===== */
+.year-dropdown-wrapper {
+    position: relative;
+}
+
+.year-dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    text-align: left;
+}
+
+.year-dropdown-btn .select-arrow {
+    width: 16px;
+    height: 16px;
+    color: #666;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.year-dropdown-btn.open .select-arrow {
+    transform: rotate(180deg);
+}
+
+.year-dropdown-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 999;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    width: 340px;
+    padding: 16px 16px 12px;
+}
+
+.year-dropdown-panel.open {
+    display: block;
+}
+
+.year-columns {
+    display: flex;
+    gap: 0;
+}
+
+.year-col {
+    flex: 1;
+}
+
+.year-col-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 4px;
+}
+
+.year-col-scroll {
+    max-height: 240px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+.year-col-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+.year-col-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.year-divider {
+    width: 1px;
+    background: #e8e8e8;
+    margin: 0 12px;
+    align-self: stretch;
+}
+
+.year-radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 4px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+
+.year-radio-item:hover {
+    background: #f5f5f5;
+}
+
+.year-radio-item input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #e74c3c;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.year-apply-row {
+    margin-top: 14px;
+}
+
+.year-apply-btn {
+    width: 100%;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 11px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.year-apply-btn:hover {
+    background: #c0392b;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("yearDropdownBtn");
+    const panel = document.getElementById("yearDropdownPanel");
+    const label = document.getElementById("yearDropdownLabel");
+    const hiddenMin = document.getElementById("year_min_hidden");
+    const hiddenMax = document.getElementById("year_max_hidden");
+    const applyBtn = document.getElementById("yearApplyBtn");
+
+    // Відновити стан з URL при поверненні результатів
+    const params = new URLSearchParams(window.location.search);
+    const initialMin = params.get("year_min") || "";
+    const initialMax = params.get("year_max") || "";
+    if (initialMin) {
+        const r = document.querySelector(`input[name="year_from_radio"][value="${initialMin}"]`);
+        if (r) r.checked = true;
+        hiddenMin.value = initialMin;
+    }
+    if (initialMax) {
+        const r = document.querySelector(`input[name="year_to_radio"][value="${initialMax}"]`);
+        if (r) r.checked = true;
+        hiddenMax.value = initialMax;
+    }
+    updateLabel();
+
+    btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        const isOpen = panel.classList.toggle("open");
+        btn.classList.toggle("open", isOpen);
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!btn.contains(e.target) && !panel.contains(e.target)) {
+            panel.classList.remove("open");
+            btn.classList.remove("open");
+        }
+    });
+
+    applyBtn.addEventListener("click", function () {
+        const fromRadio = document.querySelector('input[name="year_from_radio"]:checked');
+        const toRadio = document.querySelector('input[name="year_to_radio"]:checked');
+        hiddenMin.value = fromRadio ? fromRadio.value : "";
+        hiddenMax.value = toRadio ? toRadio.value : "";
+        updateLabel();
+        panel.classList.remove("open");
+        btn.classList.remove("open");
+    });
+
+    function updateLabel() {
+        const min = hiddenMin.value;
+        const max = hiddenMax.value;
+        if (min && max) label.textContent = min + " — " + max;
+        else if (min) label.textContent = "Від " + min;
+        else if (max) label.textContent = "До " + max;
+        else label.textContent = "Рік випуску";
+    }
+});
 </script>
     
 </body>

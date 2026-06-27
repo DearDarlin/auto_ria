@@ -20,9 +20,11 @@ import requests
 def home(request):
     cars = Car.objects.all()
     recommended_cars = Car.objects.all().order_by('-id')[:10]
+    regions = Region.objects.all().order_by('name')
     return render(request, 'main/home.html', {
         'cars': cars,
         'recommended_cars': recommended_cars,
+        'regions': regions,
     })
 
 def cars_list(request):
@@ -386,9 +388,11 @@ def search_cars(request):
     # Сортування
     cars = cars.order_by('-id')
     recommended_cars = Car.objects.all().order_by('-id')[:10]
+    regions = Region.objects.all().order_by('name')
     
     return render(request, 'main/home.html', {
         'cars': cars,
         'recommended_cars': recommended_cars,
-        'search_params': request.GET
+        'search_params': request.GET,
+        'regions': regions,
     })
